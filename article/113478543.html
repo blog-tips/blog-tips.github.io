@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>CMSブログの作り方</title>
+<meta name="description" content="Movable TypeやWordPressなど、CMSブログの作り方についてご紹介しています。" />
+<meta name="keywords" content="CMS,ブログ,作り方" />
+<meta name="viewport" content="width=device-width" />
+<link rel="alternate" href="../index.rdf" type="application/rss+xml" title="RSS" />
+<link rel="stylesheet" href="../styles-article.css" type="text/css" />
+<link rel="shortcut icon" href="../image/favicon.ico" />
+</head><body>
+<div id="container">
+<main id="content">
+<div class="blog">
+<!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:Trackback="http://madskills.com/public/xml/rss/module/Trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="https://blog-tips.net/article/113478543.html"
+    trackback:ping="http://blog.seesaa.jp/tb/113478543"
+    dc:title="CMSブログの作り方"
+    dc:identifier="https://blog-tips.net/article/113478543.html"
+    dc:description="CMSブログって何だろう？って思うんですが、CMS っていうのは、コンテンツマネジメントシステムの略のことなんで、つまりはコンテンツを制御したり、管理したりするソリューションシステムのことみたいなんです。企業がウェブサイト構築の際に CMS プラットフォームを導入することが多いと思うんですけど、やっぱ個人で CMS ブログを構築する際は、一般的にはＭＴや Wordpress あたりがCMSブログの作り方も簡単なんで、ぶなんな選択なんじゅないかなって気がします。"
+    dc:creator="ブログの作り方"
+    dc:subject="初心者簡単な作り方"
+    dc:date="2009-03-24T23:20:37+09:00"
+/>
+</rdf:RDF>
+-->
+<div class="breadcrumb"><a href="../index.html">ブログの作り方</a> &gt; <a href="../category/4150781-1.html">初心者簡単な作り方</a> &gt; CMSブログの作り方</div>
+<h1>CMSブログの作り方</h1>
+<p>　CMSというのは"コンテンツ・マネジメント・システム"の略です。</p><p>　記事や画像などコンテンツを管理するためのシステムのことを指しています。無料ブログサービスのログイン後の"管理画面"がそれにあたります。</p>
+<p>　無料ブログとは違い、独自ドメインを取得してレンタルサーバーで作成する場合は、自分で何らかの管理ツールを用意しなくてはなりません。<br />　その際のツールとして"Movable Type"や"Wordpress"などのCMSを利用して作成している人が多いです。</p>
+<h2>個人利用でのCMSブログの作り方</h2>
+<p>CMSでブログを作る際、レンタルサーバー（有料）を借りて、独自ドメイン（有料）を取得し、CMSツール（無料）をサーバーにインストールしてからブログを構築することになります。</p>
+<p>CMSブログの作り方といった場合、「<span class="red">サーバーへのCMSのインストール方法</span>」と「<span class="red">テンプレートなどのカスタマイズ方法</span>」に分けられます。</p>
+<p>CMSにもいろいろありますが、Movable Type、もしくはWordPressで作るのが人気になっています。</p><p>そのほか、xoops というCMSも人気ですが、xoopsは本体をサーバーにインストールしたあと、さらに blog 機能のアプリケーションをインストールする必要があるので、MT や WordPress と比較すると導入のハードルが高いです。</p>
+<ul>
+<li><a href="https://www.sixapart.jp/movabletype/" target="_blank" rel="nofollow">Movable Type</a>（MT,MTOS）</li>
+<li><a href="https://ja.wordpress.org/" target="_blank" rel="nofollow">WordPress</a></li>
+<li><a href="https://www.geeklog.jp/" target="_blank" rel="nofollow">Geeklog</a></li>
+<li><a href="https://ja.wikipedia.org/wiki/XOOPS_Cube" target="_blank" rel="nofollow">XOOPS</a></li>
+</ul>
+<p>自分でこれらのツールをダウンロードしてインストールすることもできますが、自動インストールに対応しているサーバーを選ぶと便利です。</p><p>CMSでウェブサイトを構築する際、商用の企業サイトの場合だと、ライセンスの購入でかなりな費用がかかる場合もありますが、個人で利用する場合はほとんどが無料で使用できます。</p>
+<h3>Movable TypeとWordPressのCMS比較</h3>
+<p><b>Movable Type</b></p>
+<ul>
+<li>再構築の必要あり</li>
+<li>詳細なカスタマイズ可能</li>
+<li>複数のブログ作成が可能</li>
+<li>手動でのインストールは難しい</li>
+</ul>
+<p><b>WordPress</b></p>
+<ul>
+<li>再構築の必要なし</li>
+<li>動的なページ生成</li>
+<li>インストールは簡単</li>
+</ul>
+<p>人気のMovable TypeとWordPress でCMS比較をしてみると、どちらかというと、独自タグを利用できるMTで構築した方が高機能っぽい気もします。</p><p>けれども、Movable Type は再構築が必要になりますので、ブログのエントリーが増えてくるにつれて、再構築の時間が長くなってしまう傾向にあります。</p><p>その点、php で動的にページが出力される WordPress は再構築をする必要はないですが、サーバーへの負荷や検索エンジンへのインデックスなどの面では静的なページが生成される mt に利点があるような気もします。</p><p>一方、レンタルサーバーへインストールする際の難しさからいえば、WordPress の方が格段に簡単です。</p><p>レンタルサーバーが自動インストールに対応していれば、どちらでも大差はないですが、自動インストールに対応していない格安サーバーで構築する際は WordPress の方が簡単のはずです。</p><p>複数のブログを構築する際は、WordPress はブログの数だけインストールしなくてはいけないという欠点があるので、Movable Type が使いやすいです。</p>
+<h3>CMSブログの作り方の手順</h3>
+<p>自動インストールに対応していないサーバーでも、MYSQLなどのデータベースが利用できれば、Movable Type などを導入することができます。</p>
+<p><a href="http://mt.blog-tips.net/" target="_blank">MTブログ（Movable Type）の作り方</a></p>
+<p><b>☆ 自動インストール非対応での作成手順</b></p>
+<ol>
+<li>独自ドメインの取得</li>
+<li>サーバー契約</li>
+<li>サーバーにデータベース作成</li>
+<li>CMS のダウンロード</li>
+<li>CMS のインストール</li>
+<li>ログイン</li>
+<li>記事投稿</li>
+</ol>
+<p>ただ、Movable Type の場合、3～5の手順はけっこう難しい面があります。</p>
+<p>一方、格安レンタルサーバーのなかでも、自動インストールに対応していて、容量もある程度の余裕のあるサーバーを契約すると、これらの手順をはぶくことができます。<br />いろいろ試しましたが、MTで複数のブログが作成できるマルチドメイン対応のエックスサーバーというのがおすすめです。</p><p><a href="115872348.html">MTブログ可能な格安レンタルサーバー</a></p>
+<p><b>☆ 自動インストール対応での作成手順</b></p>
+<ol>
+<li>独自ドメインの取得</li>
+<li>サーバー契約</li>
+<li><span class="red">自動インストール</span></li>
+<li>ログイン</li>
+<li>記事投稿</li>
+</ol>
+<p>個人でも、Movable Type をビジネスや商用で利用する際にはライセンスの購入が必要になりますが、機能的には若干異なるものの、無料で利用できるオープンソース・プロジェクト版のレンタルサーバーだと無料で使えます。</p>
+<p>どちらで作成するにしても、インストールした後のブログカスタマイズが一番難しいです。</p></div>
+<div id="trackback">
+<div class="ttitle">関連記事</div>
+<div class="blogging">
+<ul>
+<li><a href="109561262.html">ＭＴブログ 4.22 でコミュニティブログ化</a><br />
+無料でＭＴブログを作ろうとするとき、どのバージョンにするかとかいろいろまよっちゃいますが、最近バージョンの4.22には「 Movable Type Commercial 4.22 」という新バージョン...</li>
+<li><a href="109321379.html">チカッパレンタルサーバーで格安ＨＰ作り方</a><br />
+格安でホームページを作成しようと思っている人に、お勧めなのが、チカッパレンタルサーバーなんじゃないかなって思います。現在のところ初期費用が半額プライスになってるようです。（０８年１１月現在。）  無料...</li>
+<li><a href="114815028.html">ＭＴブログの作り方</a><br />
+ＭＴブログは Movable Type をサーバーにインストールして作成する更新型のウェブサイトのことですけれども、最近、ＭＴブログの作り方 - MTブログ（Movable Type）の作り方というの...</li>
+<li><a href="115872348.html">MTブログ可能な格安レンタルサーバー</a><br />
+MovableType や WordPress、XOOPS など、CMS ブログ構築可能な格安レンタルサーバーを探してるんですが、サーバーを契約してみたもののデータベースが作成できなかったり、マルチド...</li>
+</ul>
+</div>
+</div>
+<div class="navi">
+前の記事:<a href="116405624.html">キャプチャー画像の作り方</a><br />次の記事:<a href="116067979.html">CSSで初心者簡単ブログカスタマイズ方法</a>
+</div>
+</main><!-- #BeginLibraryItem "/Library/side.lbi" --><aside id="links">
+<div class="sidetitle">カテゴリ</div><div class="side"><ul>
+<li><a href="../category/4150781-1.html">初心者簡単</a></li>
+<li><a href="../category/5449171-1.html">ブログ比較</a></li>
+<li><a href="../category/3754373-1.html">カスタマイズ</a></li>
+<li><a href="../category/4150804-1.html">アフィリエイト</a></li>
+<li><a href="../category/5396661-1.html">SEO対策</a></li>
+<li><a href="../category/6189872-1.html">独自ドメイン</a></li>
+<li><a href="../category/5377733-1.html">アクセス解析とアクセスアップ</a></li>
+<li><a href="../category/5323127-1.html">htmlタグやCSS</a></li>
+<li><a href="../category/5529851-1.html">アドセンス</a></li>
+<li><a href="../category/5323473-1.html">無料ホームページの作り方</a></li>
+<li><a href="../category/4150796-1.html">グーグル無料ツール</a></li>
+<li><a href="../category/5529711-1.html">無料メールアドレスやメルマガ</a></li>
+<li><a href="../category/5529703-1.html">無料ブラウザのＦirefoxとＩＥ</a></li>
+<li><a href="../category/5529606-1.html">ＩＴニュース</a></li>
+</ul></div>
+<div class="sidetitle">ブログの作り方情報</div>
+<div class="side">
+<ul>
+<li><a href="48913125.html">無料メールアドレスの作り方</a></li>
+<li><a href="117970780.html">ブログ広告で収入を得る方法</a></li>
+<li><a href="../hikaku.html">ブログ作りはブログ比較から</a></li>
+<li><a href="92088644.html">ブログ比較の一覧</a></li>
+<li><a href="114655734.html">独自ドメインの取得方法</a></li>
+<li><a href="dokuji-cms.html">CMSでブログを作成する方法</a></li>
+<li><a href="115872348.html">CMS可能な格安レンタルサーバー</a></li>
+<li><a href="112911688.html">FC2ブログの作り方</a></li>
+<li><a href="71878598.html">ＦＣ２ホームページの作り方</a></li>
+<li><a href="110459720.html">さくらのブログの作り方</a></li>
+<li><a href="seesaa.html">Seesaaブログの作り方</a></li>
+<li><a href="107993732.html">シーサーブログを独自ドメイン化</a></li>
+<li><a href="wix.html">WIXでのブログの作り方</a></li>
+<li><a href="53785835.html">ディレクトリ登録のSEO効果</a></li>
+<li><a href="118429340.html">ブログからの集客方法</a></li>
+<li><a href="119971208.html">リスティング広告とは何ですか？</a></li>
+</ul></div>
+<div class="arch"><script type="text/javascript">
+<!--
+function ChangeArchive (sel) {
+if (sel.options[sel.selectedIndex].value != "") {
+location.href = sel.options[sel.selectedIndex].value;
+}
+}
+-->
+</script>
+<select name="MonthArchive" onchange="ChangeArchive(this)" class="archiveselect">
+<option value="">archives</option>
+<option value="../archives/200905-1.html">09/05(15)</option>
+<option value="../archives/200904-1.html">09/04(19)</option>
+<option value="../archives/200903-1.html">09/03(20)</option>
+<option value="../archives/200902-1.html">09/02(9)</option>
+<option value="../archives/200901-1.html">09/01(14)</option>
+<option value="../archives/200812-1.html">08/12(18)</option>
+<option value="../archives/200811-1.html">08/11(19)</option>
+<option value="../archives/200810-1.html">08/10(15)</option>
+<option value="../archives/200809-1.html">08/09(14)</option>
+<option value="../archives/200808-1.html">08/08(8)</option>
+<option value="../archives/200807-1.html">08/07(28)</option>
+<option value="../archives/200806-1.html">08/06(29)</option>
+<option value="../archives/200805-1.html">08/05(33)</option>
+<option value="../archives/200804-1.html">08/04(30)</option>
+<option value="../archives/200803-1.html">08/03(15)</option>
+<option value="../archives/200802-1.html">08/02(19)</option>
+<option value="../archives/200801-1.html">08/01(15)</option>
+<option value="../archives/200712-1.html">07/12(10)</option>
+<option value="../archives/200711-1.html">07/11(10)</option>
+<option value="../archives/200710-1.html">07/10(11)</option>
+<option value="../archives/200709-1.html">07/09(16)</option>
+<option value="../archives/200708-1.html">07/08(10)</option>
+<option value="../archives/200707-1.html">07/07(19)</option></select>
+</div>
+<form action="https://www.google.com/cse" id="cse-search-box">
+    <input type="hidden" name="cx" value="004767610735532938012:_ydsjrf0v8u" />
+    <input type="hidden" name="ie" value="Shift_JIS" />
+    <input type="text" name="q" size="24" />
+    <input type="submit" name="sa" value="検索" />
+</form>
+</aside><!-- #EndLibraryItem --><footer id="footer">
+<div class="pagetop"><a href="#container">PageTop▲</a></div>
+<div class="copyright"><ul><li><a href="../index.html">トップページ</a></li>
+<li><a href="../blog/index.html">ブログ</a></li>
+<li><a href="98359430.html">sitemap</a></li>
+<li><a href="../tag/index.html">tag</a></li>
+<li><a href="110348826.html" rel="nofollow">about</a></li></ul>
+<p>&copy;2009 blog-tips.net</p>
+</div>
+</footer>
+</div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2336808-36"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2336808-36');
+</script>
+</body>
+</html>

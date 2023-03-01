@@ -1,0 +1,15 @@
+<object type="application/x-shockwave-flash" style="width:425px; height:355px;" data="ユーチューブ動画ＵＲＬ">動画タイトル<param name="movie" value="ユーチューブ動画ＵＲＬ" /></object>
+
+たとえば、グーグルアースの動画の
+
+<object width="425" height="355"><param name="movie" value="http://www.youtube.com/v/mB01XJEufQk&hl=en"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/mB01XJEufQk&hl=en" type="application/x-shockwave-flash" wmode="transparent" width="425" height="355"></embed></object>
+
+をシーサーブログでユーチューブバリッドにするには
+
+<object type="application/x-shockwave-flash" style="width:425px; height:355px;" data="http://www.youtube.com/v/mB01XJEufQk&hl=en">グーグルアース<param name="movie" value="http://www.youtube.com/v/mB01XJEufQk&hl=en" /></object>
+
+みたいな感じです。
+
+ＩＥ６とファイアーフォックスでは表示されていましたがそのほかは確認してません。
+
+width:425pxやheight:355px;を変更すると大きさを変えられるようです。

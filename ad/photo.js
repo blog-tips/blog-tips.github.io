@@ -1,0 +1,1 @@
+document.write('<a href="http://px.a8.net/svt/ejp?a8mat=1I8Y9B+7X7HMY+E3S+NWRNM" target="_blank">Fotolia</a><img border="0" width="1" height="1" src="http://www17.a8.net/0.gif?a8mat=1I8Y9B+7X7HMY+E3S+NWRNM" alt="">');

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>1200pxの画像を用意するしかあるまい - 作り方の研究ブログ</title>
+<meta name="description" content="構造化データでArticleを指定しているページがあるのですが、Seach Consoleから「推奨サイズより大きい画像を指定してください」との警告を受けたので、現在、その修正作業をしています。" />
+<meta name="keywords" content="構造化データ,1200px,画像" />
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" href="../entry.css" type="text/css" />
+<link rel="amphtml" href="../amp/tips/gazou-1200px.html">
+<link rel="alternate" href="../rss.xml" type="application/rss+xml" title="作り方の研究ブログ - RSS" />
+<link rel="alternate" href="../atom.xml" type="application/atom+xml" title="作り方の研究ブログ - atom" />
+</head>
+<body>
+<div id="container">
+<div class="breadcrumb"><a href="../index.html">作り方の研究ブログ</a> &gt; <a href="index.html">ティップス</a> &gt;</div>
+<div id="content">
+<div class="blog" id="727">
+<h1>1200pxの画像を用意するしかあるまい</h1>
+<p>構造化データでArticleを指定しているページがあるのですが、Seach Consoleから「推奨サイズより大きい画像を指定してください」との警告を受けてしまいました。</p><p>Google検索セントラルの公式サイトによると、以下の記述がありますが、この「マークアップされた」の意味をどう解釈するのかで対応が変わってくるかもしれません。</p>
+<ul>
+<li>①<span class="red">記事に直接属するマークアップされた画像のみ</span>を指定する必要があります。</li>
+<li>②画像の幅は 1,200 ピクセル以上にする必要があります。</li>
+<li>③すべてのページに画像を少なくとも 1 つ含める必要があります（<span class="red">マークアップを含めるかどうかは問わない</span>）。Google は、アスペクト比と解像度に基づいて、検索結果に表示する最適な画像を選択します。</li>
+<li>④画像の URL は、クロールやインデックス登録に対応できる必要があります。</li>
+<li>⑤画像はマークアップされたコンテンツを表している必要があります。</li>
+<li>⑥ファイル形式は Google 画像検索でサポートされている必要があります。</li>
+<li>⑦適切な画像が選択されるようにするために、アスペクト比が 16x9、4x3、1x1 の高解像度画像（幅と高さをかけて 800,000 ピクセル以上の画像）を複数指定してください。</li>
+</ul>
+<p>これが「構造化データでマークアップされた」の意味なのか、「imgのHTMLタグでマークアップされた」の意味なのかは不明ですが、おそらくは後者の意味ではないかと考えています。</p>
+<p>■<b>ぼくの解釈</b></p>
+<p>①と⑤</p>
+<p>あくまでぼく個人の解釈なので正解かどうかはわかりませんが、これは記事内にて&lt;img&gt;タグでマークアップした画像を使い、その記事のコンテンツ内容を表す画像を使ってねという意味だと解釈しています。記事とは無関係な画像を無料の素材サイトから拾ってきて、テキトーに設定してもだめだよってことではないでしょうか。（詳細不明）</p>
+<p>③と⑦</p>
+<p>これは大きさの異なる複数の画像のバージョンを指定してくださいという意味だと思いますが、全てのバージョンを記事中の&lt;img&gt;タグでマークアップするかどうかはまでは問わないという意味だと解釈しています。</p>
+<p>②と⑦</p>
+<p>これはクオリティーの高い画像を用意してねという意味かと思います。</p>
+<p>ここで、「構造化データの画像には、記事内の&lt;img&gt;タグでマークアップした画像のみを指定しないと駄目なのか？」という疑問が生じてきますが、①を読めばそうとも感じますし、③を読めばそうでもないとも感じます。</p>
+<p>謎は深まるばかりですが、おそらくは記事内容を表す画像を使い、なおかつ検索結果できれいに表示されるように1200px以上の高解像度の画像を使っていれば、それを記事中の&lt;img&gt;タグで設定しているかどうかまでは問わないという意味なのかもしれません。（詳細不明）</p>
+<p>個人的には、モバイル端末で表示する画像で1200pxのサイズを使うのは表示が遅くなると思うので、記事中では小さめの画像を指定するようにしました。一方、構造化データで指定する画像については全く同じ画像の元データを使い、1200pxの高解像度のものを設定するようにしました。</p>
+<p>ニュース検索などをちらほら見ていますと、600px程度の画像は鮮明ではないものもあるので、やはり1200px程度の高解像度のものが必要かなと感じています。また、文字入れしているものやキャプ画、あるいはコンテンツと無関係な画像は若干チープに感じてしまいます。</p>
+<p>当ブログでいいますと、こんな感じだと検索結果に表示されていてもそれほど違和感はないかと思います。</p>
+<p><img src="../image/1200px-sample.png" alt="" width="600" height="342" class="ccc" /></p>
+<p>一方、これがぼやけた画像のキャプ画だとチープな印象が出てくるはずです。</p>
+<p>なので、AMPテストでプレビューしてみて、検索結果映えする形で1200px以上の高解像度の写真画像を設定しておくことをおすすめします。また、アスペクト比「16x9、4x3、1x1」との指定がありますので、1200pxにした場合は「1200px×675px、1200px×900px、1200px×1200px」あたりのサイズにトリミングして使うか、あるいは撮影機材の方であらかじめアスペクト比を設定しておくとよいかもしれません。</p>
+</div>
+<div class="content-nav"><a href="../mt/mt-amp.html">&laquo; 当ブログをAMPに対応しました</a> | <a href="../how-to/mfi-freeblog.html">MFI完全移行による無料ブログへの影響 &raquo;</a></div>
+</div>
+<div id="links">
+<div class="sidetitle">カテゴリ</div>
+<div class="category">
+<ul>
+<li><a href="../how-to/index.html">無料ブログ</a></li>
+<li class="entry-category"><a href="index.html">ティップス</a></li>
+<li class="entry-category"><a href="../mt/index.html">MTブログ</a></li>
+<li class="entry-category"><a href="../seo/index.html">SEO対策</a></li>
+<li class="entry-category"><a href="../homepage/index.html">ホームページ</a></li>
+<li class="entry-category"><a href="../rentalserver/index.html">レンタルサーバー</a></li>
+<li class="entry-category"><a href="../domain/index.html">ドメイン</a></li>
+</ul>
+</div>
+<div class="sidetitle">最近のブログ記事</div>
+<div class="side">
+<ul>
+<li><a href="../domain/godaddy-enyasu.html">ドメインの売却は円安の今がチャンス</a></li>
+<li><a href="affiliate-regulation.html">消費者庁がアフィリエイト広告の規制強化を検討</a></li>
+<li><a href="../seo/infomation-about.html">運営者情報の公開でSEO対策</a></li>
+<li><a href="../mt/xmlrpc.html">Movable Typeの脆弱性をついた攻撃が発生</a></li>
+<li><a href="../mt/howto-jason.html">MovableTypeで構造化データを設定してみました</a></li>
+<li><a href="1920-1080hd.html">フルHD解像度「1920x1080」に最適化</a></li>
+<li><a href="../domain/google-domains.html">Google Domainsに移管してみました</a></li>
+<li><a href="preload.html">WEBフォントをpreloadするのは止めました</a></li>
+<li><a href="../how-to/mfi-freeblog.html">MFI完全移行による無料ブログへの影響</a></li>
+<li><a href="gazou-1200px.html">1200pxの画像を用意するしかあるまい</a></li>
+<li><a href="../mt/mt-amp.html">当ブログをAMPに対応しました</a></li>
+<li><a href="howto-kouzouka.html">「HowTo」構造化データの作り方</a></li>
+<li><a href="line-height.html">見出しh1「line-height」の値はfont-sizeに反比例する</a></li>
+<li><a href="ipad-768px.html">iPad用のブレイクポイントを「834px」に変更</a></li>
+<li><a href="h1px.html">見出しh1のフォントサイズは何pxがよいのか？</a></li>
+<li><a href="kisya-handbook.html">共同通信社「記者ハンドブック」を読む</a></li>
+<li><a href="just-right.html">ブログ記事の校正に「Just Right!」を購入してみました</a></li>
+<li><a href="r2tls-jp4-bk.html">REALFORCEのキーボードを「R2TLS-JP4-BK」に買い替えました</a></li>
+<li><a href="../domain/grace-period.html">Grace Periodは何日間なのか？</a></li>
+<li><a href="gyousyu.html">サイト運営者の業種（日本産業分類）は何になるのか？</a></li>
+</ul>
+</div>
+<div class="sidetitle">リンク</div>
+<div class="side">
+<ul>
+<li><a href="https://www.homepage-tukurikata.com/">ホームページの作り方</a></li>
+<li><a href="../../article/92088644.html">ブログ比較</a></li>
+<li><a href="../../article/117970780.html">ブログ広告での収入</a></li>
+<li><a href="../../article/119971208.html">リスティング広告とは？</a></li>
+</ul></div>
+</div>
+<div id="footer">
+<div class="pagetop"><a href="#container">PageTop▲</a></div>
+<div class="copyright"><ul><li><a href="../archives.html">アーカイブ</a></li><li>&copy;2021 blog-tips.net</li></ul></div>
+<div class="logo"><a href="../index.html">トップページ</a> - <a href="../../index.html">ブログの作り方</a></div>
+</div></div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2336808-36"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2336808-36');
+</script>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "作り方の研究ブログ",
+        "item": "https://blog-tips.net/blog/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "ティップス",
+        "item": "https://blog-tips.net/blog/tips/"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "1200pxの画像を用意するしかあるまい"
+      }]
+    }
+</script>
+</body>
+</html>

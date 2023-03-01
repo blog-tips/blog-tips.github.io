@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>SSL導入時には301で明示化すべきか？ - 作り方の研究ブログ</title>
+<meta name="description" content="SSLを導入する際、301リダイレクト設定による常時SSL化でURLをhttpsに強制すべきか否かについて。" />
+<meta name="keywords" content="ssl,301,明示化" />
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" href="../entry.css" type="text/css" />
+<link rel="amphtml" href="../amp/tips/ssl-301.html">
+<link rel="alternate" href="../rss.xml" type="application/rss+xml" title="作り方の研究ブログ - RSS" />
+<link rel="alternate" href="../atom.xml" type="application/atom+xml" title="作り方の研究ブログ - atom" />
+</head>
+<body>
+<div id="container">
+<div class="breadcrumb"><a href="../index.html">作り方の研究ブログ</a> &gt; <a href="index.html">ティップス</a> &gt;</div>
+<div id="content">
+<div class="blog" id="673">
+<h1>SSL導入時には301で明示化すべきか？</h1>
+<p>複数のサイトにSSLを導入しているのですが、約20日が経過した現在でも、「http」から「https」ページへのインデックスの更新が6割程度になってます。ネット上ではだいたい10日程度で更新されたという情報も多いですが、私の場合はまちまちでした。</p><p>なかには翌日にはサイト情報（info:ドメイン名）がhttpsに切り替わり、すぐにインデックスが更新されたサイトもあります。けれども、他サイトは約2週間程度が経過したのちにやっとサイト情報が更新され、徐々にページもhttpsに更新されたという感じになっています。</p><p>どこに違いがあるのかは不明ですが、すぐに切り替わったサイトは301設定によるSSLの明示化はせず、相対リンクでhttpとhttpsのどちらでも表示可能な状態にしていました。それに対し、更新に時間のかかったサイトはすぐに301リダイレクトの設定をして、httpsでの表示を強制したという違いしか思い浮かびません。</p><p>内部リンクを相対リンクで設定しておけば、「http」と「https」の両方でアクセス可能な状態にできますが、両方でアクセスが可能な場合、「https」の方が優先されて表示されるようです。ただし、検索結果では「似たようなページは除外されています」との表示がされます。</p><p>あくまで個人的な印象にはなりますが、SSL導入後はすぐに301リダイレクトの設定をしないで、サイト情報やインデックス情報が更新されるまでは、「http」と「https」のどちらでも表示可能な状態にしておくのがベターなのではないかと思います。（詳細不明・未確認）</p><p>301リダイレクトはメンテナンス中でも間違って使ってしまう人がいるはずなので、たぶん、検索エンジン側でも更新までにタイムラグを設けているような気がしてなりません。なので、301リダイレクト設定による常時SSL化は、サイト情報が更新されたあとからでも問題ないと思います。</p><p>もちろん、ブラウザの警告のエラーが出ないよう、絶対リンクで記述している「http」ページへの内部リンクは削除しておく必要がありますし、 HSTSヘッダーの実装や外部プラグインなどもhttpsに対応したものを導入する必要があります。</p><p>この条件については、ウェブマスターブログの<a href="http://googlewebmastercentral-ja.blogspot.jp/2015/12/indexing-https-pages-by-default.html" target="_blank" rel="nofollow">こちらのページ</a>で紹介されています。</p><p>リダイレクト設定で明示化しての常時SSL化については、ワンテンポ置いてからの方がよい気もいたしますが、正直、どちらでもよい気もします。現在、5サイト目ぐらいですが、あと20サイトぐらいにSSLを導入してみる予定ですので、どのように対応するのがよいのか、いろいろと試してみたいと思います。</p>
+</div>
+<div class="content-nav"><a href="dokuji-ssl.html">&laquo; 独自SSL導入によるhttpsページへの対応</a> | <a href="../domain/domain-hikaku.html">ドメイン各社の更新費用を比較 &raquo;</a></div>
+</div>
+<div id="links">
+<div class="sidetitle">カテゴリ</div>
+<div class="category">
+<ul>
+<li><a href="../how-to/index.html">無料ブログ</a></li>
+<li class="entry-category"><a href="index.html">ティップス</a></li>
+<li class="entry-category"><a href="../mt/index.html">MTブログ</a></li>
+<li class="entry-category"><a href="../seo/index.html">SEO対策</a></li>
+<li class="entry-category"><a href="../homepage/index.html">ホームページ</a></li>
+<li class="entry-category"><a href="../rentalserver/index.html">レンタルサーバー</a></li>
+<li class="entry-category"><a href="../domain/index.html">ドメイン</a></li>
+</ul>
+</div>
+<div class="sidetitle">最近のブログ記事</div>
+<div class="side">
+<ul>
+<li><a href="../domain/godaddy-enyasu.html">ドメインの売却は円安の今がチャンス</a></li>
+<li><a href="affiliate-regulation.html">消費者庁がアフィリエイト広告の規制強化を検討</a></li>
+<li><a href="../seo/infomation-about.html">運営者情報の公開でSEO対策</a></li>
+<li><a href="../mt/xmlrpc.html">Movable Typeの脆弱性をついた攻撃が発生</a></li>
+<li><a href="../mt/howto-jason.html">MovableTypeで構造化データを設定してみました</a></li>
+<li><a href="1920-1080hd.html">フルHD解像度「1920x1080」に最適化</a></li>
+<li><a href="../domain/google-domains.html">Google Domainsに移管してみました</a></li>
+<li><a href="preload.html">WEBフォントをpreloadするのは止めました</a></li>
+<li><a href="../how-to/mfi-freeblog.html">MFI完全移行による無料ブログへの影響</a></li>
+<li><a href="gazou-1200px.html">1200pxの画像を用意するしかあるまい</a></li>
+<li><a href="../mt/mt-amp.html">当ブログをAMPに対応しました</a></li>
+<li><a href="howto-kouzouka.html">「HowTo」構造化データの作り方</a></li>
+<li><a href="line-height.html">見出しh1「line-height」の値はfont-sizeに反比例する</a></li>
+<li><a href="ipad-768px.html">iPad用のブレイクポイントを「834px」に変更</a></li>
+<li><a href="h1px.html">見出しh1のフォントサイズは何pxがよいのか？</a></li>
+<li><a href="kisya-handbook.html">共同通信社「記者ハンドブック」を読む</a></li>
+<li><a href="just-right.html">ブログ記事の校正に「Just Right!」を購入してみました</a></li>
+<li><a href="r2tls-jp4-bk.html">REALFORCEのキーボードを「R2TLS-JP4-BK」に買い替えました</a></li>
+<li><a href="../domain/grace-period.html">Grace Periodは何日間なのか？</a></li>
+<li><a href="gyousyu.html">サイト運営者の業種（日本産業分類）は何になるのか？</a></li>
+</ul>
+</div>
+<div class="sidetitle">リンク</div>
+<div class="side">
+<ul>
+<li><a href="https://www.homepage-tukurikata.com/">ホームページの作り方</a></li>
+<li><a href="../../article/92088644.html">ブログ比較</a></li>
+<li><a href="../../article/117970780.html">ブログ広告での収入</a></li>
+<li><a href="../../article/119971208.html">リスティング広告とは？</a></li>
+</ul></div>
+</div>
+<div id="footer">
+<div class="pagetop"><a href="#container">PageTop▲</a></div>
+<div class="copyright"><ul><li><a href="../archives.html">アーカイブ</a></li><li>&copy;2021 blog-tips.net</li></ul></div>
+<div class="logo"><a href="../index.html">トップページ</a> - <a href="../../index.html">ブログの作り方</a></div>
+</div></div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2336808-36"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2336808-36');
+</script>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "作り方の研究ブログ",
+        "item": "https://blog-tips.net/blog/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "ティップス",
+        "item": "https://blog-tips.net/blog/tips/"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "SSL導入時には301で明示化すべきか？"
+      }]
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Seesaブログのカテゴリ最新記事一覧の作り方</title>
+<meta name="description" content="このページでは「Seesaブログ,カテゴリ,最新記事,一覧,作り方」について紹介しています。Seesaブログのカテゴリ最新記事一覧の作り方についての情報です。" />
+<meta name="keywords" content="Seesaブログ,カテゴリ,最新記事,一覧,作り方" />
+<meta name="viewport" content="width=device-width" />
+<link rel="alternate" href="../index.rdf" type="application/rss+xml" title="RSS" />
+<link rel="stylesheet" href="../styles-article.css" type="text/css" />
+<link rel="shortcut icon" href="../image/favicon.ico" />
+</head><body>
+<div id="container">
+<main id="content">
+<div class="blog">
+<!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:Trackback="http://madskills.com/public/xml/rss/module/Trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="https://blog-tips.net/article/113853714.html"
+    trackback:ping="http://blog.seesaa.jp/tb/113853714"
+    dc:title="Seesaブログのカテゴリ最新記事一覧の作り方"
+    dc:identifier="https://blog-tips.net/article/113853714.html"
+    dc:description="Seesaブログにカテゴリ最新記事一覧機能というのが登場したようなんですが、個別記事の下の方に同じカテゴリ内の最新記事が表示されるようになったようです。一つ前の記事が 113741626.html という風になっているんで、たぶん、シーサーブログ全体で、今現在のところ１億記事？ぐらいはあるのではないかと思うんです。となると、デフォルトで１ページ５つの内部リンクが作成されるとしても、seesaaブログ全体で５億内部リンクぐらい増えてしまった？ということなんでしょうか、内部リンク..."
+    dc:creator="ブログの作り方"
+    dc:subject="ブログカスタマイズ"
+    dc:date="2009-02-07T22:28:36+09:00"
+/>
+</rdf:RDF>
+-->
+<div class="breadcrumb"><a href="../index.html">ブログの作り方 トップ</a> &gt; <a href="../category/3754373-1.html">ブログカスタマイズ</a> &gt;</div>
+<h1>Seesaブログのカテゴリ最新記事一覧の作り方</h1>
+<p>Seesaブログにカテゴリ最新記事一覧機能というのが登場したようなんですが、個別記事の下の方に同じカテゴリ内の最新記事が表示されるようになったようです。</p><p>一つ前の記事が 113741626.html という風になっているんで、たぶん、シーサーブログ全体で、今現在のところ１億記事？ぐらいはあるのではないかと思うんです。</p><p>となると、デフォルトで１ページ５つの内部リンクが作成されるとしても、seesaaブログ全体で５億内部リンクぐらい増えてしまった？ということなんでしょうか、内部リンクが急増中のもようです。</p><p>このブログではカテゴリ最新記事一覧が表示されていないようなんで、カテゴリ最新記事一覧の作り方について調べてみました。</p><h2>カテゴリ最新記事一覧のhtml</h2><p>Seesaブログのカテゴリ最新記事に関する説明を見てみると、【マイ・ブログ】 -> 【設定】 -> 【ブログ設定】の順で表示されるようになるみたいです。</p><p><a href="http://info.seesaa.net/article/113621256.html" target="_blank" rel="nofollow">【Seesaブログ】カテゴリ最新記事タイトル表示リリースのお知らせ</a></p><p>普通の場合は、それだけで表示されるようなんですが、ブログをカスタマイズしている場合は、どうやら表示されないっぽいみたいです。</p><p>デフォルトの html ソースを見てみると、次の部分がカテゴリ最新記事一覧に対応する seesaa ブログの独自タグになっているようです。</p><p>&lt;% if:list_category_article -%&gt;<br />
+&lt;div class="listCategoryArticle"&gt;<br />
+【&lt;% article_category.name %&gt;の最新記事】&lt;br /&gt;
+&lt;ul&gt;<br />
+&lt;% loop:list_category_article %&gt;<br />
+&lt;li&gt;&lt;a href="&lt;% article.page_url %&gt;"&gt;&lt;% article.subject | text_summary(20) %&gt;&lt;/a&gt;<br />
+&lt;/li&gt;<br />
+&lt;% /loop %&gt;<br />
+&lt;/ul&gt;<br />
+&lt;/div&gt;<br />
+&lt;% /if %&gt;
+</p>
+<p>なので、この html タグを「コンテンツ - 記事 - html編集」で対応する箇所に挿入すればいいのではないかと思います。</p><p>挿入する位置は、blogbody タグ内、もしくは loop:list_article の内側でないとたぶん、機能しない独自タグなのではないかなと思います。ブックマークのスクリプトタグの後ろあたりがいいようです。</p><p>新らしく記事欄を追加して、デフォルトのhtmlソースを見てみたり、初期値との差分で確認してみるといいと思います。</p>
+<p>スタイルシートCSSの部分も変更すると、リスト表示のてんてんがこんな感じの矢印マーク表示にもなるみたいです。</p><p><img src="../../blog.seesaa.jp/img/listCategoryArticle.gif" alt="矢印マーク素材" width="9" height="11" border="0" /></p><p>外枠も、#FFE2E2の色を変えると、自分のスタイルシートにあった形の色彩にブログカスタマイズできるのではないかなと思います。</p><hr /><p>このカテゴリ最新記事タイトルですが、広告とかぶっちゃう場合が微妙だよなと思ったんですが、広告よりも下の位置に表示されるようなんで大丈夫みたいです。</p><p>ブログのSEO的な面からいうと、シーサーブログ全体でいきなりたくさんの内部リンクが発生するというのは、ぶっちゃけ、どうなるのだろうという気もしないではないです。</p><p>でも、カテゴリ内での関連性のある内部リンクだと思うんで、ブログのSEO的にはいい感じになるのではないかなと思います。</p><p>このブログでは関連性のある記事同士でトラックバックして関連記事欄を作成（<a href="83395915.html" target="_blank">ブログの関連記事で内部リンクの作り方</a>）していたんですが、このカテゴリ最新記事一覧というのは自動的に生成されるようなんで、こっちの方が楽だなという気がします。</p>
+</div>
+<div id="trackback">
+<div class="ttitle">関連記事</div>
+<div class="blogging">
+<ul>
+<li><a href="101232799.html">シーサー最新記事欄のブログカスタマイズ</a><br />
+シーサーブログのトップページを固定している人も多いのではないかなと思います。  このブログでも、ブログのトップページには概要みたいな記事を書いているのですが、この設定は記事の日時をずっと先に設定してお...</li>
+<li><a href="107334997.html">最近の記事欄をブログカスタマイズ</a><br />
+シーサーブログで最近の記事欄を何気にカスタマイズしてみました。以前にも最新の記事欄をカスタマイズしてみたのですが、最新記事が一番上にくるようになったんでなかなかいい感じだなって思ってます。  シーサー...</li>
+<li><a href="80658559.html">内部リンクの作り方</a><br />
+内部リンクを作るにはどうしたらいいのかな？とちょくちょく思っていたのですが、関連記事という感じで内部リンクを作ってみたらどうでしょうか。パン屑リストやフッターにＴＯＰへもどるリンクをはるのもいいかと思...</li>
+<li><a href="116122157.html">シーサーブログカテゴリ登録の被リンク効果</a><br />
+シーサーブログでカテゴリ登録というのが最近できたようです。登録してランキング上位に表示されると被リンクなんかがもらえるみたいです。わたしも何気に登録しておいたんですが、意外に登録していない人が多いよう...</li>
+<li><a href="120513101.html">パンくずリストの作り方</a><br />
+Seesaa blog でのパンくずリストの作り方なんですけど、ウェブ標準な作り方がわからなかったんで W3C をのぞいてきました。W3C ではこんな感じで作られているようです。どうやらパンくずリスト...</li>
+</ul>
+</div>
+</div>
+
+<div class="navi">
+前の記事:<a href="113741626.html">ムームーDNSのカスタム設定(シーサーブログ)</a><br />次の記事:<a href="113860070.html">最適なキーワード密度の作り方 SEOブログ</a>
+</div>
+</main><!-- #BeginLibraryItem "/Library/side.lbi" --><aside id="links">
+<div class="sidetitle">カテゴリ</div><div class="side"><ul>
+<li><a href="../category/4150781-1.html">初心者簡単</a></li>
+<li><a href="../category/5449171-1.html">ブログ比較</a></li>
+<li><a href="../category/3754373-1.html">カスタマイズ</a></li>
+<li><a href="../category/4150804-1.html">アフィリエイト</a></li>
+<li><a href="../category/5396661-1.html">SEO対策</a></li>
+<li><a href="../category/6189872-1.html">独自ドメイン</a></li>
+<li><a href="../category/5377733-1.html">アクセス解析とアクセスアップ</a></li>
+<li><a href="../category/5323127-1.html">htmlタグやCSS</a></li>
+<li><a href="../category/5529851-1.html">アドセンス</a></li>
+<li><a href="../category/5323473-1.html">無料ホームページの作り方</a></li>
+<li><a href="../category/4150796-1.html">グーグル無料ツール</a></li>
+<li><a href="../category/5529711-1.html">無料メールアドレスやメルマガ</a></li>
+<li><a href="../category/5529703-1.html">無料ブラウザのＦirefoxとＩＥ</a></li>
+<li><a href="../category/5529606-1.html">ＩＴニュース</a></li>
+</ul></div>
+<div class="sidetitle">ブログの作り方情報</div>
+<div class="side">
+<ul>
+<li><a href="48913125.html">無料メールアドレスの作り方</a></li>
+<li><a href="117970780.html">ブログ広告で収入を得る方法</a></li>
+<li><a href="../hikaku.html">ブログ作りはブログ比較から</a></li>
+<li><a href="92088644.html">ブログ比較の一覧</a></li>
+<li><a href="114655734.html">独自ドメインの取得方法</a></li>
+<li><a href="dokuji-cms.html">CMSでブログを作成する方法</a></li>
+<li><a href="115872348.html">CMS可能な格安レンタルサーバー</a></li>
+<li><a href="112911688.html">FC2ブログの作り方</a></li>
+<li><a href="71878598.html">ＦＣ２ホームページの作り方</a></li>
+<li><a href="110459720.html">さくらのブログの作り方</a></li>
+<li><a href="seesaa.html">Seesaaブログの作り方</a></li>
+<li><a href="107993732.html">シーサーブログを独自ドメイン化</a></li>
+<li><a href="wix.html">WIXでのブログの作り方</a></li>
+<li><a href="53785835.html">ディレクトリ登録のSEO効果</a></li>
+<li><a href="118429340.html">ブログからの集客方法</a></li>
+<li><a href="119971208.html">リスティング広告とは何ですか？</a></li>
+</ul></div>
+<div class="arch"><script type="text/javascript">
+<!--
+function ChangeArchive (sel) {
+if (sel.options[sel.selectedIndex].value != "") {
+location.href = sel.options[sel.selectedIndex].value;
+}
+}
+-->
+</script>
+<select name="MonthArchive" onchange="ChangeArchive(this)" class="archiveselect">
+<option value="">archives</option>
+<option value="../archives/200905-1.html">09/05(15)</option>
+<option value="../archives/200904-1.html">09/04(19)</option>
+<option value="../archives/200903-1.html">09/03(20)</option>
+<option value="../archives/200902-1.html">09/02(9)</option>
+<option value="../archives/200901-1.html">09/01(14)</option>
+<option value="../archives/200812-1.html">08/12(18)</option>
+<option value="../archives/200811-1.html">08/11(19)</option>
+<option value="../archives/200810-1.html">08/10(15)</option>
+<option value="../archives/200809-1.html">08/09(14)</option>
+<option value="../archives/200808-1.html">08/08(8)</option>
+<option value="../archives/200807-1.html">08/07(28)</option>
+<option value="../archives/200806-1.html">08/06(29)</option>
+<option value="../archives/200805-1.html">08/05(33)</option>
+<option value="../archives/200804-1.html">08/04(30)</option>
+<option value="../archives/200803-1.html">08/03(15)</option>
+<option value="../archives/200802-1.html">08/02(19)</option>
+<option value="../archives/200801-1.html">08/01(15)</option>
+<option value="../archives/200712-1.html">07/12(10)</option>
+<option value="../archives/200711-1.html">07/11(10)</option>
+<option value="../archives/200710-1.html">07/10(11)</option>
+<option value="../archives/200709-1.html">07/09(16)</option>
+<option value="../archives/200708-1.html">07/08(10)</option>
+<option value="../archives/200707-1.html">07/07(19)</option></select>
+</div>
+<form action="https://www.google.com/cse" id="cse-search-box">
+    <input type="hidden" name="cx" value="004767610735532938012:_ydsjrf0v8u" />
+    <input type="hidden" name="ie" value="Shift_JIS" />
+    <input type="text" name="q" size="24" />
+    <input type="submit" name="sa" value="検索" />
+</form>
+</aside><!-- #EndLibraryItem --><footer id="footer">
+<div class="pagetop"><a href="#container">PageTop▲</a></div>
+<div class="copyright"><ul><li><a href="../index.html">トップページ</a></li>
+<li><a href="../blog/index.html">ブログ</a></li>
+<li><a href="98359430.html">sitemap</a></li>
+<li><a href="../tag/index.html">tag</a></li>
+<li><a href="110348826.html" rel="nofollow">about</a></li></ul>
+<p>&copy;2009 blog-tips.net</p>
+</div>
+</footer>
+</div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2336808-36"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2336808-36');
+</script>
+</body>
+</html>

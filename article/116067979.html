@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>CSSで初心者簡単ブログカスタマイズ方法</title>
+<meta name="description" content="CSSを使っての初心者簡単なブログカスタマイズ方法についての情報です。行間やフォントサイズなどをブログカスタマイズしましょう。" />
+<meta name="keywords" content="CSS,初心者,簡単,ブログ,カスタマイズ" />
+<meta name="viewport" content="width=device-width" />
+<link rel="alternate" href="../index.rdf" type="application/rss+xml" title="RSS" />
+<link rel="stylesheet" href="../styles-article.css" type="text/css" />
+<link rel="shortcut icon" href="../image/favicon.ico" />
+</head><body>
+<div id="container">
+<main id="content">
+<div class="blog">
+<!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:Trackback="http://madskills.com/public/xml/rss/module/Trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="https://blog-tips.net/article/116067979.html"
+    trackback:ping="http://blog.seesaa.jp/tb/116067979"
+    dc:title="CSSで初心者簡単ブログカスタマイズ方法"
+    dc:identifier="https://blog-tips.net/article/116067979.html"
+    dc:description="ブログのデザイン的な見栄えの部分をカスタマイズするには、スタイルシート(CSS)で一括して変更します。記事本文の行間や文字の大きさ、色彩などを変えることができます。ライブドアやSeesaa、FC2など、利用しているブログサービスでスタイルシートの編集が可能であれば詳細に設定できます。"
+    dc:creator="ブログの作り方"
+    dc:subject="初心者簡単な作り方"
+    dc:date="2009-03-26T22:40:19+09:00"
+/>
+</rdf:RDF>
+-->
+<div class="breadcrumb"><a href="../index.html">ブログの作り方</a> &gt; <a href="../category/3754373-1.html">カスタマイズ</a> &gt; CSSで初心者簡単ブログカスタマイズ方法</div><h1>CSSで初心者簡単ブログカスタマイズ方法</h1><p>ブログのデザイン的な見栄えの部分をカスタマイズするには、スタイルシート(CSS)で一括して変更します。</p><p>記事本文の行間や文字の大きさ、色彩などを変えることができます。<br />ライブドアやSeesaa、FC2など、利用しているブログサービスでスタイルシートの編集が可能であれば詳細に設定できます。</p><h2>ブログの文字や色彩をCSSでカスタマイズする方法</h2><p>CSSというのはスタイルシートのことで、「.css」の拡張子がついたファイルのことを指しています。</p><p>ブログのソースを表示してみると、たいていは head タグ内にある<br />&lt;link rel="stylesheet" の箇所に、参照するスタイルシートの URL が表示されているはずです。</p><p><b>【例：このページの場合】</b><br /><br />
+<img src="../image/css-iti.png" width="320" height="162" alt="" class="ccc" /></p><p>このURLにアクセスしてみると、実際のスタイルシートはこのようなファイルになっています。</p><p><b>【例：実際のスタイルシート】</b><br /><br /><img src="../image/rei-cssfile.png" alt="" width="268" height="249" style="border: solid 1px #000000;" /></p><p>ブログの文字の大きさや色彩、行間などを一括で変更するには、html 編集ではなくて、このCSSファイルを変更すると便利です。</p><p>文字の大きさを変えるには、このファイルの何pxとか書かれている部分を変更し、色彩を変えるには、#EFEFEF などの部分を書き換えればいいわけです。</p>
+<p><b>カスタマイズ要素</b></p>
+<ul>
+<li>font-size:文字の大きさ;</li>
+<li>font-weight:文字の太さ;</li>
+<li>line-height:行間;</li>
+<li>color:文字の色彩;</li>
+<li>background-color:背景の色彩;</li>
+</ul><p>ブログ内の全てのページでこのCSSファイルが参照されている場合、このファイルを書き換えるだけで、一括で全ページのデザインを変更することができます。</p>
+<h3>シーサーブログでのCSSカスタマイズ方法</h3><p>シーサーブログの場合、記事中のテキストの部分を変更するには、「デザイン - デザイン一覧」のスタイルシートの箇所で text の部分を書き換えて保存します。</p><p><img src="../image/dezainn-seesaablog.png" alt="" width="315" height="238" class="ccc" /></p><p>デフォルトのスタイルシートの text の部分はこんな感じです。</p><p>&#9670; <b>デフォルトのスタイルシート</b></p><p><img src="../image/text-css.png" width="268" height="298" alt="シーサーブログのCSS" class="ccc" /></p><p>textの部分は、記事のタイトルなどは含まず、純粋に記事の本文のみの箇所が該当します。</p>
+<ul>
+<li>text → 本文</li>
+<li>body → 画面全体</li>
+<li>container → ブログ全体</li>
+<li>banner → ヘッダー部分</li>
+<li>h1 → ブログタイトル</li>
+<li>links → 右サイドバー</li>
+</ul>
+<p><a href="100962415.html">シーサーブログCSSの対応するdiv領域</a></p>
+<p>この場合、font-size:12px;と書いているので、文字の大きさは12pxで表示されています。このデフォルトのスタイルシートのままで表示してみると、実際のブログはこんな感じです。</p><p><img src="../image/css-before.png" width="287" height="214" alt="スタイルシートデフォルト" class="ccc" /></p><p>ただ、12pxだと多少文字が小さい気もしたので、この記事本文の箇所にあたるデフォルトのスタイルシートのtextの部分を、こんな感じでブログカスタマイズしちゃったんです。</p><p>&#9670; <b>ブログカスタマイズ後のCSS</b></p><p><img src="../image/my-css.png" width="232" height="252" alt="CSSカスタマイズ" class="ccc" /></p><p>そうすると、実際のブログはこんな感じで表示されました。</p><p><img src="../image/css-after.png" width="310" height="250" alt="カスタマイズ後の見え方" class="ccc" /></p><p>デフォルトの文字の大きさですが、font-size を 12px から 14px にして大きくしてみたんです。</p><p>さらに、行間も多少空けた方がみやすいと思ったんで、line-height:170%; を付け足してみた次第です。</p><p>行間をさらにおおきく取りたい場合は、この % の値を 180% とかにして設定してみるといいかと思いますが、一般的には150%程度のサイトが多いです。</p><p>さらに、記事本文の色は、はっきりした濃い黒の方が見やすいと思ったんで、color:#000000; も付け足してます。</p><p>この #000000 の値はまっ黒っていうことですけど、薄めの黒がいいとおもったら、#333333 とか #555555 って感じで増やしていけばいいと思います。</p><p>ちなみに、<a href="http://www.vector.co.jp/soft/win95/art/se187189.html" target="_blank" rel="nofollow">パワースポイト</a>などの色彩を採取するツールを使うと、こんな色にしたいという色彩のコードを簡単に調べることができます。</p>
+<p>記事本文の色彩や行間、文字の大きさを変化させるだけでも、かなり印象が違ってきます。</p><ul>
+<li><b>font-size:文字の大きさ;</b><br />font-size:12px;<br />font-size:13px;<br />font-size:14px;<br />font-size:90%;</li>
+<li><b>font-weight:文字の太さ;</b><br />font-weight:bold;<br />font-weight:normal;</li>
+<li><b>line-height:行間;</b><br />line-height:150%;</li>
+<li><b>color:文字の色彩;</b><br />color:#000000;<br />color:#333333;</li>
+<li><b>background-color:背景の色彩;</b><br />background-color:#FFFFFF;<br />background-color:#EFEFEF;</li>
+</ul><p>この「:」や「;」が抜けてたりすると、場合によってはきちんと表示されなかったりもするようです。</p><p>padding はエントリー部分の余白を設定するときに使います。</p><p>padding:上 右 下 左;</p><p>左の箇所の余白をある程度とっておくと、見やすくなるかもしれません。</p>
+<p>&#9670; <b>Seesaaでのカスタマイズの例</b></p><hr />
+<p>.text {<br />
+font-size:13px;<br />
+line-height:150%;<br />
+color:#111111;<br />
+padding:5px 10px 0px 10px;<br />
+background-color:#FFFFFF;<br />
+}</p><hr />
+<p>.text {<br />
+font-size:14px;<br />
+padding:5px 10px 0px 10px;<br />
+font-weight:bold;<br />
+line-height:150%;<br />
+color:#000000;<br />
+background-color:#FFFFFF;<br />
+}</p>
+<hr /><p>ちなみに、FC2 ブログの場合は、おそらくテンプレートによって違うとは思いますが、だいたいは entry_text、もしくは entry_body の箇所が記事本文の箇所にあたるかと思います。</p><p>CSSスタイルシートを直接編集できるブログサービスはシーサーブログや FC2、ジュゲムや blogger（外部CSSではない） などがありますが、それほど多くはないです。</p>
+</div>
+<div id="trackback">
+<div class="ttitle">関連記事</div>
+<div class="blogging">
+<ul>
+<li><a href="111230413.html">横幅widthをpxから%で相対指定のCSS</a><br />
+アクセス解析を見てみると、画面の解像度を 1024x768 で設定している人が多いようなので、ブログの横幅 px を解像度 1024x768 に合わせた長さに設定した方がいいのかなって思うんです。たぶ...</li>
+<li><a href="108551878.html">見やすいブログやサイトのフォント</a><br />
+ブログのスタイルシートでフォントを指定すると意図したフォント順で表示されるようになりますが、見やすいサイトやブログではどのようなフォントを使用しているのでしょうか。前の記事でおしゃれフォントの記事を書...</li>
+</ul>
+</div>
+</div>
+<div class="navi">
+前の記事:<a href="113478543.html">CMSブログの作り方</a><br />次の記事:<a href="116268034.html">htaccess ファイルって何だろう？</a>
+</div>　
+</main><!-- #BeginLibraryItem "/Library/side.lbi" --><aside id="links">
+<div class="sidetitle">カテゴリ</div><div class="side"><ul>
+<li><a href="../category/4150781-1.html">初心者簡単</a></li>
+<li><a href="../category/5449171-1.html">ブログ比較</a></li>
+<li><a href="../category/3754373-1.html">カスタマイズ</a></li>
+<li><a href="../category/4150804-1.html">アフィリエイト</a></li>
+<li><a href="../category/5396661-1.html">SEO対策</a></li>
+<li><a href="../category/6189872-1.html">独自ドメイン</a></li>
+<li><a href="../category/5377733-1.html">アクセス解析とアクセスアップ</a></li>
+<li><a href="../category/5323127-1.html">htmlタグやCSS</a></li>
+<li><a href="../category/5529851-1.html">アドセンス</a></li>
+<li><a href="../category/5323473-1.html">無料ホームページの作り方</a></li>
+<li><a href="../category/4150796-1.html">グーグル無料ツール</a></li>
+<li><a href="../category/5529711-1.html">無料メールアドレスやメルマガ</a></li>
+<li><a href="../category/5529703-1.html">無料ブラウザのＦirefoxとＩＥ</a></li>
+<li><a href="../category/5529606-1.html">ＩＴニュース</a></li>
+</ul></div>
+<div class="sidetitle">ブログの作り方情報</div>
+<div class="side">
+<ul>
+<li><a href="48913125.html">無料メールアドレスの作り方</a></li>
+<li><a href="117970780.html">ブログ広告で収入を得る方法</a></li>
+<li><a href="../hikaku.html">ブログ作りはブログ比較から</a></li>
+<li><a href="92088644.html">ブログ比較の一覧</a></li>
+<li><a href="114655734.html">独自ドメインの取得方法</a></li>
+<li><a href="dokuji-cms.html">CMSでブログを作成する方法</a></li>
+<li><a href="115872348.html">CMS可能な格安レンタルサーバー</a></li>
+<li><a href="112911688.html">FC2ブログの作り方</a></li>
+<li><a href="71878598.html">ＦＣ２ホームページの作り方</a></li>
+<li><a href="110459720.html">さくらのブログの作り方</a></li>
+<li><a href="seesaa.html">Seesaaブログの作り方</a></li>
+<li><a href="107993732.html">シーサーブログを独自ドメイン化</a></li>
+<li><a href="wix.html">WIXでのブログの作り方</a></li>
+<li><a href="53785835.html">ディレクトリ登録のSEO効果</a></li>
+<li><a href="118429340.html">ブログからの集客方法</a></li>
+<li><a href="119971208.html">リスティング広告とは何ですか？</a></li>
+</ul></div>
+<div class="arch"><script type="text/javascript">
+<!--
+function ChangeArchive (sel) {
+if (sel.options[sel.selectedIndex].value != "") {
+location.href = sel.options[sel.selectedIndex].value;
+}
+}
+-->
+</script>
+<select name="MonthArchive" onchange="ChangeArchive(this)" class="archiveselect">
+<option value="">archives</option>
+<option value="../archives/200905-1.html">09/05(15)</option>
+<option value="../archives/200904-1.html">09/04(19)</option>
+<option value="../archives/200903-1.html">09/03(20)</option>
+<option value="../archives/200902-1.html">09/02(9)</option>
+<option value="../archives/200901-1.html">09/01(14)</option>
+<option value="../archives/200812-1.html">08/12(18)</option>
+<option value="../archives/200811-1.html">08/11(19)</option>
+<option value="../archives/200810-1.html">08/10(15)</option>
+<option value="../archives/200809-1.html">08/09(14)</option>
+<option value="../archives/200808-1.html">08/08(8)</option>
+<option value="../archives/200807-1.html">08/07(28)</option>
+<option value="../archives/200806-1.html">08/06(29)</option>
+<option value="../archives/200805-1.html">08/05(33)</option>
+<option value="../archives/200804-1.html">08/04(30)</option>
+<option value="../archives/200803-1.html">08/03(15)</option>
+<option value="../archives/200802-1.html">08/02(19)</option>
+<option value="../archives/200801-1.html">08/01(15)</option>
+<option value="../archives/200712-1.html">07/12(10)</option>
+<option value="../archives/200711-1.html">07/11(10)</option>
+<option value="../archives/200710-1.html">07/10(11)</option>
+<option value="../archives/200709-1.html">07/09(16)</option>
+<option value="../archives/200708-1.html">07/08(10)</option>
+<option value="../archives/200707-1.html">07/07(19)</option></select>
+</div>
+<form action="https://www.google.com/cse" id="cse-search-box">
+    <input type="hidden" name="cx" value="004767610735532938012:_ydsjrf0v8u" />
+    <input type="hidden" name="ie" value="Shift_JIS" />
+    <input type="text" name="q" size="24" />
+    <input type="submit" name="sa" value="検索" />
+</form>
+</aside><!-- #EndLibraryItem --><footer id="footer">
+<div class="pagetop"><a href="#container">PageTop▲</a></div>
+<div class="copyright"><ul><li><a href="../index.html">トップページ</a></li>
+<li><a href="../blog/index.html">ブログ</a></li>
+<li><a href="98359430.html">sitemap</a></li>
+<li><a href="../tag/index.html">tag</a></li>
+<li><a href="110348826.html" rel="nofollow">about</a></li></ul>
+<p>&copy;2009 blog-tips.net</p>
+</div>
+</footer>
+</div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2336808-36"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2336808-36');
+</script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>アドレスタグ（連絡先）の作り方</title>
+<meta name="description" content="アドレスタグ（連絡先）の作り方についての情報です。" />
+<meta name="keywords" content="アドレスタグ,連絡先,作り方" />
+<meta name="viewport" content="width=device-width" />
+<link rel="alternate" href="../index.rdf" type="application/rss+xml" title="RSS" />
+<link rel="stylesheet" href="../styles-article.css" type="text/css" />
+<link rel="shortcut icon" href="../image/favicon.ico" />
+</head><body>
+<div id="container">
+<main id="content">
+<div class="blog">
+<!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:Trackback="http://madskills.com/public/xml/rss/module/Trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="https://blog-tips.net/article/97853078.html"
+    trackback:ping="http://blog.seesaa.jp/tb/97853078"
+    dc:title="アドレスタグ（連絡先）の作り方"
+    dc:identifier="https://blog-tips.net/article/97853078.html"
+    dc:description="無料ブログの連絡先欄やプロフィール欄によくみかけるマークにＦＯＡＦがあります。これはフレンド・オブ・ア・フレンドの略のようで、FOAFプロジェクトというところが中心になってやっているようです。"
+    dc:creator="ブログの作り方"
+    dc:subject="htmlタグやCSS"
+    dc:date="2008-05-25T03:06:13+09:00"
+/>
+</rdf:RDF>
+-->
+<div class="breadcrumb"><a href="../index.html">ブログの作り方 トップ</a> &gt; <a href="../category/5323127-1.html">htmlタグやCSS</a> &gt;</div>
+<h1>アドレスタグ（連絡先）の作り方</h1>
+<p>無料ブログの連絡先欄やプロフィール欄によくみかけるマークにＦＯＡＦがあります。</p><p>これはフレンド・オブ・ア・フレンドの略のようで、FOAFプロジェクトというところが中心になってやっているようです。</p> <p>よくみかけるこんなマークです。<img src="../image/foafTiny.gif" alt="foafマーク" width="26" height="14" border="0" /></p><p><a href="http://www.foaf-project.org/" target="_blank" rel="nofollow">The Friend of a Friend (FOAF) project.</a></p><p>シーサーブログの場合、プロフィールの欄にメールアドレスなどを入力しておけば、自動的にFOAFのＲＤＦが作成されるようなんですが、実際にどのような実用性があるのかはいまだによくわかりません。</p><p>友人関係を記述するのに役に立ちそうな気がしますが、はたして使用している人はどのくらいいるのでしょうか。</p><p>メールアドレスを記述することでＩＤ的な役わりがあるみたいなのですが、ウェブ上にメールアドレスを記述しておくとスパムの的になるので、メールアドレスは自動的に暗号化されるようです。</p><p>以前にこの変換された文字列を検索にかけてみたところ、数百件がヒットして、まったくしらない人のFOAFの友人欄に追加されていたり、自分のFOAFを使用してブログを作成している人もいたりでなんだかよくわかりませんでした。</p><p>シーサーブログでプロフィールを公開している人の場合は自分のブログのＵＲＬにfoaf.rdfをつけるとみることができると思います。</p>
+<p>わたしが最近興味あるのはこのFOAFのＳＥＯ効果です。</p><p>最近は機械で自動作成されたページが多いようで、グーグルやヤフーは目を光らせているようです。</p><p>人間がきちんと作成しているウェブサイトなのか、それとも、機械で自動的に作成されたページなのかを見分けるには、やっぱり、文字の修飾とか、あと、連絡先やお問い合わせページ、プロフィール欄などが記入されているかなども多少は考慮にはいるのではないかなと思います。</p><p>ヤフーのカテゴリ登録などの場合は、連絡先などで訪問者とのコンタクトを取る方法が記入されていないとまず登録されないと聞いたことがあります。</p><hr /><h2>ブログに連絡先の作り方</h2><p>そんなわけで、無料ブログを作成する際は<b>アドレスタグ</b>などで連絡先を記入しておいた方がいいと思います。</p><p>ブログやサイトの連絡先などはアドレスタグを使いながら作るのが一般的なようです。そこに一緒に上のFOAFなどを記入しておくといいようです。</p><p>たいていはページのフッターにアドレスタグを記入していることが多いと思いますが、スパムとかあれなんで、ためしにこのページに作ってみようと思います。</p><p>連絡先の正式な作り方はわかりませんが、お問い合わせページやaboutページを作成しているサイトが多いように思います。アドレスタグはこんなのです。</p><p>&lt;address&gt;&lt;/address&gt;</p><p>このアドレスタグの間にメール起動のmailto:を使用しながらメールアドレスを記入するといいらしいです。ヤフーメールの場合こんな感じです。</p>
+<p>&lt;a href="mailto:aaa@yahoo.co.jp"&gt;aaa@yahoo.co.jp&lt;/a&gt;</p><p>ついでにブログのＵＲＬなんかもいれておいたらいいのではないかと思います。</p><hr /><address><p>メールアドレス：<a href="mailto:info@blog-tips.net" rel="nofollow">info@blog-tips.net</a></p><p>ブログURL：<a href="../index.html" target="_blank">blog-tips.net</a></p><p>ちなみに、アドレスタグ内に文字を記入すると斜体になるようです。</p><p>無料ブログなどの場合はスパムとかあるので、捨てメールアドレスなどを記入しておくといいと思います。</p></address><hr /><p>このアドレスタグはここでは記事中に埋め込んでますが、普通はページのフッターなどにいれておくとかっこいいのではないかなと思います。</p>
+</div>
+<div id="trackback">
+<div class="ttitle">関連記事</div>
+<div class="blogging">
+<ul>
+<li><a href="48913125.html">無料メールアドレスの作り方</a><br />
+無料ブログを作成するにあたってとりあえずすることは、無料のメールアドレスを取得することです。無料メールアドレスの作り方はとっても簡単です。無料の簡単フリーメールには、ヤフーのヤフーメールやグーグルのＧ...</li>
+<li><a href="94098704.html">メールフォームの作り方</a><br />
+自動返信などのメールフォームもブログに設置することができるようです。このメールフォームの作り方ですが、設置には多少お金がかかるのかなと思っていましたが、検索してみると無料で利用できるところがちらほらと...</li>
+<li><a href="81750114.html">メールマガジンの作り方</a><br />
+メールマガジンは登録しておくと有用な情報がメールで送られてくるので便利なツールだと思います。このメールマガジンを配信できるサイトがけっこうありますが、有名なところといえば「まぐまぐ！」じゃないでしょう...</li>
+<li><a href="118024933.html">用語集やヘルプページの作成とブログSEO</a><br />
+用語集やヘルプページを作成しているウェブサイトが多いですけど、ユーザビリティーの向上はSEO対策にもつながるものと思うんで、このブログでも用語集を作成してみようと思います。以前ほかのブログで、定義タグ...</li>
+</ul>
+</div>
+</div>
+
+<div class="navi">
+前の記事:<a href="97749460.html">無料ブログのサイトマップを丁寧の作成</a><br />次の記事:<a href="97878100.html">グーグルアドセンスのユーチューブ動画ユニット</a>
+</div>
+</main><!-- #BeginLibraryItem "/Library/side.lbi" --><aside id="links">
+<div class="sidetitle">カテゴリ</div><div class="side"><ul>
+<li><a href="../category/4150781-1.html">初心者簡単</a></li>
+<li><a href="../category/5449171-1.html">ブログ比較</a></li>
+<li><a href="../category/3754373-1.html">カスタマイズ</a></li>
+<li><a href="../category/4150804-1.html">アフィリエイト</a></li>
+<li><a href="../category/5396661-1.html">SEO対策</a></li>
+<li><a href="../category/6189872-1.html">独自ドメイン</a></li>
+<li><a href="../category/5377733-1.html">アクセス解析とアクセスアップ</a></li>
+<li><a href="../category/5323127-1.html">htmlタグやCSS</a></li>
+<li><a href="../category/5529851-1.html">アドセンス</a></li>
+<li><a href="../category/5323473-1.html">無料ホームページの作り方</a></li>
+<li><a href="../category/4150796-1.html">グーグル無料ツール</a></li>
+<li><a href="../category/5529711-1.html">無料メールアドレスやメルマガ</a></li>
+<li><a href="../category/5529703-1.html">無料ブラウザのＦirefoxとＩＥ</a></li>
+<li><a href="../category/5529606-1.html">ＩＴニュース</a></li>
+</ul></div>
+<div class="sidetitle">ブログの作り方情報</div>
+<div class="side">
+<ul>
+<li><a href="48913125.html">無料メールアドレスの作り方</a></li>
+<li><a href="117970780.html">ブログ広告で収入を得る方法</a></li>
+<li><a href="../hikaku.html">ブログ作りはブログ比較から</a></li>
+<li><a href="92088644.html">ブログ比較の一覧</a></li>
+<li><a href="114655734.html">独自ドメインの取得方法</a></li>
+<li><a href="dokuji-cms.html">CMSでブログを作成する方法</a></li>
+<li><a href="115872348.html">CMS可能な格安レンタルサーバー</a></li>
+<li><a href="112911688.html">FC2ブログの作り方</a></li>
+<li><a href="71878598.html">ＦＣ２ホームページの作り方</a></li>
+<li><a href="110459720.html">さくらのブログの作り方</a></li>
+<li><a href="seesaa.html">Seesaaブログの作り方</a></li>
+<li><a href="107993732.html">シーサーブログを独自ドメイン化</a></li>
+<li><a href="wix.html">WIXでのブログの作り方</a></li>
+<li><a href="53785835.html">ディレクトリ登録のSEO効果</a></li>
+<li><a href="118429340.html">ブログからの集客方法</a></li>
+<li><a href="119971208.html">リスティング広告とは何ですか？</a></li>
+</ul></div>
+<div class="arch"><script type="text/javascript">
+<!--
+function ChangeArchive (sel) {
+if (sel.options[sel.selectedIndex].value != "") {
+location.href = sel.options[sel.selectedIndex].value;
+}
+}
+-->
+</script>
+<select name="MonthArchive" onchange="ChangeArchive(this)" class="archiveselect">
+<option value="">archives</option>
+<option value="../archives/200905-1.html">09/05(15)</option>
+<option value="../archives/200904-1.html">09/04(19)</option>
+<option value="../archives/200903-1.html">09/03(20)</option>
+<option value="../archives/200902-1.html">09/02(9)</option>
+<option value="../archives/200901-1.html">09/01(14)</option>
+<option value="../archives/200812-1.html">08/12(18)</option>
+<option value="../archives/200811-1.html">08/11(19)</option>
+<option value="../archives/200810-1.html">08/10(15)</option>
+<option value="../archives/200809-1.html">08/09(14)</option>
+<option value="../archives/200808-1.html">08/08(8)</option>
+<option value="../archives/200807-1.html">08/07(28)</option>
+<option value="../archives/200806-1.html">08/06(29)</option>
+<option value="../archives/200805-1.html">08/05(33)</option>
+<option value="../archives/200804-1.html">08/04(30)</option>
+<option value="../archives/200803-1.html">08/03(15)</option>
+<option value="../archives/200802-1.html">08/02(19)</option>
+<option value="../archives/200801-1.html">08/01(15)</option>
+<option value="../archives/200712-1.html">07/12(10)</option>
+<option value="../archives/200711-1.html">07/11(10)</option>
+<option value="../archives/200710-1.html">07/10(11)</option>
+<option value="../archives/200709-1.html">07/09(16)</option>
+<option value="../archives/200708-1.html">07/08(10)</option>
+<option value="../archives/200707-1.html">07/07(19)</option></select>
+</div>
+<form action="https://www.google.com/cse" id="cse-search-box">
+    <input type="hidden" name="cx" value="004767610735532938012:_ydsjrf0v8u" />
+    <input type="hidden" name="ie" value="Shift_JIS" />
+    <input type="text" name="q" size="24" />
+    <input type="submit" name="sa" value="検索" />
+</form>
+</aside><!-- #EndLibraryItem --><footer id="footer">
+<div class="pagetop"><a href="#container">PageTop▲</a></div>
+<div class="copyright"><ul><li><a href="../index.html">トップページ</a></li>
+<li><a href="../blog/index.html">ブログ</a></li>
+<li><a href="98359430.html">sitemap</a></li>
+<li><a href="../tag/index.html">tag</a></li>
+<li><a href="110348826.html" rel="nofollow">about</a></li></ul>
+<p>&copy;2009 blog-tips.net</p>
+</div>
+</footer>
+</div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2336808-36"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2336808-36');
+</script>
+</body>
+</html>

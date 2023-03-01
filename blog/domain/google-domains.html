@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Google Domainsに移管してみました - 作り方の研究ブログ</title>
+<meta name="description" content="Googleドメインですが、日本でも使えるようになっていたため、今回いくつかのドメイン名を移管してみました。" />
+<meta name="keywords" content="Google Domains,移管" />
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" href="../entry.css" type="text/css" />
+<link rel="amphtml" href="../amp/domain/google-domains.html">
+<link rel="alternate" href="../rss.xml" type="application/rss+xml" title="作り方の研究ブログ - RSS" />
+<link rel="alternate" href="../atom.xml" type="application/atom+xml" title="作り方の研究ブログ - atom" />
+</head>
+<body>
+<div id="container">
+<div class="breadcrumb"><a href="../index.html">作り方の研究ブログ</a> &gt; <a href="index.html">ドメイン</a> &gt;</div>
+<div id="content">
+<div class="blog" id="730">
+<h1>Google Domainsに移管してみました</h1>
+<p>Google Domainsが日本でも使えるようになっていたため、今回いくつかのドメイン名を移管してみました。</p><p>以前に利用しようとした際は日本ではまだ対応しておらず、「日本でも対応したらメールで教えるね！」とのことだったため、メールアドレスを登録していた記憶があるのですが、いつの間にか使えるようになっていたみたいです。</p>
+<p><a href="https://domains.google/intl/ja_jp/" target="_blank" rel="nofollow noopener noreferrer">Google Domains</a></p>
+<p>気になるのはwhoisの代理公開ですが、ドメインに種類によっては対応していないケースもあるものの、大抵は対応しているもようです。</p>
+<p>対応している場合は、移管の際の確認画面で「プライバシー保護が有効です」が表示されるため、こちらで確認してから移管されるとよいでしょう。</p>
+<p><img src="../image/google-whois.png" alt="" width="320" height="264" class="ccc" /></p>
+<p>■<b>ぼくがGoogle Domainsを選んだ理由</b></p>
+<p>今回、ぼくがGoogle Domainsを選んだきっかけは、複数のドメインのリダイレクト設定で悩みがあったためです。</p>
+<p>現在、「example.com」や「example.net」など、.comや.netなどの種類が違うだけで同じドメイン名をいくつか持っているのですが、これを「example.info」に転送して統一して使用しています。</p>
+<p>これは打ち間違えやスペルミス対策というよりも、ただのコレクションなのですが、入手困難なドメイン名で３つまでを取得しており、今回これに４つ目の「org」も入手できたため、こちらも転送して統一したいと考えています。</p>
+<p>けれども、こちらのドメインについては前運営者の被リンクが100本ほど残っているようなのです。</p>
+<p>この場合、そのまま転送してしまうと、被リンク数の水増しのような感じでペナルティーがかかってしまう懸念があるため、既存の被リンクを無効にしてから転送したいのですが、どのような方法がよいのか確証が持てません。</p>
+<p>robots.txtでクロールを拒否してから、メタタグ0秒でリダイレクトするか、もしくは否認ツールで付いている被リンクをすべて否認してからリダイレクトか、判断が難しいところです。</p>
+<p>その点、Google Domainsでは簡単な転送機能を提供しているとのことですので、今回はこちらを利用してみることにしました。</p>
+<p><img src="../image/google-tensou.png" alt="" width="320" height="249" class="ccc" /></p>
+<p>自分のサーバーを経由せず、Googleに転送設定をすべてお任せすれば、無難に処理してくれるのではないかと感じています。また、Google Domainsで一括管理すれば、ある程度は透明性を確保できると思います。</p>
+<p>この転送設定についてですが、何も考えずに推奨どおりにすすめていきますと「<span class="red">302リダイレクト</span>」での転送になるようです。なので、メタタグ0秒や301よりも、302が無難なのかもしれません。</p>
+<p>ただ、安全を期すならSearch Consoleで被リンクを確認し、前運営者のリンクをすべて否認した上で転送設定をかけるのがベストではないかなと思います。</p>
+</div>
+<div class="content-nav"><a href="../tips/preload.html">&laquo; WEBフォントをpreloadするのは止めました</a> | <a href="../tips/1920-1080hd.html">フルHD解像度「1920x1080」に最適化 &raquo;</a></div>
+</div>
+<div id="links">
+<div class="sidetitle">カテゴリ</div>
+<div class="category">
+<ul>
+<li><a href="../how-to/index.html">無料ブログ</a></li>
+<li class="entry-category"><a href="../tips/index.html">ティップス</a></li>
+<li class="entry-category"><a href="../mt/index.html">MTブログ</a></li>
+<li class="entry-category"><a href="../seo/index.html">SEO対策</a></li>
+<li class="entry-category"><a href="../homepage/index.html">ホームページ</a></li>
+<li class="entry-category"><a href="../rentalserver/index.html">レンタルサーバー</a></li>
+<li class="entry-category"><a href="index.html">ドメイン</a></li>
+</ul>
+</div>
+<div class="sidetitle">最近のブログ記事</div>
+<div class="side">
+<ul>
+<li><a href="godaddy-enyasu.html">ドメインの売却は円安の今がチャンス</a></li>
+<li><a href="../tips/affiliate-regulation.html">消費者庁がアフィリエイト広告の規制強化を検討</a></li>
+<li><a href="../seo/infomation-about.html">運営者情報の公開でSEO対策</a></li>
+<li><a href="../mt/xmlrpc.html">Movable Typeの脆弱性をついた攻撃が発生</a></li>
+<li><a href="../mt/howto-jason.html">MovableTypeで構造化データを設定してみました</a></li>
+<li><a href="../tips/1920-1080hd.html">フルHD解像度「1920x1080」に最適化</a></li>
+<li><a href="google-domains.html">Google Domainsに移管してみました</a></li>
+<li><a href="../tips/preload.html">WEBフォントをpreloadするのは止めました</a></li>
+<li><a href="../how-to/mfi-freeblog.html">MFI完全移行による無料ブログへの影響</a></li>
+<li><a href="../tips/gazou-1200px.html">1200pxの画像を用意するしかあるまい</a></li>
+<li><a href="../mt/mt-amp.html">当ブログをAMPに対応しました</a></li>
+<li><a href="../tips/howto-kouzouka.html">「HowTo」構造化データの作り方</a></li>
+<li><a href="../tips/line-height.html">見出しh1「line-height」の値はfont-sizeに反比例する</a></li>
+<li><a href="../tips/ipad-768px.html">iPad用のブレイクポイントを「834px」に変更</a></li>
+<li><a href="../tips/h1px.html">見出しh1のフォントサイズは何pxがよいのか？</a></li>
+<li><a href="../tips/kisya-handbook.html">共同通信社「記者ハンドブック」を読む</a></li>
+<li><a href="../tips/just-right.html">ブログ記事の校正に「Just Right!」を購入してみました</a></li>
+<li><a href="../tips/r2tls-jp4-bk.html">REALFORCEのキーボードを「R2TLS-JP4-BK」に買い替えました</a></li>
+<li><a href="grace-period.html">Grace Periodは何日間なのか？</a></li>
+<li><a href="../tips/gyousyu.html">サイト運営者の業種（日本産業分類）は何になるのか？</a></li>
+</ul>
+</div>
+<div class="sidetitle">リンク</div>
+<div class="side">
+<ul>
+<li><a href="https://www.homepage-tukurikata.com/">ホームページの作り方</a></li>
+<li><a href="../../article/92088644.html">ブログ比較</a></li>
+<li><a href="../../article/117970780.html">ブログ広告での収入</a></li>
+<li><a href="../../article/119971208.html">リスティング広告とは？</a></li>
+</ul></div>
+</div>
+<div id="footer">
+<div class="pagetop"><a href="#container">PageTop▲</a></div>
+<div class="copyright"><ul><li><a href="../archives.html">アーカイブ</a></li><li>&copy;2021 blog-tips.net</li></ul></div>
+<div class="logo"><a href="../index.html">トップページ</a> - <a href="../../index.html">ブログの作り方</a></div>
+</div></div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2336808-36"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2336808-36');
+</script>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "作り方の研究ブログ",
+        "item": "https://blog-tips.net/blog/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "ドメイン",
+        "item": "https://blog-tips.net/blog/domain/"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Google Domainsに移管してみました"
+      }]
+    }
+</script>
+</body>
+</html>

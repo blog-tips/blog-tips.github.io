@@ -1,0 +1,413 @@
+<!doctype html>
+<html ⚡ lang="ja">
+<head>
+<meta charset="utf-8">
+<title>当ブログをAMPに対応しました - 作り方の研究ブログ</title>
+<meta name="description" content="当ブログをAMPに対応してみましたので、Movable Typeで作成したブログをAMPに対応する方法についてご紹介します。" />
+<meta name="keywords" content="Movable Type,amp" />
+<meta name="viewport" content="width=device-width" />
+<link rel="canonical" href="../../mt/mt-amp.html">
+<link rel="alternate" href="../../rss.xml" type="application/rss+xml" title="作り方の研究ブログ - RSS" />
+<link rel="alternate" href="../../atom.xml" type="application/atom+xml" title="作り方の研究ブログ - atom" />
+<style amp-custom>
+body {
+margin:0;
+padding:0;
+font-family: sans-serif;
+}
+#container{
+margin:0 auto;
+padding: 0;
+width:890px;
+line-height:1.6;
+}
+.breadcrumb {
+font-size:14px;
+padding:40px 0 10px 15px;
+}
+a {
+color: #00c;
+}
+a:hover {
+color:#256ba7;
+text-decoration: underline;
+}
+p {
+margin:1em 0;
+}
+img {
+border:0;
+}
+h1 {
+font-size:24px;
+padding:5px 0 5px 20px;
+background-image: url(../../image/hp-sozai.png);
+background-repeat: no-repeat;
+background-position: left center;
+line-height:1.4;
+}
+h2 {
+background-color:#f0f7f9;
+font-size:16px;
+padding:3px 5px 3px 10px;
+}
+h3 {
+font-size:16px;
+color: #8C0000;
+padding:10px 5px 0 0;
+}
+hr {
+border-width: 1px 0 0 0;
+border-style: solid;
+border-color: #ccc;
+height: 1px;
+}
+#content {
+float:left;
+width:600px;
+padding:0 0 20px 0;
+border-top:1px solid #C9D7F1;
+border-bottom:1px solid #C9D7F1;
+}
+ul {
+margin: 0 0 0 1em;
+padding: 0;
+}
+li {
+list-style:none; }
+#content ol li {
+list-style:decimal; 
+}
+#content ol{
+margin: 0 0 0 10px;
+padding: 0;
+}
+#content ul li {
+list-style:disc; 
+}
+.blog {
+margin: 0;
+padding:15px 0 10px 0;
+font-size: 14px;
+}
+.red {color:#c00000;font-weight:bold;}
+.ccc {border:1px #ccc solid;}
+#links {
+padding:20px 0 0 0;
+width:250px;
+float:right;
+margin: 0;
+font-size:12px;
+} 
+#trackbacks {
+padding:0px 10px 0px 10px;
+} 
+#trackbacks ul {
+margin: 12px 0px 12px 0px;
+}
+#trackbacks li {
+ margin: 3px 0px 3px 14px;
+font-size:13px;
+ }
+.trackbacks-header {
+background-color:#F0F0F0;
+font-weight:bold;
+font-size:13px;
+color: #000;
+padding:3px 5px 3px 10px;
+border:1px solid #ccc;
+}
+.trackback {
+ font-size:13px;
+ }
+.trackback a{
+color: #0000cc;
+  }
+.sidetitle {
+background-color:#EBEFF9;
+font-size:16px;
+padding:8px 0px 8px 15px;
+font-weight:bold;
+border-bottom: 1px solid #6B90DA;
+letter-spacing: 0.1em;
+}
+.category {
+background-color:#F7F6EB;
+padding:5px 10px 5px 5px;
+}
+.side {
+background-color:#F7F6EB;
+padding:5px 10px 5px 5px;
+}
+.side ul, .category ul{
+margin: 0 0 0 1em;
+}
+.side ul li,.category ul li{
+padding:4px 0 4px 0;
+}
+.side a, .category a {
+line-height:170%;
+}
+.side input{
+border:1px solid #7E9DB9;
+background-color:#fff;
+color:#333;
+}
+#footer {
+padding:0;
+height:120px;
+clear:both;
+}
+.pagetop {
+font-size:80%;
+text-align:right;
+padding:0 50px 0 0;
+}
+.copyright {
+padding-top: 0;
+padding-left: 35px;
+margin-right: 20px;
+font-size: 11px;
+color: #666;
+text-align: left
+}
+.copyright ul a{
+color: #0000cc;
+text-decoration: underline;
+font-size:12px;
+}
+.copyright ul {
+margin: 0;
+padding: 0;
+list-style-type: none;
+}
+.copyright ul li {
+margin: 0;
+padding-left: 4px;
+padding-right: 4px;
+display: inline;
+border-left: 1px solid #9A9A9A;
+}
+.logo {
+font-size:12px;
+padding:10px 0;
+text-align:center;
+}
+.content-nav {
+font-size:14px;
+padding:0 0 0 10px;
+}
+.content-nav a{
+}
+blockquote {
+margin: 0px;
+padding: 10px 10px 10px 10px;
+border: #D9D9D9 solid;
+border-width: 1px 0;
+}
+img {max-width:100%;height:auto;}
+
+@media screen and (max-device-width: 834px) {
+body,#container {width:100%;}
+.breadcrumb {padding-left:40px;}
+h1{font-size:28px;}
+#content {float:none;width:100%;}
+.blog {font-size: 16px;padding:0 40px 20px 40px;}
+.content-nav {font-size:16px;padding:0 40px 0 40px;}
+#links {font-size: 16px;padding:20px 0 0 0;width:100%;float:none;}
+.sidetitle {padding:9px 0px 14px 40px;font-size:20px;}
+.category, .side {font-size:16px;padding:5px 0 10px 40px;}
+.side ul, .category ul{margin: 0;}
+}
+@media screen and (max-device-width: 480px) {
+body,#container {width:100%;float:none;}
+.blog {float:none;padding:0 10px;font-size:100%;}
+#content {border-bottom:none;width:100%;float:none;border-top:none;}
+#links {font-size:16px;padding:0;width:100%;float:none;font-size:100%;line-height:180%;}
+h1{font-size:130%;}
+h2{margin:0;font-size:100%;padding:5px 0 5px 5px;}
+h3{font-size:110%;}
+img {max-width:100%;height:auto;}
+.breadcrumb {font-size:110%; padding:20px 10px 0 10px;}
+.content-nav {font-size:120%;padding:0 20px;}
+.content-nav a{font-size:100%;}
+.copyright li a{font-size:110%;}
+.sidetitle {padding:9px 0px 14px 19px;margin:0px;font-size:100%;clear:both;}
+.category {width:100%;padding:0;margin:0;}
+.category ul {margin:0;}
+.category ul li {padding:0;float:left;text-indent:14px;font-size:100%;width:50%;background-color:#ccc;}
+.category ul li a{margin:0.5px;background-color:#F7F6EB;display:block;height:50px;line-height: 50px;font-size:100%;text-decoration:none;}
+.side {font-size:100%;padding:5px 0 10px 0;margin:0;}
+.side ul {margin: 0 10px;padding: 0;}
+.side ul li {display: block;border-bottom:1px solid #ccc;}
+.side ul li a{display: block;padding:7px 0;font-size:100%;text-decoration:none;}
+.side ul li a:hover, .category ul li a:hover {font-size:100%;text-decoretion:underline;}
+.copyright {padding:0 0 0 10px;margin: 0;color: #666;text-align: center;float:none;}
+.copyright,.pagetop,.logo {font-size:100%;}
+.copyright li a{font-size:100%;}
+#footer {height:190px;padding-top:20px;width:100%;float:none;}
+.pagetop {font-size:120%;text-align:right;padding:0 10px 10px 0;}
+}
+</style>
+<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+<script async src="../../../../cdn.ampproject.org/v0.js"></script>
+</head>
+<body>
+<div id="container">
+<div class="breadcrumb"><a href="../../index.html">作り方の研究ブログ</a> &gt; <a href="../../mt/index.html">MTブログ</a> &gt;</div>
+
+
+<div id="content">
+<div class="blog" id="726">
+<h1>当ブログをAMPに対応しました</h1>
+<p>当ブログをAMPに対応してみたので、Movable Typeで作成したブログをAMPに対応する際の手順についてご紹介します。</p><p>■<b>アーカイブテンプレートのコピー</b></p>
+<p>作業をする前に、テンプレートのバックアップをとっておくことをおすすめします。</p>
+<p>まず最初にAMPページを出力するためのテンプレートを作成しますが、オリジナルの方のブログ記事のテンプレートをコピーして複製します。</p>
+<p><amp-img src="../../image/amp-fukusei.png" layout="intrinsic" alt="" width="320" height="200" class="ccc" /></amp-img></p>
+<p>複製したら、コピーの方にAMPページなどの適当な名前をつけておきます。</p>
+<p>「オリジナルの方」は「優先マーク」がついているはずですが、オリジナルの方で設定したURLのパスが優先されるため、今までの記事のパーマリンクなどが変更されることはありません。</p>
+<p><b>・オリジナルページ側</b></p>
+<p><amp-img src="../../image/amp-permalink.png" layout="intrinsic" alt="" width="320" height="200" class="ccc" /></amp-img></p>
+<p>コピーした「AMPページ」の方には、AMP用のURLで出力されるようにカスタムパスを設定します。</p>
+<p><amp-img src="../../image/pas.png" layout="intrinsic" alt="" width="320" height="200" class="ccc" /></amp-img></p>
+<p>こちらは優先マークがついていないため、個別ページのパーマリンクなどへの影響はありませんが、AMPページのファイル自体は出力されます。</p>
+<p><b>・AMPページ側</b></p>
+<p><amp-img src="../../image/amp-ban.png" layout="intrinsic" alt="" width="320" height="200" class="ccc" /></amp-img></p>
+<p>そのため、オリジナルの方のURL構成などは変更されない状態のまま、AMPページも別に出力されることになります。</p>
+<p>■<b>AMPページのURLの設定</b></p>
+<p>AMPページのURLはいろいろな方法があり、「ファイル名.amp.html」のような形のURLにすることも出来ますが、当サイトでは「AMP」フォルダ下で出力されるようにカスタムパスを設定しました。</p>
+<p>例えば、当ブログではオリジナルページを「カテゴリ名/投稿名.html」の形で運営しているため、AMPページはampフォルダ下の「amp/カテゴリ名/投稿名.html」の形で出力されるように以下のカスタムパスで設定しています。</p>
+<p>amp/%C/%b.html</p>
+<p>「%C」はカテゴリ名、「%b」は投稿名ですが、<a href="https://www.movabletype.jp/documentation/appendices/archive-file-path-specifiers.html" target="_blank" rel="nofollow noopener noreferrer">こちらのページ</a>を参考にして、既存のURLと同じ形式になるように設定しておくことをおすすめします。</p>
+<p>■<b>AMPの基本的な設定</b></p>
+<p>あとは、プロジェクトの公式サイトにあるボイラープレートを参考にAMP用のテンプレートを修正していきます。</p>
+<p>→ <a href="https://amp.dev/ja/documentation/guides-and-tutorials/start/create/basic_markup/" target="_blank" rel="nofollow noopener noreferrer">AMP HTML ページの作成</a></p>
+<p>DTDはHTML5とほぼ同様の「AMP HTML」バージョンで書いていきます。W3C勧告のHTML5とはimgタグの仕様などで若干違う点もありますが、ほぼHTML5と考えてよいかと思います。</p>
+<p>このあたりはAMP公式プロジェクトのサイトに手順が記載されているため、その通りに記載すればよいかと思います。</p>
+<p>稲妻マークでDTDを修正し、&lt;link rel="canonical"でオリジナルページに正規化し、外部CSSを削除した上でCSSを&lt;style amp-custom&gt;内にコピペして、定型文を２つほどコピペしたらほぼ完成です。</p>
+<p>&lt;link rel="canonical"で正規化する際、以下のように記載するとよいかもしれません。</p>
+<p>&lt;link rel="canonical" href="&lt;$MTEntryPermalink$&gt;"&gt;</p>
+<p>ただし、上記のとおり、優先マッピングがオンになっていた場合、この&lt;$MTEntryPermalink$&gt;のURLはAMPページの方が出力されてしまうため、「オフ」になっていることを確認することをおすすめします。</p>
+<p>また、フッター部分のアクセス解析などはウィジットの中身をコピペでAMP版テンプレートに直接貼り付けたのち、アクセス解析の部分を削除することをおすすめします。</p>
+<p>■<b>&lt;amp-img src=への変換方法</b></p>
+<p>難しい点は画像の&lt;imgタグを&lt;amp-imgに変換することですが、Movable Typeの場合、&lt;$MTInclude module="ブログ記事の詳細"$&gt;の部分などに「regex_replace」を設定して置換できます。</p>
+<p>こちらのページにあるように、スラッシュで囲まれた部分を検索し、指定した文字列に置換してファイルを出力する形になります。<br />→ <a href="https://www.movabletype.jp/documentation/appendices/modifiers/regex_replace.html" target="_blank" rel="nofollow noopener noreferrer">regex_replace - グローバル・モディファイアリファレンス</a></p>
+<p>そのため、「img」を「amp-img」に変換する際、&lt;$MTInclude module="ブログ記事の詳細" regex_replace="/img/","amp-img"$&gt;でも置換できるかと思いますが、「img」だと本文中でも使用している可能性もあるため、「img src=」を「amp-img src=」に変換すればよいと思います。</p>
+<p>これを上記ページの使用例にあてはめると「regex_replace="/img src=/","amp-img src="」になります。</p>
+<p>ただし、これだと最初だけのひとつ目だけしか置換されないため、「g」を付けて全て置換されるようにします。</p>
+<p>&lt;$MTInclude module="ブログ記事の詳細" regex_replace="/img src=/g","amp-img src="$&gt;</p>
+<p>当ブログでは「img src=」などの文字列も本文中などで使用していますので、以下の入れ子を使って置換していますが、この「regex_replace」を使えば、タグを置換した上で出力することができます。</p>
+<p>テストする際、テンプレートごと全てのページを再構築するのではなく、AMPテンプレートの設定を保存した上で適当な１ページのみを更新してチェックされることをおすすめします。個別ページで更新ボタンを押したのち、ampバージョンのURLにアクセスすれば「amp-img」に変わっているはずです。</p>
+<p><amp-img src="../../image/img-ok.png" layout="intrinsic" alt="" width="320" height="200" class="ccc" /></amp-img></p>
+<p>そのほか、ヘッダー部分のロゴ画像などについては、テンプレートに直接記載してしまった方がよいかもしれません。</p>
+<p>■<b>border="0"の削除</b></p>
+<p>当ブログではborder="0"なども付与しているため、「 ｂorder="0"」を空の「」に置換してこれも削除するように設定しておきました。<span class="red">（※ここでの記述自体も置換されるため、bを全角のｂにしています。）</span></p>
+<p>ダブルクォートが重複する際はシングルクォートで以下のように記載します。<br /> 「regex_replace='/ ｂorder="0"/g',''」</p>
+<p>上記と合わせると以下のようになります。</p>
+<p>&lt;$MTInclude module="ブログ記事の詳細" regex_replace="/img src=/g","amp-img src=" regex_replace='/ ｂorder="0"/g',''$&gt;</p>
+<p>■<b>「layout」の設定</b></p>
+<p>画像の拡大、縮小の「layout」については、当ブログでは「responsive」ではなく、実寸以上には拡大されない「intrinsic」を設定しました。サイトによって使用している画像の質や大きさに違いがあるかと思いますので、解像度が低く、200px程度の小さめの画像を多く使用している場合は「intrinsic」がおすすめです。</p>
+<p>ただ、高解像度の写真画像の場合は実寸以上に拡大してもそれほどぼやけないはずですので、responsiveでもよいかと思います。</p>
+<p>当ブログでは全ての画像に「alt」を設定しているため、「alｔ=」を「layout="intrinsic" alｔ=」で置換することで以下のようにレイアウトタグを付与しました。<span class="red">（※tを全角にしてます。）</span></p>
+<p>「regex_replace='/alｔ=/g','layout="intrinsic" alｔ='」</p>
+<p>ここまでをまとめると以下のようになります。</p>
+<p>&lt;$MTInclude module="ブログ記事の詳細" regex_replace="/img src=/g","amp-img src=" regex_replace='/ ｂorder="0"/g','' regex_replace='/alｔ=/g','layout="intrinsic" alｔ='$&gt;</p>
+<p>■<b>終了タグ&lt;/amp-img&gt;の付与</b></p>
+<p>終了タグ&lt;/amp-img&gt;についてですが、これはMTSetVarBlockを使って置換することをおすすめします。<br />→ <a href="https://www.movabletype.jp/documentation/appendices/tags/setvarblock.html" target="_blank" rel="nofollow noopener noreferrer">MTSetVarBlock - テンプレートタグリファレンス</a></p>
+<p>この場合は、上記&lt;amp-imgの置換の箇所の記述は必要なくなりますが、当ブログでは以下のように設定しておきました。</p>
+<p>&lt;mt:SetVarBlock name="before"&gt;/&lt;img (.*?)&gt;/g&lt;/mt:SetVarBlock&gt;<br />&lt;mt:SetVarBlock name="after"&gt;&lt;amp-img \1&gt;&lt;/amp-img&gt;&lt;/mt:SetVarBlock&gt;</p>
+<p>&lt;$MTInclude module="ブログ記事の詳細" regex_replace="$before","$after"$&gt;</p>
+<p>imgタグで囲まれているパターンのうち(.*?)にマッチした部分を取り出して「\1」に入れ、regex_replaceで置換するという意味になりますが、詳しくは正規表現とか置換、後方参照などで調べてみることをおすすめします。</p>
+<p>(.*)のように記入すると、pタグの後ろの方の&gt;が認識されてpタグの後ろに&lt;/amp-img&gt;が付与されてしまったので、最短マッチで終えるハテナマークをつけて(.*?)にするとうまくいきました。</p>
+<p><amp-img src="../../image/amp-end.png" layout="intrinsic" alt="" width="320" height="200" class="ccc" /></amp-img></p>
+<p>これらを全部合わせると、最終的には以下のようになりました。</p>
+<p>&lt;mt:SetVarBlock name="before"&gt;/&lt;img (.*?)&gt;/g&lt;/mt:SetVarBlock&gt;<br />&lt;mt:SetVarBlock name="after"&gt;&lt;amp-img \1&gt;&lt;/amp-img&gt;&lt;/mt:SetVarBlock&gt;</p>
+<p>&lt;$MTInclude module="ブログ記事の詳細" regex_replace="$before","$after" regex_replace='/ ｂorder="0"/g','' regex_replace='/alｔ=/g','layout="intrinsic" alｔ='$&gt;</p>
+<p><span class="red">（※置換対策でborderのbとaltのtを全角にしてます。実際に使用する際は半角で記入してください。）</span></p>
+<p>当ブログではこれでうまく出力されましたが、これらを組み合わせれば、対応できるかと思います。</p>
+<p>■<b>&lt;link rel="amphtml"でAMPページを指定</b></p>
+<p>あとはampチェックで問題なければ、オリジナルページからampページにリンクして公開すればよいでしょう。</p>
+<p>→ <a href="https://search.google.com/test/amp?hl=ja" target="_blank" rel="nofollow noopener noreferrer">AMPテスト</a></p>
+<p><amp-img src="../../image/mt-amp-ok.png" layout="intrinsic" alt="" width="320" height="200" class="ccc" /></amp-img></p>
+<p>当ブログでは正規のオリジナルページのテンプレートの方に以下のように設定しておきました。</p>
+<p style="word-wrap: break-word;">&lt;link rel="amphtml" href="https://blog-tips.net/blog/amp/&lt;$MTCategoryBasename$&gt;/&lt;$mt:EntryBasename$&gt;.html"&gt;</p>
+<p>問題なさそうでしたら、全ページを再構築して反映させます。</p>
+<p>同様に、インデックスページやカテゴリページ、アーカイブページなどもそれぞれAMP化しておくことをおすすめします。</p>
+</div>
+<div class="content-nav"><a href="../../tips/howto-kouzouka.html">&laquo; 「HowTo」構造化データの作り方</a> | <a href="../../tips/gazou-1200px.html">1200pxの画像を用意するしかあるまい &raquo;</a></div>
+</div>
+<div id="links">
+<div class="sidetitle">カテゴリ</div>
+<div class="category">
+<ul>
+<li><a href="../../how-to/index.html">無料ブログ</a></li>
+<li class="entry-category"><a href="../../tips/index.html">ティップス</a></li>
+<li class="entry-category"><a href="../../mt/index.html">MTブログ</a></li>
+<li class="entry-category"><a href="../../seo/index.html">SEO対策</a></li>
+<li class="entry-category"><a href="../../homepage/index.html">ホームページ</a></li>
+<li class="entry-category"><a href="../../rentalserver/index.html">レンタルサーバー</a></li>
+<li class="entry-category"><a href="../../domain/index.html">ドメイン</a></li>
+</ul>
+</div>
+<div class="sidetitle">最近のブログ記事</div>
+<div class="side">
+<ul>
+<li><a href="../../domain/godaddy-enyasu.html">ドメインの売却は円安の今がチャンス</a></li>
+<li><a href="../../tips/affiliate-regulation.html">消費者庁がアフィリエイト広告の規制強化を検討</a></li>
+<li><a href="../../seo/infomation-about.html">運営者情報の公開でSEO対策</a></li>
+<li><a href="../../mt/xmlrpc.html">Movable Typeの脆弱性をついた攻撃が発生</a></li>
+<li><a href="../../mt/howto-jason.html">MovableTypeで構造化データを設定してみました</a></li>
+<li><a href="../../tips/1920-1080hd.html">フルHD解像度「1920x1080」に最適化</a></li>
+<li><a href="../../domain/google-domains.html">Google Domainsに移管してみました</a></li>
+<li><a href="../../tips/preload.html">WEBフォントをpreloadするのは止めました</a></li>
+<li><a href="../../how-to/mfi-freeblog.html">MFI完全移行による無料ブログへの影響</a></li>
+<li><a href="../../tips/gazou-1200px.html">1200pxの画像を用意するしかあるまい</a></li>
+<li><a href="../../mt/mt-amp.html">当ブログをAMPに対応しました</a></li>
+<li><a href="../../tips/howto-kouzouka.html">「HowTo」構造化データの作り方</a></li>
+<li><a href="../../tips/line-height.html">見出しh1「line-height」の値はfont-sizeに反比例する</a></li>
+<li><a href="../../tips/ipad-768px.html">iPad用のブレイクポイントを「834px」に変更</a></li>
+<li><a href="../../tips/h1px.html">見出しh1のフォントサイズは何pxがよいのか？</a></li>
+<li><a href="../../tips/kisya-handbook.html">共同通信社「記者ハンドブック」を読む</a></li>
+<li><a href="../../tips/just-right.html">ブログ記事の校正に「Just Right!」を購入してみました</a></li>
+<li><a href="../../tips/r2tls-jp4-bk.html">REALFORCEのキーボードを「R2TLS-JP4-BK」に買い替えました</a></li>
+<li><a href="../../domain/grace-period.html">Grace Periodは何日間なのか？</a></li>
+<li><a href="../../tips/gyousyu.html">サイト運営者の業種（日本産業分類）は何になるのか？</a></li>
+</ul>
+</div>
+<div class="sidetitle">リンク</div>
+<div class="side">
+<ul>
+<li><a href="https://www.homepage-tukurikata.com/">ホームページの作り方</a></li>
+<li><a href="../../../article/92088644.html">ブログ比較</a></li>
+<li><a href="../../../article/117970780.html">ブログ広告での収入</a></li>
+<li><a href="../../../article/119971208.html">リスティング広告とは？</a></li>
+</ul></div>
+</div>
+<div id="footer">
+<div class="pagetop"><a href="#container">PageTop▲</a></div>
+<div class="copyright"><ul><li><a href="../../archives.html">アーカイブ</a></li><li>&copy;2021 blog-tips.net</li></ul></div>
+<div class="logo"><a href="../../index.html">トップページ</a> - <a href="../../../index.html">ブログの作り方</a></div>
+</div></div>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "作り方の研究ブログ",
+        "item": "https://blog-tips.net/blog/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "MTブログ",
+        "item": "https://blog-tips.net/blog/mt/"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "当ブログをAMPに対応しました"
+      }]
+    }
+</script>
+</body>
+</html>

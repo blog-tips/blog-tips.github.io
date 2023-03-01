@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>パンくずリストの作り方</title>
+<meta name="description" content="パンくずリストの作り方についてです。" />
+<meta name="keywords" content="パンくずリスト,作り方" />
+<meta name="viewport" content="width=device-width" />
+<link rel="alternate" href="../index.rdf" type="application/rss+xml" title="RSS" />
+<link rel="stylesheet" href="../styles-article.css" type="text/css" />
+<link rel="shortcut icon" href="../image/favicon.ico" />
+</head><body>
+<div id="container">
+<main id="content">
+<div class="blog">
+<!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:Trackback="http://madskills.com/public/xml/rss/module/Trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="https://blog-tips.net/article/120513101.html"
+    trackback:ping="http://blog.seesaa.jp/tb/120513101"
+    dc:title="パンくずリストの作り方"
+    dc:identifier="https://blog-tips.net/article/120513101.html"
+    dc:description="Seesaa blog でのパンくずリストの作り方なんですけど、ウェブ標準な作り方がわからなかったんで W3C をのぞいてきました。W3C ではこんな感じで作られているようです。どうやらパンくずリストごと h1 タイトルでくくっているようなんですが、どういった作り方がSEO対策的に一番いいのかっていうのをパンくずリスト比較しようと思います。ちなみに、パンくずリストっていうのは、ブログ訪問者さまが迷わないようにするためのナビゲーションのことです。ヘンゼルとグレーテルみたいに森で..."
+    dc:creator="ブログの作り方"
+    dc:subject="ブログカスタマイズ"
+    dc:date="2009-05-23T22:41:29+09:00"
+/>
+</rdf:RDF>
+-->
+<div class="breadcrumb"><a href="../index.html">ブログの作り方 トップ</a> &gt; <a href="../category/3754373-1.html">ブログカスタマイズ</a> &gt;</div>
+<h1>パンくずリストの作り方</h1>
+<p>Seesaa blog でのパンくずリストの作り方ですが、ウェブ標準な作り方がわからなかったんで W3C をのぞいてきました。</p><p>W3C ではこんな感じで作られているようです。</p><p><img src="../image/pankuzu-list.png" width="319" height="76" alt="W3Cでのパンくずリスト" class="ccc" /></p><p>どうやらパンくずリストごと h1 タイトルでくくっているようなんですが、どういった作り方がSEO対策的に一番いいのかっていうのをパンくずリスト比較しようと思います。</p><p>ちなみに、パンくずリストっていうのは、ブログ訪問者さまが迷わないようにするためのナビゲーションリンクのことです。</p><p>ヘンゼルとグレーテルみたいに、森で迷っても大丈夫なように、パンくずを残して道しるべにするものです。</p><h2>パンくずリストの作り方を比較</h2><p>シーサーブログのデフォルトでのパンくずリストは、確かこんな感じになっています。</p><p>&lt;&lt; 前の記事 | TOP | 次の記事 &gt;&gt;</p><p>でも、一般的なパンくずリストだとこんな感じのが多いです。</p><p>TOP &gt; カテゴリ &gt; 個別記事</p><p>この場合、「カテゴリー」ごとにフォルダ分けもされているものが多いです。</p><p>でも、無料ブログでは自由にフォルダを作成することはできないので、たいていは「エントリー記事」や「過去ログ」ごとにフォルダ分けがされているはずです。</p><p>どちらがいいのかは正直わかりませんが、とりあえずこんな感じでこのブログでもパンくずリストを作ってみました。</p><p><img src="../image/pankuzu.png" width="309" height="113" alt="当ブログのパンくずリスト" class="ccc" /></p><p>ただ、最初の方にキーワードが密集してしまうので、はたしてSEO的にこれでいいものだろうか？という気もしてしまいます。</p><p>そこで、ヤフーヘルプとグーグルヘルプを参照してみたのですが、どうやらこんな感じになっているようなんです。</p><p><b>グーグルヘルプのパンくずリスト</b></p><p><img src="../image/google-pankuzu.png" width="254" height="129" alt="グーグルのパンくずリスト" class="ccc" /></p><p><b>ヤフーヘルプのパンくずリスト</b></p><p><img src="../image/yahoo-pankuzu.png" width="273" height="128" alt="ヤフーヘルプのパンくずリスト" class="ccc" /></p><p>結局のところ、ページ上部でキーワードが重複されると、くどいような気もするんで、最終的には現在ご覧になっているページで表示されているパンくずリストを作成してみました。</p><p>グーグルのようにパンくずリストのアンカーテキストにキーワードをいれつつも、ヤフーみたいにタイトルと重複しないような形で作成してみた次第です。</p><p>html ソースの例はこんな感じですが、シーサーブログでは個別ページやカテゴリページなどでの場合わけをしながら作成するといいかと思います。</p><p>スタイルシート的には、文字サイズちいさめでアンダーラインをつけておくとわかりやすいです。</p><p>シーサーブログでの作り方の例）</p><p>html の部分<br />
+&lt;div class="breadcrumb"&gt;&lt;a href="&lt;% blog.page_url %&gt;"&gt;ブログタイトル&lt;/a&gt; &amp;gt; &lt;% if:style.disp_category %&gt;&lt;a href="&lt;% article_category.page_url %&gt;"&gt;&lt;% article_category.name %&gt;&lt;/a&gt;&lt;% /if %&gt; &amp;gt;&lt;/div&gt;</p>
+<p>css の部分<br />
+.breadcrumb {<br />
+line-height:120%;<br />
+padding:0px 0px 10px 0px;<br />
+}<br />
+.breadcrumb a{<br />
+font-size:12px;<br />
+font-weight:normal;<br />
+color: #003366;<br />
+text-decoration:underline;<br />
+}</p><p>ちなみに、breadcrumb の部分は任意の英数小文字で、&gt; の記号は html 上に記入する場合は、&amp;gt; と書いた方がいいかと思います。</p><p>シーサーのデフォルトで表示されている前の記事、次の記事表示はこのブログでは記事下の一番下に持っていくことにしました。</p>
+</div>
+<div id="trackback">
+<div class="ttitle">関連記事</div>
+<div class="blogging">
+<ul>
+<li><a href="111568033.html">ナビゲーションでブログカスタマイズ</a><br />
+今日のブログカスタマイズは、ナビゲーションバーのところをいじってみました。ブログ記事もけっこうたまってきたんで、ヤフーみたいな感じにナビゲーションバーを作成してみたいと思います。</li>
+<li><a href="107477146.html">カテゴリページのナビをブログカスタマイズ</a><br />
+この前は最新の記事欄をブログカスタマイズして、おとといは過去ログページもブログカスタマイズしたんで、今日はカテゴリページをいじってみようと思います。 前回までのブログカスタマイズ 最近の記事欄をブログ...</li>
+<li><a href="119696613.html">ブログ階層の作り方</a><br />
+ブログ階層にも深さが必要だと思うんですけど、それにはきちんとしたフォルダ分けをする必要があるかと思うんです。でも、無料ブログサービスの場合、カテゴリごとのフォルダわけができなかったりもしたりです、、そ...</li>
+</ul>
+</div>
+</div>
+<div class="navi">
+前の記事:<a href="92088644.html">ブログ比較ではじめよう</a><br />次の記事:<a href="120080343.html">Seesaa引越し後のブログの作り方</a>
+</div>
+</main><!-- #BeginLibraryItem "/Library/side.lbi" --><aside id="links">
+<div class="sidetitle">カテゴリ</div><div class="side"><ul>
+<li><a href="../category/4150781-1.html">初心者簡単</a></li>
+<li><a href="../category/5449171-1.html">ブログ比較</a></li>
+<li><a href="../category/3754373-1.html">カスタマイズ</a></li>
+<li><a href="../category/4150804-1.html">アフィリエイト</a></li>
+<li><a href="../category/5396661-1.html">SEO対策</a></li>
+<li><a href="../category/6189872-1.html">独自ドメイン</a></li>
+<li><a href="../category/5377733-1.html">アクセス解析とアクセスアップ</a></li>
+<li><a href="../category/5323127-1.html">htmlタグやCSS</a></li>
+<li><a href="../category/5529851-1.html">アドセンス</a></li>
+<li><a href="../category/5323473-1.html">無料ホームページの作り方</a></li>
+<li><a href="../category/4150796-1.html">グーグル無料ツール</a></li>
+<li><a href="../category/5529711-1.html">無料メールアドレスやメルマガ</a></li>
+<li><a href="../category/5529703-1.html">無料ブラウザのＦirefoxとＩＥ</a></li>
+<li><a href="../category/5529606-1.html">ＩＴニュース</a></li>
+</ul></div>
+<div class="sidetitle">ブログの作り方情報</div>
+<div class="side">
+<ul>
+<li><a href="48913125.html">無料メールアドレスの作り方</a></li>
+<li><a href="117970780.html">ブログ広告で収入を得る方法</a></li>
+<li><a href="../hikaku.html">ブログ作りはブログ比較から</a></li>
+<li><a href="92088644.html">ブログ比較の一覧</a></li>
+<li><a href="114655734.html">独自ドメインの取得方法</a></li>
+<li><a href="dokuji-cms.html">CMSでブログを作成する方法</a></li>
+<li><a href="115872348.html">CMS可能な格安レンタルサーバー</a></li>
+<li><a href="112911688.html">FC2ブログの作り方</a></li>
+<li><a href="71878598.html">ＦＣ２ホームページの作り方</a></li>
+<li><a href="110459720.html">さくらのブログの作り方</a></li>
+<li><a href="seesaa.html">Seesaaブログの作り方</a></li>
+<li><a href="107993732.html">シーサーブログを独自ドメイン化</a></li>
+<li><a href="wix.html">WIXでのブログの作り方</a></li>
+<li><a href="53785835.html">ディレクトリ登録のSEO効果</a></li>
+<li><a href="118429340.html">ブログからの集客方法</a></li>
+<li><a href="119971208.html">リスティング広告とは何ですか？</a></li>
+</ul></div>
+<div class="arch"><script type="text/javascript">
+<!--
+function ChangeArchive (sel) {
+if (sel.options[sel.selectedIndex].value != "") {
+location.href = sel.options[sel.selectedIndex].value;
+}
+}
+-->
+</script>
+<select name="MonthArchive" onchange="ChangeArchive(this)" class="archiveselect">
+<option value="">archives</option>
+<option value="../archives/200905-1.html">09/05(15)</option>
+<option value="../archives/200904-1.html">09/04(19)</option>
+<option value="../archives/200903-1.html">09/03(20)</option>
+<option value="../archives/200902-1.html">09/02(9)</option>
+<option value="../archives/200901-1.html">09/01(14)</option>
+<option value="../archives/200812-1.html">08/12(18)</option>
+<option value="../archives/200811-1.html">08/11(19)</option>
+<option value="../archives/200810-1.html">08/10(15)</option>
+<option value="../archives/200809-1.html">08/09(14)</option>
+<option value="../archives/200808-1.html">08/08(8)</option>
+<option value="../archives/200807-1.html">08/07(28)</option>
+<option value="../archives/200806-1.html">08/06(29)</option>
+<option value="../archives/200805-1.html">08/05(33)</option>
+<option value="../archives/200804-1.html">08/04(30)</option>
+<option value="../archives/200803-1.html">08/03(15)</option>
+<option value="../archives/200802-1.html">08/02(19)</option>
+<option value="../archives/200801-1.html">08/01(15)</option>
+<option value="../archives/200712-1.html">07/12(10)</option>
+<option value="../archives/200711-1.html">07/11(10)</option>
+<option value="../archives/200710-1.html">07/10(11)</option>
+<option value="../archives/200709-1.html">07/09(16)</option>
+<option value="../archives/200708-1.html">07/08(10)</option>
+<option value="../archives/200707-1.html">07/07(19)</option></select>
+</div>
+<form action="https://www.google.com/cse" id="cse-search-box">
+    <input type="hidden" name="cx" value="004767610735532938012:_ydsjrf0v8u" />
+    <input type="hidden" name="ie" value="Shift_JIS" />
+    <input type="text" name="q" size="24" />
+    <input type="submit" name="sa" value="検索" />
+</form>
+</aside><!-- #EndLibraryItem --><footer id="footer">
+<div class="pagetop"><a href="#container">PageTop▲</a></div>
+<div class="copyright"><ul><li><a href="../index.html">トップページ</a></li>
+<li><a href="../blog/index.html">ブログ</a></li>
+<li><a href="98359430.html">sitemap</a></li>
+<li><a href="../tag/index.html">tag</a></li>
+<li><a href="110348826.html" rel="nofollow">about</a></li></ul>
+<p>&copy;2009 blog-tips.net</p>
+</div>
+</footer>
+</div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2336808-36"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2336808-36');
+</script>
+</body>
+</html>

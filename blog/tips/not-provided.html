@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Analyticsの(not provided)とは何なのか？ - 作り方の研究ブログ</title>
+<meta name="description" content="グーグルアナリティクスのnot providedで表示される検索キーワードは、https対応の検索からアクセスされた場合に表示されます。生ログで確認しても検索キーワードは不明でした。" />
+<meta name="keywords" content="analytics,not provided" />
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" href="../entry.css" type="text/css" />
+<link rel="amphtml" href="../amp/tips/not-provided.html">
+<link rel="alternate" href="../rss.xml" type="application/rss+xml" title="作り方の研究ブログ - RSS" />
+<link rel="alternate" href="../atom.xml" type="application/atom+xml" title="作り方の研究ブログ - atom" />
+</head>
+<body>
+<div id="container">
+<div class="breadcrumb"><a href="../index.html">作り方の研究ブログ</a> &gt; <a href="index.html">ティップス</a> &gt;</div>
+<div id="content">
+<div class="blog" id="613">
+<h1>Analyticsの(not provided)とは何なのか？</h1>
+ <p>久しぶりにアクセス解析を見てみたのですが、検索キーワードの箇所で(not provided)が表示されてしまい、不明なものが多数出てきているようです。</p><p>このGoogle Analyticsの検索キーワードについては、「集客 - キャンペーン - オーガニック検索トラフィック」の箇所にて確認することができます。</p><p><img src="../image/not-provided.png" alt="" width="327" height="135" style="border: solid 1px #cccccc;" /></p> 
+<p>最近は検索者のプライバシー保護が主流になっているようで、グーグルアカウントにログインした状態ではhttps検索がデフォルトになっているのが原因かと思われます。</p>
+<p>今まで検索キーワードは特に気にしていなかったですし、「ふーん。」ぐらいにしか見ていなかったのですが、隠されると何だかミステリアスに感じてしまい、どうしても知りたくなってしまうのが人情というものです。</p>
+<p>そこで、生ログを確認してみたんですけど、グーグル検索の場合でも、リファラーの付いてるものと付いてないものがあるようです。</p>
+<p>こちらが付いているもので、この場合は検索語句のリファラーが付いているので検索されたキーワードを確認できます。</p>
+<p><img src="../image/refer.png" alt="" width="326" height="98" style="border: solid 1px #cccccc;" /></p> 
+<p>一方、httpsの検索結果からのアクセスの場合、検索キーワードが確認できません。おそらく、このタイプのアクセスが(not provided)で表示されてしまうのだろうと思われます。</p>
+<p><img src="../image/https.png" alt="" width="285" height="90" style="border: solid 1px #cccccc;" /></p> 
+<p>ちなみに、グーグルアカウントからログアウトして、いくつかのブラウザでチェックしてみますと、ブラウザによってはhttpsではない普通のグーグル検索になるケースもあるようです。</p> 
+<p><img src="../image/safari-http.png" alt="" width="236" height="59" style="border: solid 1px #cccccc;" /></p> 
+<p> おそらく、こういうアクセスは検索キーワードが確認できるものの、デフォルトでhttps対応になっているクロームなどでは(not provided)が表示されるのだろうと思われます。</p>
+<p>結局、この(not provided)については、生ログでも検索キーワードは確認できませんでした。</p>
+<p>この検索キーワードを確認する方法については、「集客 - 検索エンジン最適化 - 検索クエリ」の箇所で確認できるようなのですが、これを閲覧するにはウェブマスターツールへの登録が必要になるようです。</p>
+<p><img src="../image/analytics-keywards.png" alt="" width="235" height="306" style="border: solid 1px #cccccc;" /></p> 
+<p>私はウェブマスターツールを利用していないため、どのようなものなのかはよく分からないのですが、利用されている方はチェックしてみるとよいかもしれません。</p>
+<p>今後、仕様変更などもあるかと思いますので、今までの分かっている検索キーワードについてはダウンロードして保存しておいた方がよいかもしれませんね。</p>
+</div>
+<div class="content-nav"><a href="jyukyuu-access.html">&laquo; 季節要因でお正月のアクセス数は減少する傾向</a> | <a href="../domain/ennyasu-cost.html">円安で海外でのドメイン管理コストが増大 &raquo;</a></div>
+</div>
+<div id="links">
+<div class="sidetitle">カテゴリ</div>
+<div class="category">
+<ul>
+<li><a href="../how-to/index.html">無料ブログ</a></li>
+<li class="entry-category"><a href="index.html">ティップス</a></li>
+<li class="entry-category"><a href="../mt/index.html">MTブログ</a></li>
+<li class="entry-category"><a href="../seo/index.html">SEO対策</a></li>
+<li class="entry-category"><a href="../homepage/index.html">ホームページ</a></li>
+<li class="entry-category"><a href="../rentalserver/index.html">レンタルサーバー</a></li>
+<li class="entry-category"><a href="../domain/index.html">ドメイン</a></li>
+</ul>
+</div>
+<div class="sidetitle">最近のブログ記事</div>
+<div class="side">
+<ul>
+<li><a href="../domain/godaddy-enyasu.html">ドメインの売却は円安の今がチャンス</a></li>
+<li><a href="affiliate-regulation.html">消費者庁がアフィリエイト広告の規制強化を検討</a></li>
+<li><a href="../seo/infomation-about.html">運営者情報の公開でSEO対策</a></li>
+<li><a href="../mt/xmlrpc.html">Movable Typeの脆弱性をついた攻撃が発生</a></li>
+<li><a href="../mt/howto-jason.html">MovableTypeで構造化データを設定してみました</a></li>
+<li><a href="1920-1080hd.html">フルHD解像度「1920x1080」に最適化</a></li>
+<li><a href="../domain/google-domains.html">Google Domainsに移管してみました</a></li>
+<li><a href="preload.html">WEBフォントをpreloadするのは止めました</a></li>
+<li><a href="../how-to/mfi-freeblog.html">MFI完全移行による無料ブログへの影響</a></li>
+<li><a href="gazou-1200px.html">1200pxの画像を用意するしかあるまい</a></li>
+<li><a href="../mt/mt-amp.html">当ブログをAMPに対応しました</a></li>
+<li><a href="howto-kouzouka.html">「HowTo」構造化データの作り方</a></li>
+<li><a href="line-height.html">見出しh1「line-height」の値はfont-sizeに反比例する</a></li>
+<li><a href="ipad-768px.html">iPad用のブレイクポイントを「834px」に変更</a></li>
+<li><a href="h1px.html">見出しh1のフォントサイズは何pxがよいのか？</a></li>
+<li><a href="kisya-handbook.html">共同通信社「記者ハンドブック」を読む</a></li>
+<li><a href="just-right.html">ブログ記事の校正に「Just Right!」を購入してみました</a></li>
+<li><a href="r2tls-jp4-bk.html">REALFORCEのキーボードを「R2TLS-JP4-BK」に買い替えました</a></li>
+<li><a href="../domain/grace-period.html">Grace Periodは何日間なのか？</a></li>
+<li><a href="gyousyu.html">サイト運営者の業種（日本産業分類）は何になるのか？</a></li>
+</ul>
+</div>
+<div class="sidetitle">リンク</div>
+<div class="side">
+<ul>
+<li><a href="https://www.homepage-tukurikata.com/">ホームページの作り方</a></li>
+<li><a href="../../article/92088644.html">ブログ比較</a></li>
+<li><a href="../../article/117970780.html">ブログ広告での収入</a></li>
+<li><a href="../../article/119971208.html">リスティング広告とは？</a></li>
+</ul></div>
+</div>
+<div id="footer">
+<div class="pagetop"><a href="#container">PageTop▲</a></div>
+<div class="copyright"><ul><li><a href="../archives.html">アーカイブ</a></li><li>&copy;2021 blog-tips.net</li></ul></div>
+<div class="logo"><a href="../index.html">トップページ</a> - <a href="../../index.html">ブログの作り方</a></div>
+</div></div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2336808-36"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2336808-36');
+</script>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "作り方の研究ブログ",
+        "item": "https://blog-tips.net/blog/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "ティップス",
+        "item": "https://blog-tips.net/blog/tips/"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Analyticsの(not provided)とは何なのか？"
+      }]
+    }
+</script>
+</body>
+</html>

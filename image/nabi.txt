@@ -1,0 +1,58 @@
+ƒiƒrƒQ[ƒVƒ‡ƒ“ƒo[‚Ì—á
+
+‚g‚s‚l‚k‚É’Ç‰Á‚·‚é•”•ª
+iaaa,bbb‚Í”CˆÓ‚Ì•¶šj
+
+<div id="aaa">
+<div id="bbb">
+<ul>
+<li><a href="‚©‚Ä‚²‚è‚P‚Ì‚t‚q‚k">‚©‚Ä‚²‚è‚P</a></li>  
+<li><a href="‚©‚Ä‚²‚è‚Q‚Ì‚t‚q‚k">‚©‚Ä‚²‚è‚Q</a></li>  
+<li><a href="‚©‚Ä‚²‚è‚R‚Ì‚t‚q‚k">‚©‚Ä‚²‚è‚R</a></li>
+<li><a href="‚©‚Ä‚²‚è‚S‚Ì‚t‚q‚k">‚©‚Ä‚²‚è‚S</a></li>
+<li><a href="‚©‚Ä‚²‚è‚T‚Ì‚t‚q‚k">‚©‚Ä‚²‚è‚T</a></li>
+<li><a href="‚©‚Ä‚²‚è‚U‚Ì‚t‚q‚k">‚©‚Ä‚²‚è‚U</a></li>
+</ul>                       
+</div>
+</div>
+
+
+ƒXƒ^ƒCƒ‹ƒV[ƒg‚É‹L“ü‚·‚é•”•ª
+iaaa,bbb‚Í”CˆÓ‚Ì•¶šj
+
+#aaa {
+font-size:12px;
+height:35px;
+font-weight:normal;
+background-color:#EEEEEE;
+border-bottom: 1px solid #ccc;
+font-family: verdana;
+}
+
+#bbb {
+position: relative;
+}
+
+#aaa ul {
+margin: 0;
+padding: 0 0 0 20px;
+ist-style: none;
+}
+
+#aaa ul li {
+float: left;
+padding-top: 2px;
+}
+
+#aaa ul li a {
+font-weight:normal;
+border-left: 1px solid #c2beba;
+display: block;
+text-decoration: none;
+padding: 7px 15px 7px 16px;
+background-color: #ebe9e8;
+}
+
+#aaa ul li a:hover {
+text-decoration: underline;
+}

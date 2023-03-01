@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>MovableTypeで構造化データを設定してみました - 作り方の研究ブログ</title>
+<meta name="description" content="当ブログではMovableTypeを使用していますが、MTブログでjsonの構造化データを作成してみました。" />
+<meta name="keywords" content="MovableType,構造化データ,記事構造化データ" />
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" href="../entry.css" type="text/css" />
+<link rel="amphtml" href="../amp/mt/howto-jason.html">
+<link rel="alternate" href="../rss.xml" type="application/rss+xml" title="作り方の研究ブログ - RSS" />
+<link rel="alternate" href="../atom.xml" type="application/atom+xml" title="作り方の研究ブログ - atom" />
+</head>
+<body>
+<div id="container">
+<div class="breadcrumb"><a href="../index.html">作り方の研究ブログ</a> &gt; <a href="index.html">MTブログ</a> &gt;</div>
+<div id="content">
+<div class="blog" id="732">
+<h1>MovableTypeで構造化データを設定してみました</h1>
+<p>当ブログではMovableTypeを使用していますが、MTブログでjsonの構造化データを設定してみました。</p><p>構造化データのうち、「ぱんくずリスト」については全ページ一律で設定できるため、比較的簡単に対応できると思います。</p>
+<p>一方、「記事タイプ」や「HowTo」については、画像の有無やコンテンツの性質によって個別に違いが出てきます。</p>
+<p>当ブログでは画像を使用していない記事もあるため、全ページを一律で記事（Article）タイプの構造化データを設定するわけにもいきません。また、記事タイプでは<a href="../tips/gazou-1200px.html">1200px以上の画像が必要</a>とのことで、小さい画像を掲載しているページについても対応が難しいです。</p>
+<p>そのため、<span class="red">記事番号（EntryID）</span>を割り振って場合分けをし、１番の記事ならArticleのjsonを表示、２番の記事ならHowToのjsonを表示、３番の記事はjsonなし...などといった形で個別に対応するのがよいと思います。</p>
+<p>&lt;mt:If tag="EntryID" eq="1"&gt;<br /> Article構造化データ<br /> &lt;/mt:If&gt;</p>
+<p>&lt;mt:If tag="EntryID" eq="2"&gt;<br /> HowTo構造化データ<br /> &lt;/mt:If&gt;</p>
+<p>上記のような「テンプレートモジュール」を作成し、body終了タグの直前にでも設定しておくとよいでしょう。</p>
+<h2>構造化データ化する際の手順</h2>
+<p>実際に作成する際、以下の手順で対応するとよいでしょう。</p>
+<p id="step1"><b>①記事番号の出力</b></p>
+<p>まず、「ブログ記事の詳細」の適当な箇所に、&lt;$mt:EntryID$&gt;を記載して記事番号を表示させます。</p>
+<p>&lt;article id="&lt;$mt:EntryID$&gt;"&gt;</p>
+<p><img src="../image/entry-id.png" alt="" width="480" height="360" class="ccc" /></p>
+<p>この番号を元に上記の記事番号による場合分けをしていきます。</p>
+<p id="step2"><b>②「テンプレートモジュール」で「記事構造化データ」を作成</b></p>
+<p>テンプレートモジュールで適当なものを複製し、上記のようなEntryIDによる場合分けの内容に書き変えます。名前は何でも良いと思います。</p>
+<p>例えば、こちらの場合、エントリーナンバー719番の記事に適用する構造化データの内容になります。</p>
+<p><img src="../image/json-article.png" alt="" width="480" height="360" class="ccc" /></p>
+<p>記事タイプの場合、日付のフォーマットは「ISO 8601」ですが、MTタグのformatの場合、utc="1"を取れば、日本時間で表示されるはずです。こちらの画像では見切れてしまいましたが、最後のzは日本時間の+09:00にしておけばよいと思います。</p>
+<p id="step3"><b>③「ぱんくずリスト構造化データ」の作成</b></p>
+<p>ぱんくずリストについては、実際のぱんくずリストの箇所のタグを参考にしながら作成すれば、普通に出力されるはずです。</p>
+<p><img src="../image/mtjson-pankuzu.png" alt="" width="480" height="360" class="ccc" /></p>
+<p id="step4"><b>④「body」タグの直前に上記の構造化データを設定</b></p>
+<p>ブログ記事のテンプレートなどで、「body」タグの直前に②と③の構造化データを設定しておきます。</p>
+<p><img src="../image/kouzouka-blog.png" alt="" width="480" height="360" class="ccc" /></p>
+<p id="step5"><b>⑤AMP用の構造化データも別途に作成</b></p>
+<p>AMPページも作成している場合、同様の手順でAMP用のテンプレートにも設定しておきます。</p>
+<p>結局、当ブログでは以下のような形になりました。</p>
+<p></p>
+<p><img src="../image/kouzouka-tenpure.png" alt="" width="480" height="360" class="ccc" /></p>
+<p id="step6"><b>⑥リッチリザルトテストでチェック</b></p>
+<p>完了しましたら、再構築をしてデータを反映させ、リッチリザルトテストでチェックするとよいでしょう。</p>
+<p>ちなみに、このページについては「記事」と「ぱんくずリスト」、「ハウツー」を設定してみました。</p>
+<p><img src="../image/json-finish.png" alt="" width="480" height="360" class="ccc" /></p>
+<p>上記のような方法の場合、いずれ「記事構造化データ」のテンプレートの行数が長くなっていくはずですが、「記事構造化データその１」、「記事構造化データその２」などとわけて記載していけば、対応できると思います。</p>
+</div>
+<div class="content-nav"><a href="../tips/1920-1080hd.html">&laquo; フルHD解像度「1920x1080」に最適化</a> | <a href="xmlrpc.html">Movable Typeの脆弱性をついた攻撃が発生 &raquo;</a></div>
+</div>
+<div id="links">
+<div class="sidetitle">カテゴリ</div>
+<div class="category">
+<ul>
+<li><a href="../how-to/index.html">無料ブログ</a></li>
+<li class="entry-category"><a href="../tips/index.html">ティップス</a></li>
+<li class="entry-category"><a href="index.html">MTブログ</a></li>
+<li class="entry-category"><a href="../seo/index.html">SEO対策</a></li>
+<li class="entry-category"><a href="../homepage/index.html">ホームページ</a></li>
+<li class="entry-category"><a href="../rentalserver/index.html">レンタルサーバー</a></li>
+<li class="entry-category"><a href="../domain/index.html">ドメイン</a></li>
+</ul>
+</div>
+<div class="sidetitle">最近のブログ記事</div>
+<div class="side">
+<ul>
+<li><a href="../domain/godaddy-enyasu.html">ドメインの売却は円安の今がチャンス</a></li>
+<li><a href="../tips/affiliate-regulation.html">消費者庁がアフィリエイト広告の規制強化を検討</a></li>
+<li><a href="../seo/infomation-about.html">運営者情報の公開でSEO対策</a></li>
+<li><a href="xmlrpc.html">Movable Typeの脆弱性をついた攻撃が発生</a></li>
+<li><a href="howto-jason.html">MovableTypeで構造化データを設定してみました</a></li>
+<li><a href="../tips/1920-1080hd.html">フルHD解像度「1920x1080」に最適化</a></li>
+<li><a href="../domain/google-domains.html">Google Domainsに移管してみました</a></li>
+<li><a href="../tips/preload.html">WEBフォントをpreloadするのは止めました</a></li>
+<li><a href="../how-to/mfi-freeblog.html">MFI完全移行による無料ブログへの影響</a></li>
+<li><a href="../tips/gazou-1200px.html">1200pxの画像を用意するしかあるまい</a></li>
+<li><a href="mt-amp.html">当ブログをAMPに対応しました</a></li>
+<li><a href="../tips/howto-kouzouka.html">「HowTo」構造化データの作り方</a></li>
+<li><a href="../tips/line-height.html">見出しh1「line-height」の値はfont-sizeに反比例する</a></li>
+<li><a href="../tips/ipad-768px.html">iPad用のブレイクポイントを「834px」に変更</a></li>
+<li><a href="../tips/h1px.html">見出しh1のフォントサイズは何pxがよいのか？</a></li>
+<li><a href="../tips/kisya-handbook.html">共同通信社「記者ハンドブック」を読む</a></li>
+<li><a href="../tips/just-right.html">ブログ記事の校正に「Just Right!」を購入してみました</a></li>
+<li><a href="../tips/r2tls-jp4-bk.html">REALFORCEのキーボードを「R2TLS-JP4-BK」に買い替えました</a></li>
+<li><a href="../domain/grace-period.html">Grace Periodは何日間なのか？</a></li>
+<li><a href="../tips/gyousyu.html">サイト運営者の業種（日本産業分類）は何になるのか？</a></li>
+</ul>
+</div>
+<div class="sidetitle">リンク</div>
+<div class="side">
+<ul>
+<li><a href="https://www.homepage-tukurikata.com/">ホームページの作り方</a></li>
+<li><a href="../../article/92088644.html">ブログ比較</a></li>
+<li><a href="../../article/117970780.html">ブログ広告での収入</a></li>
+<li><a href="../../article/119971208.html">リスティング広告とは？</a></li>
+</ul></div>
+</div>
+<div id="footer">
+<div class="pagetop"><a href="#container">PageTop▲</a></div>
+<div class="copyright"><ul><li><a href="../archives.html">アーカイブ</a></li><li>&copy;2021 blog-tips.net</li></ul></div>
+<div class="logo"><a href="../index.html">トップページ</a> - <a href="../../index.html">ブログの作り方</a></div>
+</div></div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2336808-36"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2336808-36');
+</script>
+<script type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "HowTo","name": "MovableTypeで構造化データを設定してみました","description": "MovableTypeでぱんくずリストや記事タイプ、Howtoなどの構造化データを設定する方法についてご紹介しています。","image": {"@type": "ImageObject","url": "https://blog-tips.net/blog/image/json-finish.png","height": "360","width": "480"},
+"supply": [{"@type": "HowToSupply","name": "構造化データ用の画像"}],
+"tool": [{"@type": "HowToTool","name": "MovableType"}],
+"step": [
+{"@type": "HowToStep","url": "https://blog-tips.net/blog/mt/howto-jason.html#step1","name": "記事番号の出力","itemListElement": [{"@type": "HowToDirection","text": "まず、「ブログ記事の詳細」の適当な箇所に、EntryIDタグを記載して記事番号を表示させます。この番号を元に上記の記事番号による場合分けをしていきます。"}],"image": {"@type": "ImageObject","url": "https://blog-tips.net/blog/image/entry-id.png","height": "360","width": "480"}},
+{"@type": "HowToStep","name": "「テンプレートモジュール」で「記事構造化データ」を作成","url": "https://blog-tips.net/blog/mt/howto-jason.html#step2","itemListElement": [{"@type": "HowToDirection","text": "テンプレートモジュールで適当なものを複製し、上記のようなEntryIDによる場合分けの内容に書き変えます。名前は何でも良いと思います。"}],"image": {"@type": "ImageObject","url": "https://blog-tips.net/blog/image/json-article.png","height": "360","width": "480"}},
+{"@type": "HowToStep","name": "「ぱんくずリスト構造化データ」の作成","url": "https://blog-tips.net/blog/mt/howto-jason.html#step3","itemListElement": [{"@type": "HowToDirection","text": "ぱんくずリストについては、実際のぱんくずリストの箇所のタグを参考にしながら作成すれば、普通に出力されるはずです。"}],"image": {"@type": "ImageObject","url": "https://blog-tips.net/blog/image/mtjson-pankuzu.png","height": "360","width": "480"}},
+{"@type": "HowToStep","name": "「body」タグの直前に上記の構造化データを設定","url": "https://blog-tips.net/blog/mt/howto-jason.html#step4","itemListElement": [{"@type": "HowToDirection","text": "ブログ記事のテンプレートなどで、「body」タグの直前に②と③の構造化データを設定しておきます。"}],"image": {"@type": "ImageObject","url": "https://blog-tips.net/blog/image/kouzouka-blog.png","height": "360","width": "480"}},
+{"@type": "HowToStep","name": "AMP用の構造化データも別途に作成","url": "https://blog-tips.net/blog/mt/howto-jason.html#step5","itemListElement": [{"@type": "HowToDirection","text": "AMPページも作成している場合、同様の手順でAMP用のテンプレートにも設定しておきます。"}],"image": {"@type": "ImageObject","url": "https://blog-tips.net/blog/image/kouzouka-tenpure.png","height": "360","width": "480"}},
+{"@type": "HowToStep","name": "リッチリザルトテストでチェック","url": "https://blog-tips.net/blog/mt/howto-jason.html#step6","itemListElement": [{"@type": "HowToDirection","text": "完了しましたら、再構築をしてデータを反映させ、リッチリザルトテストでチェックするとよいでしょう。ちなみに、このページについては「記事」と「ぱんくずリスト」、「ハウツー」を設定してみました。"}],"image": {"@type": "ImageObject","url": "https://blog-tips.net/blog/image/json-finish.png","height": "360","width": "480"}}
+],"totalTime": "PT2H"
+}
+</script>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "MovableTypeで構造化データを設定してみました",
+      "image": [
+        "https://blog-tips.net/blog/image/json-article-1200.png"
+       ],
+      "datePublished": "2021-07-21T06:51:28+09:00",
+      "dateModified": "2021-07-21T08:32:39+09:00"
+    }
+</script>
+
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "作り方の研究ブログ",
+        "item": "https://blog-tips.net/blog/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "MTブログ",
+        "item": "https://blog-tips.net/blog/mt/"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "MovableTypeで構造化データを設定してみました"
+      }]
+    }
+</script>
+</body>
+</html>

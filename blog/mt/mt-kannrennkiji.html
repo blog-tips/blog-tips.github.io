@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>MTブログに関連記事一欄の作り方 - 作り方の研究ブログ</title>
+<meta name="description" content="MovableTypeの関連記事一欄の作り方についてご紹介します。" />
+<meta name="keywords" content="mt,関連記事,作り方,MovableType" />
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" href="../entry.css" type="text/css" />
+<link rel="amphtml" href="../amp/mt/mt-kannrennkiji.html">
+<link rel="alternate" href="../rss.xml" type="application/rss+xml" title="作り方の研究ブログ - RSS" />
+<link rel="alternate" href="../atom.xml" type="application/atom+xml" title="作り方の研究ブログ - atom" />
+</head>
+<body>
+<div id="container">
+<div class="breadcrumb"><a href="../index.html">作り方の研究ブログ</a> &gt; <a href="index.html">MTブログ</a> &gt;</div>
+<div id="content">
+<div class="blog" id="267">
+<h1>MTブログに関連記事一欄の作り方</h1>
+<p>当ブログはMovableTypeを利用しているのですが、カスタマイズ性にすぐれているCMSですので、エントリーの直下に関連記事一欄を設置することにしました。<br />
+MTブログの関連記事の作り方についてご紹介します。</p>
+<p>Movable Typeに関連記事を設置する方法としては、タグ機能を利用する方法がありますが、当ブログではすでに「タグ」をdescriptionの部分で使用しているので、かわりにトラックバック機能を利用することにしました。</p>
+
+<p>他の作り方と比較すると、トラックバックをする手間がかかりますので若干の面倒くささがあります。<br />
+けれども、自分で関連性の強い記事同士を結びつけることになので、精度についてはかなり高いものとなりますし、ひいてはSEO対策やユーザビリティーの面でも利点があるものと思うのです。</p>
+
+<p>ただ、トラックバック機能をすでに利用している場合は使えませんので、タグ機能などを利用することをおすすめします。</p>
+
+<p>■<b>作り方の手順</b></p>
+
+<p>１．まず、「設定 - コミュニケーション」でトラックバック機能を有効にします。<br />
+さらに、「URLのnofollow指定」を解除し、承認後に公開する設定にします。</p>
+
+<p>２．次に、下のhtmlが記事の直下に表示されるよう、「個別エントリーのテンプレート」や「ブログ記事の詳細モジュール」などの適当な箇所に組み込みます。</p>
+<p>
+&lt;mt:IfPingsActive&gt;<br />
+&lt;div id="trackbacks" class="trackbacks"&gt;<br />
+&lt;div class="trackbacks-header"&gt;関連記事&lt;/div&gt;<br />
+&lt;ul&gt;&lt;mt:Pings&gt;<br />
+&lt;li id="ping-&lt;$mt:PingID$&gt;"&gt;<br />
+&lt;a href="&lt;$mt:PingURL$&gt;"&gt;&lt;$mt:PingTitle$&gt;&lt;/a&gt;&lt;/li&gt;<br />
+&lt;/mt:Pings&gt;&lt;/ul&gt;<br />
+&lt;/div&gt;<br />
+&lt;/mt:IfPingsActive&gt;
+</p>
+<p>３．エントリーの方でも「トラックバックを許可」に設定し、関連していると思われる記事から、その記事へトラックバックします。</p>
+
+<p>４．「コメント - トラックバック」の箇所で、トラックバックされたエントリーを公開に設定します。</p>
+
+<p>５．もし、トラックバックＵＲＬがわからない場合は、一旦、エントリーテンプレートの適当な箇所に&lt;$mt:EntryTrackbackLink$&gt;を挿入してみれば分かります。<br />
+番号順の規則性がありますので、次からはその番号にトラックバックしましょう。</p>
+
+<p>６．上のhtmlタグはスタイルシートを設定してカスタマイズしましょう。</p>
+
+<p><b>当ブログでの例</b></p>
+<p>
+#trackbacks {<br />
+padding:0px 10px 0px 10px;<br />
+} <br />
+#trackbacks ul {<br />
+margin: 12px 0px 12px 0px;<br />
+}<br />
+#trackbacks li {<br />
+ margin: 3px 0px 3px 14px;<br />
+font-size:13px;<br />
+ }<br />
+.trackbacks-header {<br />
+background-color:#F0F0F0;<br />
+font-weight:bold;<br />
+font-size:13px;<br />
+color: #000000;<br />
+padding:3px 5px 3px 10px;<br />
+border:1px solid #cccccc;<br />
+}
+</p><p>そうすると、このような関連記事一欄が表示されるはずです。</p>
+</div>
+ <div id="trackbacks" class="trackbacks">
+ <div class="trackbacks-header">関連記事</div>
+ <ul>
+ <li id="ping-9">
+ <a href="movabletype-moving.html">Movable Typeの引越し方法</a></li>
+ 
+ <li id="ping-10">
+ <a href="mt-wordpress.html">mtブログとwordpressブログの比較</a></li>
+ 
+ <li id="ping-11">
+ <a href="../seo/inner-pageranku.html">内部リンクの多いページはＰＲが上がりやすい</a></li>
+ 
+ <li id="ping-12">
+ <a href="defalult-mt.html">Movable Type のデフォルトテンプレートって複雑ですね...</a></li>
+ </ul><hr />
+ </div>
+<div class="content-nav"><a href="../tips/theory.html">&laquo; ブログは外側で作るのがセオリー</a> | <a href="toukou-nitiji.html">MTで投稿日時をずらしてリンク切れ &raquo;</a></div>
+</div>
+<div id="links">
+<div class="sidetitle">カテゴリ</div>
+<div class="category">
+<ul>
+<li><a href="../how-to/index.html">無料ブログ</a></li>
+<li class="entry-category"><a href="../tips/index.html">ティップス</a></li>
+<li class="entry-category"><a href="index.html">MTブログ</a></li>
+<li class="entry-category"><a href="../seo/index.html">SEO対策</a></li>
+<li class="entry-category"><a href="../homepage/index.html">ホームページ</a></li>
+<li class="entry-category"><a href="../rentalserver/index.html">レンタルサーバー</a></li>
+<li class="entry-category"><a href="../domain/index.html">ドメイン</a></li>
+</ul>
+</div>
+<div class="sidetitle">最近のブログ記事</div>
+<div class="side">
+<ul>
+<li><a href="../domain/godaddy-enyasu.html">ドメインの売却は円安の今がチャンス</a></li>
+<li><a href="../tips/affiliate-regulation.html">消費者庁がアフィリエイト広告の規制強化を検討</a></li>
+<li><a href="../seo/infomation-about.html">運営者情報の公開でSEO対策</a></li>
+<li><a href="xmlrpc.html">Movable Typeの脆弱性をついた攻撃が発生</a></li>
+<li><a href="howto-jason.html">MovableTypeで構造化データを設定してみました</a></li>
+<li><a href="../tips/1920-1080hd.html">フルHD解像度「1920x1080」に最適化</a></li>
+<li><a href="../domain/google-domains.html">Google Domainsに移管してみました</a></li>
+<li><a href="../tips/preload.html">WEBフォントをpreloadするのは止めました</a></li>
+<li><a href="../how-to/mfi-freeblog.html">MFI完全移行による無料ブログへの影響</a></li>
+<li><a href="../tips/gazou-1200px.html">1200pxの画像を用意するしかあるまい</a></li>
+<li><a href="mt-amp.html">当ブログをAMPに対応しました</a></li>
+<li><a href="../tips/howto-kouzouka.html">「HowTo」構造化データの作り方</a></li>
+<li><a href="../tips/line-height.html">見出しh1「line-height」の値はfont-sizeに反比例する</a></li>
+<li><a href="../tips/ipad-768px.html">iPad用のブレイクポイントを「834px」に変更</a></li>
+<li><a href="../tips/h1px.html">見出しh1のフォントサイズは何pxがよいのか？</a></li>
+<li><a href="../tips/kisya-handbook.html">共同通信社「記者ハンドブック」を読む</a></li>
+<li><a href="../tips/just-right.html">ブログ記事の校正に「Just Right!」を購入してみました</a></li>
+<li><a href="../tips/r2tls-jp4-bk.html">REALFORCEのキーボードを「R2TLS-JP4-BK」に買い替えました</a></li>
+<li><a href="../domain/grace-period.html">Grace Periodは何日間なのか？</a></li>
+<li><a href="../tips/gyousyu.html">サイト運営者の業種（日本産業分類）は何になるのか？</a></li>
+</ul>
+</div>
+<div class="sidetitle">リンク</div>
+<div class="side">
+<ul>
+<li><a href="https://www.homepage-tukurikata.com/">ホームページの作り方</a></li>
+<li><a href="../../article/92088644.html">ブログ比較</a></li>
+<li><a href="../../article/117970780.html">ブログ広告での収入</a></li>
+<li><a href="../../article/119971208.html">リスティング広告とは？</a></li>
+</ul></div>
+</div>
+<div id="footer">
+<div class="pagetop"><a href="#container">PageTop▲</a></div>
+<div class="copyright"><ul><li><a href="../archives.html">アーカイブ</a></li><li>&copy;2021 blog-tips.net</li></ul></div>
+<div class="logo"><a href="../index.html">トップページ</a> - <a href="../../index.html">ブログの作り方</a></div>
+</div></div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2336808-36"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2336808-36');
+</script>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "作り方の研究ブログ",
+        "item": "https://blog-tips.net/blog/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "MTブログ",
+        "item": "https://blog-tips.net/blog/mt/"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "MTブログに関連記事一欄の作り方"
+      }]
+    }
+</script>
+</body>
+</html>

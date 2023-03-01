@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>ブログにアフィリエイトhtmlタグの貼り付け方</title>
+<meta name="description" content="このページでは「ブログ,アフィリエイト,html,タグ」について紹介しています。ブログにアフィリエイトhtmlタグの貼り付け方についての情報です。" />
+<meta name="keywords" content="ブログ,アフィリエイト,html,タグ" />
+<meta name="viewport" content="width=device-width" />
+<link rel="alternate" href="../index.rdf" type="application/rss+xml" title="RSS" />
+<link rel="stylesheet" href="../styles-article.css" type="text/css" />
+<link rel="shortcut icon" href="../image/favicon.ico" />
+</head><body>
+<div id="container">
+<main id="content">
+<div class="blog">
+<!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:Trackback="http://madskills.com/public/xml/rss/module/Trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="https://blog-tips.net/article/117679096.html"
+    trackback:ping="http://blog.seesaa.jp/tb/117679096"
+    dc:title="ブログにアフィリエイトhtmlタグの貼り付け方"
+    dc:identifier="https://blog-tips.net/article/117679096.html"
+    dc:description="アフィリエイトを始めると、このhtmlタグはいったいどうやってブログに貼り付ければいいんだろう？と思ってしまいますが、ブログサービスやアフィリエイトタグの種類によっても貼り付け方法が違ってくるようなんです。初心者簡単なブログアフィリエイトタグの貼付方法について調べてみました。"
+    dc:creator="ブログの作り方"
+    dc:subject="ブログアフィリエイト"
+    dc:date="2009-04-17T23:31:21+09:00"
+/>
+</rdf:RDF>
+-->
+<div class="breadcrumb"><a href="../index.html">ブログの作り方 トップ</a> &gt; <a href="../category/4150804-1.html">ブログアフィリエイト</a> &gt;</div>
+<h1>ブログにアフィリエイトhtmlタグの貼り付け方</h1>
+<p>アフィリエイトを始めると、このhtmlタグはいったいどうやってブログに貼り付ければいいんだろう？と思ってしまいますが、ブログサービスやアフィリエイトタグの種類によっても貼り付け方法が違ってくるようなんです。</p><p>初心者簡単なブログアフィリエイトタグの貼付方法について調べてみました。</p><h2>アフィリエイトタグのブログへの貼り付け方</h2><p>ブログサービスによってアフィリエイトタグの貼付方法には違いがありますが、html 編集の自由度が高いブログサービスでないと貼り付けられなかったりもします。</p><p>ヤフーブログや楽天ブログ、ココログやgooブログの場合などhtml編集の自由度がない場合、ほぼアフィリエイトは断念せざるを得ませんが、ヤフーアフィリエイトや楽天アフィリなどの自社サービスは使えたりもします。</p><p>ここではシーサーブログやＦＣ２、ジュゲム、忍者、ライブドアでのアフィリエイトタグ貼付方法について見てみたいと思います。</p><p><b>アフィリエイトタグの構造</b></p><p>一般的な a href なアフィリエイトバナータグには、通常のアンカーテキストに加えて、&lt;img border="0" width="1" height="1" src="" alt=""&gt;などの画像タグが挿入されていることが多いです。</p><p>この画像は縦横の長さが 1px のちっちゃい画像ですので、広告の表示回数をチェックするためだけに設置されているようです。これは一緒に貼り付けておく必要があります。</p><p>このhtmlタグを記事中、サイドバー、もしくは記事下に貼り付けることになるわけですが、通常のリンクタグとかわらないので、「記事中」の場合は記事入力欄にそのまま貼り付ければ表示されます。</p><p>(アドセンスなどのジャバスクリプト型のタグの場合は、自動改行設定をオフにしてhtmlを有効にしないと表示されません。)</p><p>そのほかのサイドバーなどの場所に貼り付ける場合、シーサーブログの場合は「自由形式」、ＦＣ２ブログの場合は、「プラグイン - 公式プラグイン - フリーエリア」など自由に使えるhtmlスペースを利用すると割と簡単です。</p><p>コピペで貼り付けて保存ボタンを押すだけです。</p><hr /><p>広告の位置を微調節したい場合は、任意のdiv要素でくくってあげて、スタイルシートで設定するといいと思います。</p><p>アフィリエイトタグ自体に改変を加えることはできませんが、それを囲む外側の div 要素は変更することができます。</p><p>例１）中央揃え（htmlのみ）<br />
+&lt;div style="text-align:center;"&gt;アフィリエイトタグ&lt;/div&gt;<br /><br />
+例２）スタイルシートを使った中央ぞろえ（html＋CSS）<br />
+&lt;div class="ad"&gt;アフィリエイトタグ&lt;/div&gt;<br /><br />
+.ad {<br />
+text-align:center;<br />
+}<br /><br />
+例３）スタイルシートを使った余白取り（html＋CSS）<br />
+&lt;div class="ad"&gt;&lt;アフィリエイトタグ&gt;&lt;/div&gt;<br /><br />
+.ad {<br />
+padding:10px 10px 10px 10px;<br />
+}<br /><br />
+（※class="ad"の部分は任意の英数小文字です。）<br />
+padding:上 右 下 左;の関係になります。</p>
+<p>スタイルシートについては、<a href="http://www.htmq.com/html/div.shtml" target="_blank" rel="nofollow">&lt;DIV&gt;－HTMLタグリファレンス</a>に詳しく載っていました。</p><hr />
+<p>一般的なアフィリエイトタグの種類としては、グーグルアドセンスなどのJavaScript型アフィリエイトバナーと、エーハチネットなどの a href のアンカーテキスト型アフィリバナーが存在します。</p><p>JavaScript型の場合、ブラウザでオフにしている人には広告が表示されませんが、アンカーテキスト型の場合はブラウザで閲覧される限り必ず表示されます。</p><p>JavaScript型は主にグーグルアドセンスなどのコンテンツマッチ広告ですので、タグの取得方法や貼り付け方などは公式サイトやこちらのページで確認してみてください。</p><p><a href="109280007.html" target="_blank">ブログにグーグルアドセンスを貼る方法</a></p><p>bloggerなどボタンを押すだけで表示されるブログサービスもあるようです。</p><hr /><p><b>アフィリエイトタグの valid html 対応</b></p><p>アフィリエイトタグを html valid にする場合、ほとんどのアフィリエイトサービスでは禁止されていますが、バリューコマースのように、XHTML1.1 に準拠する場合のみ多少の変更ができるサービスもあるようです。</p><p>規約で許可されている限りは変更しない方がぶなんですが、可能の場合もあるかと思いますので、直接問い合わせてみるといいかと思います。</p><p>特にアンカーテキストの内容を変更することは、広告主が嫌がると思うのでやめた方がいいと思います。</p><p><b>過去ログアフィリタグの是非</b></p><p>ブログの場合、過去ログは検索エンジンではヒットすることがほとんどないですし、訪問者のほとんどはトップページやエントリー部分を見ることになるかと思います。</p><p>なので、余計な発リンクを抑えるためにも、SEO的に過去ログからはアフィリエイトタグをはずした方がいいような気もします。</p><p>一般的に、一番ページビューが多いのはトップページで、そこから個別エントリーなどの階層の深いページに行くにつれて極端にページビューが減少するものです。</p><p>けれども、広告への関心の強さの面からみると、トップページよりも階層の深いページの方が関心の強さが強くなります。</p><p>ですので、ブログのトップページにはサイトテーマに最も合った広告を、個別記事にはその個別のコンテンツ内容に合ったアフィリエイトタグを貼り付けておくと効果的だと思います。</p>
+</div>
+<div id="trackback">
+<div class="ttitle">関連記事</div>
+<div class="blogging">
+<ul>
+<li><a href="69786001.html">ブログアフィリエイトASPに登録</a><br />
+ASP とは、ブログアフィリエイトの場合、アフィリエイトサービスの仲介会社のことを指していますが、広告を載せたいブログ運営者と広告を出したい企業を結びつけるサービスのことです。A8ネット やアドセンス...</li>
+<li><a href="93824290.html">アフィリエイトプログラムの広告バナーとrel=nofollow</a><br />
+もしもドロップシッピングではアドワーズ広告の５０００円分プレゼントキャンペーンが開催されているようです。これは広告を出稿しながらアフィリエイトをしたいという人には耳寄り情報ではないかなと思います。  ...</li>
+<li><a href="104073752.html">無料ブログのアフィリエイトのはじめ方</a><br />
+初心者でも簡単にはじめられるという無料ブログのアフィリエイトですが、どんな感じではじめればいいのでしょうか。ブログアフィリエイトのはじめ方についてあれこれしようと思います。  アフィリエイトしやすい無...</li>
+<li><a href="117970780.html">ブログで収入を得る方法</a><br />
+ブログでお金を得て収入を得る方法があるようなんですが、一般的には「アフィリエイト」って呼ばれているようで、主婦の方からビジネスマンの副業など、ちょっとしたお小遣い稼ぎに大人気のようです。「アフィリエイ...</li>
+</ul>
+</div>
+</div>
+
+<div class="navi">
+前の記事:<a href="118762797.html">SEO対策への当ブログの取り組み</a><br />次の記事:<a href="117735509.html">seesaaブログのdescriptionをカスタマイズ</a>
+</div>
+</main><!-- #BeginLibraryItem "/Library/side.lbi" --><aside id="links">
+<div class="sidetitle">カテゴリ</div><div class="side"><ul>
+<li><a href="../category/4150781-1.html">初心者簡単</a></li>
+<li><a href="../category/5449171-1.html">ブログ比較</a></li>
+<li><a href="../category/3754373-1.html">カスタマイズ</a></li>
+<li><a href="../category/4150804-1.html">アフィリエイト</a></li>
+<li><a href="../category/5396661-1.html">SEO対策</a></li>
+<li><a href="../category/6189872-1.html">独自ドメイン</a></li>
+<li><a href="../category/5377733-1.html">アクセス解析とアクセスアップ</a></li>
+<li><a href="../category/5323127-1.html">htmlタグやCSS</a></li>
+<li><a href="../category/5529851-1.html">アドセンス</a></li>
+<li><a href="../category/5323473-1.html">無料ホームページの作り方</a></li>
+<li><a href="../category/4150796-1.html">グーグル無料ツール</a></li>
+<li><a href="../category/5529711-1.html">無料メールアドレスやメルマガ</a></li>
+<li><a href="../category/5529703-1.html">無料ブラウザのＦirefoxとＩＥ</a></li>
+<li><a href="../category/5529606-1.html">ＩＴニュース</a></li>
+</ul></div>
+<div class="sidetitle">ブログの作り方情報</div>
+<div class="side">
+<ul>
+<li><a href="48913125.html">無料メールアドレスの作り方</a></li>
+<li><a href="117970780.html">ブログ広告で収入を得る方法</a></li>
+<li><a href="../hikaku.html">ブログ作りはブログ比較から</a></li>
+<li><a href="92088644.html">ブログ比較の一覧</a></li>
+<li><a href="114655734.html">独自ドメインの取得方法</a></li>
+<li><a href="dokuji-cms.html">CMSでブログを作成する方法</a></li>
+<li><a href="115872348.html">CMS可能な格安レンタルサーバー</a></li>
+<li><a href="112911688.html">FC2ブログの作り方</a></li>
+<li><a href="71878598.html">ＦＣ２ホームページの作り方</a></li>
+<li><a href="110459720.html">さくらのブログの作り方</a></li>
+<li><a href="seesaa.html">Seesaaブログの作り方</a></li>
+<li><a href="107993732.html">シーサーブログを独自ドメイン化</a></li>
+<li><a href="wix.html">WIXでのブログの作り方</a></li>
+<li><a href="53785835.html">ディレクトリ登録のSEO効果</a></li>
+<li><a href="118429340.html">ブログからの集客方法</a></li>
+<li><a href="119971208.html">リスティング広告とは何ですか？</a></li>
+</ul></div>
+<div class="arch"><script type="text/javascript">
+<!--
+function ChangeArchive (sel) {
+if (sel.options[sel.selectedIndex].value != "") {
+location.href = sel.options[sel.selectedIndex].value;
+}
+}
+-->
+</script>
+<select name="MonthArchive" onchange="ChangeArchive(this)" class="archiveselect">
+<option value="">archives</option>
+<option value="../archives/200905-1.html">09/05(15)</option>
+<option value="../archives/200904-1.html">09/04(19)</option>
+<option value="../archives/200903-1.html">09/03(20)</option>
+<option value="../archives/200902-1.html">09/02(9)</option>
+<option value="../archives/200901-1.html">09/01(14)</option>
+<option value="../archives/200812-1.html">08/12(18)</option>
+<option value="../archives/200811-1.html">08/11(19)</option>
+<option value="../archives/200810-1.html">08/10(15)</option>
+<option value="../archives/200809-1.html">08/09(14)</option>
+<option value="../archives/200808-1.html">08/08(8)</option>
+<option value="../archives/200807-1.html">08/07(28)</option>
+<option value="../archives/200806-1.html">08/06(29)</option>
+<option value="../archives/200805-1.html">08/05(33)</option>
+<option value="../archives/200804-1.html">08/04(30)</option>
+<option value="../archives/200803-1.html">08/03(15)</option>
+<option value="../archives/200802-1.html">08/02(19)</option>
+<option value="../archives/200801-1.html">08/01(15)</option>
+<option value="../archives/200712-1.html">07/12(10)</option>
+<option value="../archives/200711-1.html">07/11(10)</option>
+<option value="../archives/200710-1.html">07/10(11)</option>
+<option value="../archives/200709-1.html">07/09(16)</option>
+<option value="../archives/200708-1.html">07/08(10)</option>
+<option value="../archives/200707-1.html">07/07(19)</option></select>
+</div>
+<form action="https://www.google.com/cse" id="cse-search-box">
+    <input type="hidden" name="cx" value="004767610735532938012:_ydsjrf0v8u" />
+    <input type="hidden" name="ie" value="Shift_JIS" />
+    <input type="text" name="q" size="24" />
+    <input type="submit" name="sa" value="検索" />
+</form>
+</aside><!-- #EndLibraryItem --><footer id="footer">
+<div class="pagetop"><a href="#container">PageTop▲</a></div>
+<div class="copyright"><ul><li><a href="../index.html">トップページ</a></li>
+<li><a href="../blog/index.html">ブログ</a></li>
+<li><a href="98359430.html">sitemap</a></li>
+<li><a href="../tag/index.html">tag</a></li>
+<li><a href="110348826.html" rel="nofollow">about</a></li></ul>
+<p>&copy;2009 blog-tips.net</p>
+</div>
+</footer>
+</div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2336808-36"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2336808-36');
+</script>
+</body>
+</html>

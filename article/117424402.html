@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>独自ドメインブログの作り方</title>
+<meta name="description" content="独自ドメインブログの作り方についての情報です。" />
+<meta name="keywords" content="独自ドメイン,ブログ,作り方" />
+<meta name="viewport" content="width=device-width" />
+<link rel="alternate" href="../index.rdf" type="application/rss+xml" title="RSS" />
+<link rel="stylesheet" href="../styles-article.css" type="text/css" />
+<link rel="shortcut icon" href="../image/favicon.ico" />
+</head><body>
+<div id="container">
+<main id="content">
+<div class="blog">
+<!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:Trackback="http://madskills.com/public/xml/rss/module/Trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="https://blog-tips.net/article/117424402.html"
+    trackback:ping="http://blog.seesaa.jp/tb/117424402"
+    dc:title="独自ドメインブログの作り方"
+    dc:identifier="https://blog-tips.net/article/117424402.html"
+    dc:description="当ブログはサブドメインの tukuruzo.seesaa.net から、独自ドメインの blog-tips.net へと移行してみました。独自ドメインブログの作り方は、主に、無料ブログサービスに設定する方法とレンタルサーバーで作る方法の２種類があります。"
+    dc:creator="ブログの作り方"
+    dc:subject="独自ドメインブログ"
+    dc:date="2009-05-13T23:21:44+09:00"
+/>
+</rdf:RDF>
+-->
+<div class="breadcrumb"><a href="../index.html">ブログの作り方</a> &gt; <a href="../category/6189872-1.html">独自ドメインブログ</a> &gt; 独自ドメインブログの作り方</div>
+<h1>独自ドメインブログの作り方</h1>
+<p>当ブログはサブドメインの tukuruzo.seesaa.net から、独自ドメインの blog-tips.net へと移行してみました。</p><p>独自ドメインブログの作り方は、主に、無料ブログサービスに設定する方法とレンタルサーバーで作る方法の２種類があります。</p>
+<h2>無料ブログサービスでの独自ドメイン化の手順</h2>
+<p>無料ブログで独自ドメインを使用する際、主に３種類のパターンがありますが、設定方法自体はどの場合でもそれほど変わりません。</p><p><b>【<span class="red">①</span>独自ドメインを取得して新規でブログを作成する場合】</b></p><p>まず、無料ブログサービス側から割り当てられるURLを使い、通常どうりにブログを作成します。</p><p>次に、その作成した無料ブログに独自ドメインをホストする形になります。<br />たいてい、半日程度で設定が反映されて、取得した独自ドメインでブログが表示されるようになります。</p>
+<ol>
+<li>独自ドメインの取得</li>
+<li>ネームサーバーやDNSの設定</li>
+<li>無料ブログサービス側の設定</li>
+</ol>
+<p><b>【<span class="red">②</span>既に作成している無料ブログを独自ドメイン化】</b></p>
+<p>当サイトの場合はこちらでした。（Seesaablog）<br />リダイレクト関係は使えないケースが多いので、ウェブマスターツールなどでURLの変更を検索エンジンへ通知することになります。</p><p>当サイトの場合、設定から半日程度で独自ドメインで表示されるようになりましたが、検索エンジン側のインデックスが完全に切り替わるには、２週間程度かかったようです。</p>
+<ol>
+<li>旧サイトをウェブマスターツールに登録</li>
+<li>独自ドメインの取得</li>
+<li>ネームサーバーやDNSの設定</li>
+<li>無料ブログサービス側の設定</li>
+<li>内部リンクのURL変更（絶対リンクの場合）</li>
+<li>外部からの被リンクのurl変更</li>
+<li>ブログランキングなどの登録変更</li>
+<li>新サイトもウェブマスターツールに登録</li>
+<li>旧サイトのウェブマスターツールでURL変更を通知</li>
+</ol>
+<p>リンク関係はすべて新URLへと統一するのがぶなんです。<br />新サイト内には、旧サイトへのリンクがひとつもないようにすることをおすすめします。</p><p>「info:旧サイトのURL」でサイト情報を検索してみて、新しいドメインが表示されていたら移行が完了です。</p><p><img src="../image/ridairekuto-siraberu.png" alt="" width="292" height="178" style="border: solid 1px #000000;" /> </p>
+<p><b>【<span class="red">③</span>既に独自ドメイン化しているブログを違うドメインに変更】</b></p>
+<p>違うドメインへ変更する場合は、旧サイトにアクセスした際、新ドメインへ301リダイレクトされるかどうかを確認しましょう。</p><p>旧ドメインの設定先が必要になるので、レンタルサーバーを契約することになるかと思います。</p>
+<ol>
+<li>旧ドメインを違うサーバーに設定</li>
+<li>新規ドメインをブログに設定</li>
+<li>旧ドメインから新ドメインへ301リダイレクト</li>
+<li>内部リンクの URL 変更（絶対リンクの場合）</li>
+<li>外部からの被リンクの url 変更</li>
+<li>ブログランキングなどの登録変更</li>
+<li>ウェブマスターツールでURL変更を通知</li>
+</ol>
+<p>移行が完了したあとも、リダイレクト関係はすっと保持しておくことをおすすめします。</p>
+<p>ちなみに、無料ブログサービスに設定した場合、取得したドメインでのメールアドレスも使うには、別にレンタルサーバーを借りる必要があります。</p>
+<p>■関連記事</p>
+<ul>
+<li><a href="114655734.html">独自ドメインの取得方法</a></li>
+<li><a href="111935258.html" target="_blank">独自ドメインが使えるブログサービス</a></li>
+<li><a href="107993732.html" target="_blank">シーサーブログを独自ドメイン化</a></li>
+<li><a href="109140216.html" target="_blank">ブログの独自ドメイン名の作り方</a></li>
+<li><a href="115303558.html" target="_blank">jpドメインの個人情報や料金比較</a></li>
+<li><a href="110414784.html" target="_blank">独自ドメインとサブドメインの見分け方</a></li>
+<li><a href="113741626.html" target="_blank">ムームーDNSのカスタム設定(シーサーブログ)</a></li>
+<li><a href="117359724.html" target="_blank">独自ドメイン化ブログのインデックス推移</a></li>
+</ul>
+<h3>内部リンクの修正方法</h3>
+<p>当サイトを例にすると、シーサーブログで独自ドメイン化したあとは、カテゴリや過去ログのURLはすべて自動で修正されます。</p><p>けれども、記事中などに自分で貼り付けた内部リンクは、新しいURLへ手動で修正する必要があります。</p><p>修正する際、記事エントリーの「1234.html」の部分や「article」のフォルダ部分は同一の状態で出力されるので、ドメイン部分を変更することになります。</p><p>例：）<br />http://tukuruzo.seesaa.net/article/1234.html<br />を<br />https://blog-tips.net/article/1234.html<br />に修正</p><p>このブログの場合は、記事中などの tukuruzo.seesaa.net の部分を見つけて blog-tips.net へと変更しました。</p><p>リンク切れチェックの無料ツールなどを使うとわりと簡単です。<br /><a href="112251425.html" target="_blank">ブログのリンク切れとリダイレクトのSEO対策</a></p><p>新ドメインブログからみて、旧ドメインへのリンクは外部リンク扱いになりますが、現在のこのブログの外部リンクをチェックしてみると、こんな感じで旧サイトへのリンクがけっこうあります。</p><p><img src="../image/naibulink-tukuruzo.jpg" width="215" height="300" style="border: solid 1px #000000;" alt="ブログの外部リンクをチェック" /></p><p>このブログ内の旧urlへのリンクがなくなったら、自分が管理している関連ブログやランキング登録などの外部からの被リンクもできるだけ新しいurlに変更した方がぶなんです。</p><h3>レンタルサーバーでの独自ドメインブログの作り方</h3><p>取得した独自ドメインを無料ブログサービスでは使わず、自分でレンタルサーバーを利用する場合は、CMSなど何らかのブログ構築ツールをインストールする必要があります。</p><p>ツールとしては、WordPressとMovable typeのふたつに人気が集中していますが、個人での利用の場合は無料で利用することができます。</p><p>無料ブログサービスに設定する場合と比較すると、ソフトのインストール方法やブログのカスタマイズ方法などがむずかしめです。</p><p><a href="113478543.html">CMSブログの作り方</a></p>
+<p>できるだけ、自動インストールに対応しているレンタルサーバーを利用することをおすすめします。</p><p><a href="115872348.html">MTレンタルサーバーの格安情報</a></p>
+</div>
+<div class="navi">
+前の記事:<a href="118876910.html">ブログのhtmlタグを削減してみた</a><br />次の記事:<a href="119485586.html">写真集の作り方</a>
+</div>
+</main><!-- #BeginLibraryItem "/Library/side.lbi" --><aside id="links">
+<div class="sidetitle">カテゴリ</div><div class="side"><ul>
+<li><a href="../category/4150781-1.html">初心者簡単</a></li>
+<li><a href="../category/5449171-1.html">ブログ比較</a></li>
+<li><a href="../category/3754373-1.html">カスタマイズ</a></li>
+<li><a href="../category/4150804-1.html">アフィリエイト</a></li>
+<li><a href="../category/5396661-1.html">SEO対策</a></li>
+<li><a href="../category/6189872-1.html">独自ドメイン</a></li>
+<li><a href="../category/5377733-1.html">アクセス解析とアクセスアップ</a></li>
+<li><a href="../category/5323127-1.html">htmlタグやCSS</a></li>
+<li><a href="../category/5529851-1.html">アドセンス</a></li>
+<li><a href="../category/5323473-1.html">無料ホームページの作り方</a></li>
+<li><a href="../category/4150796-1.html">グーグル無料ツール</a></li>
+<li><a href="../category/5529711-1.html">無料メールアドレスやメルマガ</a></li>
+<li><a href="../category/5529703-1.html">無料ブラウザのＦirefoxとＩＥ</a></li>
+<li><a href="../category/5529606-1.html">ＩＴニュース</a></li>
+</ul></div>
+<div class="sidetitle">ブログの作り方情報</div>
+<div class="side">
+<ul>
+<li><a href="48913125.html">無料メールアドレスの作り方</a></li>
+<li><a href="117970780.html">ブログ広告で収入を得る方法</a></li>
+<li><a href="../hikaku.html">ブログ作りはブログ比較から</a></li>
+<li><a href="92088644.html">ブログ比較の一覧</a></li>
+<li><a href="114655734.html">独自ドメインの取得方法</a></li>
+<li><a href="dokuji-cms.html">CMSでブログを作成する方法</a></li>
+<li><a href="115872348.html">CMS可能な格安レンタルサーバー</a></li>
+<li><a href="112911688.html">FC2ブログの作り方</a></li>
+<li><a href="71878598.html">ＦＣ２ホームページの作り方</a></li>
+<li><a href="110459720.html">さくらのブログの作り方</a></li>
+<li><a href="seesaa.html">Seesaaブログの作り方</a></li>
+<li><a href="107993732.html">シーサーブログを独自ドメイン化</a></li>
+<li><a href="wix.html">WIXでのブログの作り方</a></li>
+<li><a href="53785835.html">ディレクトリ登録のSEO効果</a></li>
+<li><a href="118429340.html">ブログからの集客方法</a></li>
+<li><a href="119971208.html">リスティング広告とは何ですか？</a></li>
+</ul></div>
+<div class="arch"><script type="text/javascript">
+<!--
+function ChangeArchive (sel) {
+if (sel.options[sel.selectedIndex].value != "") {
+location.href = sel.options[sel.selectedIndex].value;
+}
+}
+-->
+</script>
+<select name="MonthArchive" onchange="ChangeArchive(this)" class="archiveselect">
+<option value="">archives</option>
+<option value="../archives/200905-1.html">09/05(15)</option>
+<option value="../archives/200904-1.html">09/04(19)</option>
+<option value="../archives/200903-1.html">09/03(20)</option>
+<option value="../archives/200902-1.html">09/02(9)</option>
+<option value="../archives/200901-1.html">09/01(14)</option>
+<option value="../archives/200812-1.html">08/12(18)</option>
+<option value="../archives/200811-1.html">08/11(19)</option>
+<option value="../archives/200810-1.html">08/10(15)</option>
+<option value="../archives/200809-1.html">08/09(14)</option>
+<option value="../archives/200808-1.html">08/08(8)</option>
+<option value="../archives/200807-1.html">08/07(28)</option>
+<option value="../archives/200806-1.html">08/06(29)</option>
+<option value="../archives/200805-1.html">08/05(33)</option>
+<option value="../archives/200804-1.html">08/04(30)</option>
+<option value="../archives/200803-1.html">08/03(15)</option>
+<option value="../archives/200802-1.html">08/02(19)</option>
+<option value="../archives/200801-1.html">08/01(15)</option>
+<option value="../archives/200712-1.html">07/12(10)</option>
+<option value="../archives/200711-1.html">07/11(10)</option>
+<option value="../archives/200710-1.html">07/10(11)</option>
+<option value="../archives/200709-1.html">07/09(16)</option>
+<option value="../archives/200708-1.html">07/08(10)</option>
+<option value="../archives/200707-1.html">07/07(19)</option></select>
+</div>
+<form action="https://www.google.com/cse" id="cse-search-box">
+    <input type="hidden" name="cx" value="004767610735532938012:_ydsjrf0v8u" />
+    <input type="hidden" name="ie" value="Shift_JIS" />
+    <input type="text" name="q" size="24" />
+    <input type="submit" name="sa" value="検索" />
+</form>
+</aside><!-- #EndLibraryItem --><footer id="footer">
+<div class="pagetop"><a href="#container">PageTop▲</a></div>
+<div class="copyright"><ul><li><a href="../index.html">トップページ</a></li>
+<li><a href="../blog/index.html">ブログ</a></li>
+<li><a href="98359430.html">sitemap</a></li>
+<li><a href="../tag/index.html">tag</a></li>
+<li><a href="110348826.html" rel="nofollow">about</a></li></ul>
+<p>&copy;2009 blog-tips.net</p>
+</div>
+</footer>
+</div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2336808-36"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2336808-36');
+</script>
+</body>
+</html>

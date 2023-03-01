@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>無料ブログでテーブルタグ</title>
+<meta name="description" content="無料ブログでテーブルタグについての情報です。" />
+<meta name="keywords" content="テーブル,タグ,ブラウザ" />
+<meta name="viewport" content="width=device-width" />
+<link rel="alternate" href="../index.rdf" type="application/rss+xml" title="RSS" />
+<link rel="stylesheet" href="../styles-article.css" type="text/css" />
+<link rel="shortcut icon" href="../image/favicon.ico" />
+</head><body>
+<div id="container">
+<main id="content">
+<div class="blog">
+<!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:Trackback="http://madskills.com/public/xml/rss/module/Trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="https://blog-tips.net/article/101674014.html"
+    trackback:ping="http://blog.seesaa.jp/tb/101674014"
+    dc:title="無料ブログでテーブルタグ"
+    dc:identifier="https://blog-tips.net/article/101674014.html"
+    dc:description="最近、シーサーブログのＨＴＭＬっていうカテゴリを作ったんですが、はやくも書くことがなくなってきたようなんで、ちょっと無理やりにでもカテゴリの記事数を増加させようと思います。シーサーブログのＨＴＭＬタグカテゴリわけって、少ない記事数だったらＳＥＯ的にまずいっていうようなことを聞いたことがあるのですが、それほど変らないような気もかわりそうな気もしないではないです。でも、やはり、カテゴリが多い方がよく整理されていて、みやすいブログだと思うので、細かいカテゴリわけは必要なんじゃないか..."
+    dc:creator="ブログの作り方"
+    dc:subject="htmlタグやCSS"
+    dc:date="2008-06-27T21:02:08+09:00"
+/>
+</rdf:RDF>
+-->
+<div class="breadcrumb"><a href="../index.html">ブログの作り方 トップ</a> &gt; <a href="../category/5323127-1.html">htmlタグやCSS</a> &gt;</div>
+<h1>無料ブログでテーブルタグ</h1>
+<p>最近、シーサーブログのＨＴＭＬっていうカテゴリを作ったんですが、はやくも書くことがなくなってきたようなんで、ちょっと無理やりにでもカテゴリの記事数を増加させようと思います。</p><p><a href="../category/5323127-1.html">シーサーブログのＨＴＭＬタグ</a></p><p>カテゴリわけって、少ない記事数だったらＳＥＯ的にまずいっていうようなことを聞いたことがあるのですが、それほど変らないような気もかわりそうな気もしないではないです。</p><p>でも、やはり、カテゴリが多い方がよく整理されていて、みやすいブログだと思うので、細かいカテゴリわけは必要なんじゃないかなって思います。</p><p>ところで、テーブルタグなんですが、&lt;table&gt; というタグを使って、表にしたりするタグのようなんです。</p><h2>テーブルタグのブラウザによる表示違い</h2><p>いろいろとテーブルタグの設定方法があるようなんですが、ここでもやはり、ＩＥとファイアーフォックスのブラウザで表示のされ方に違いがあるようなんです。</p>
+<div style="text-align:left;">
+<table style="cellspacing:10px;
+border-collapse:separate;
+border-spacing:10px;
+">
+<tr style="border-collapse:separate;
+border: 10px #7DD5FF outset;
+">
+<td style="margin:10px;
+border-collapse:separate;
+border: 10px #7DD5FF outset;
+"><a href="http://blog.blogmura.com/blog_beginner/" target="_blank"><img src="../image/blog_beginner88_31_nf.gif" alt="ブログ初心者" width="88" height="31" border="0" /></a></td>
+</tr>
+</table></div>
+<p>こんな感じでテーブル枠を立体化させるとファイアーフォックスでみるときれいなんですが、ＩＥで見るとなんだか汚いんです。</p><p>テーブルの枠線や td を border:outset; とかインセットとかに設定すると立体化したりするようなんですが、ブラウザによる見え方の違いがあるようで結構つかいずらいです。</p><p>セルの間にスペースを保つタグなどもＩＥやファイアーフォックスでは対応されていたり、いなかったりで、両方うまく表示されるようにするにはどう設定すればいいかは正直わかりません。</p><p>一般的にはブラウザの占有率から考えてＩＥに合わせるという方法が多いようですが、両方に対応できそうな感じのタグの記述方法はcssでいろいろためしながら設定するしかないように思います。</p><hr /><p>テーブルタグの３大要素は、&lt;table&gt;と&lt;tr&gt;、&lt;td&gt;ですが、見出しも設定したい場合は、&lt;th&gt;を使うといいようです。</p><p>基本的なタグはこんな感じですが、横に升目を増やしたい場合は&lt;td&gt;&lt;/td&gt;を追加して、縦に増やしたい場合は、<span style="color:#980000;">trでくくっているもの</span>自体を増やす感じです。</p>
+<p>&lt;table&gt;<br />
+<span style="color:#980000;">&lt;tr&gt;<br />
+&lt;td&gt;&lt;/td&gt;<br />
+&lt;td&gt;&lt;/td&gt;<br />
+&lt;/tr&gt;</span><br />
+&lt;/table&gt;</p>
+<p>でもこのままでは、表の線が太くなっちゃうんで、cellspacingで間隔をcssで設定するか、もしくはテーブルタグに直接&lt;table border="1" cellspacing="0"&gt;と記入するといい感じになります。</p>
+<table border="1" cellspacing="0">
+<tr>
+<td>テーブル</td>
+<td>タグ</td>
+</tr>
+</table>
+<p>以前にホームページビルダーのお試し版を使用してみたのですが、いまいちサイトの構成自体がこのテーブルタグの使用が多いようで使いずらかった記憶があります。</p><p><a href="90682987.html">無料ホームページの作成ツール</a></p><p>テーブルタグはなるべく表作成などに使用するようにして、無料ブログの全体的な構図？はスタイルシートで設定した方がいいように思います。</p>
+</div>
+<div class="navi">
+前の記事:<a href="101056262.html">Firefox３アドオンのSEO for firefox</a><br />次の記事:<a href="100962415.html">シーサーブログＣＳＳと Firebug</a></div>
+</main><!-- #BeginLibraryItem "/Library/side.lbi" --><aside id="links">
+<div class="sidetitle">カテゴリ</div><div class="side"><ul>
+<li><a href="../category/4150781-1.html">初心者簡単</a></li>
+<li><a href="../category/5449171-1.html">ブログ比較</a></li>
+<li><a href="../category/3754373-1.html">カスタマイズ</a></li>
+<li><a href="../category/4150804-1.html">アフィリエイト</a></li>
+<li><a href="../category/5396661-1.html">SEO対策</a></li>
+<li><a href="../category/6189872-1.html">独自ドメイン</a></li>
+<li><a href="../category/5377733-1.html">アクセス解析とアクセスアップ</a></li>
+<li><a href="../category/5323127-1.html">htmlタグやCSS</a></li>
+<li><a href="../category/5529851-1.html">アドセンス</a></li>
+<li><a href="../category/5323473-1.html">無料ホームページの作り方</a></li>
+<li><a href="../category/4150796-1.html">グーグル無料ツール</a></li>
+<li><a href="../category/5529711-1.html">無料メールアドレスやメルマガ</a></li>
+<li><a href="../category/5529703-1.html">無料ブラウザのＦirefoxとＩＥ</a></li>
+<li><a href="../category/5529606-1.html">ＩＴニュース</a></li>
+</ul></div>
+<div class="sidetitle">ブログの作り方情報</div>
+<div class="side">
+<ul>
+<li><a href="48913125.html">無料メールアドレスの作り方</a></li>
+<li><a href="117970780.html">ブログ広告で収入を得る方法</a></li>
+<li><a href="../hikaku.html">ブログ作りはブログ比較から</a></li>
+<li><a href="92088644.html">ブログ比較の一覧</a></li>
+<li><a href="114655734.html">独自ドメインの取得方法</a></li>
+<li><a href="dokuji-cms.html">CMSでブログを作成する方法</a></li>
+<li><a href="115872348.html">CMS可能な格安レンタルサーバー</a></li>
+<li><a href="112911688.html">FC2ブログの作り方</a></li>
+<li><a href="71878598.html">ＦＣ２ホームページの作り方</a></li>
+<li><a href="110459720.html">さくらのブログの作り方</a></li>
+<li><a href="seesaa.html">Seesaaブログの作り方</a></li>
+<li><a href="107993732.html">シーサーブログを独自ドメイン化</a></li>
+<li><a href="wix.html">WIXでのブログの作り方</a></li>
+<li><a href="53785835.html">ディレクトリ登録のSEO効果</a></li>
+<li><a href="118429340.html">ブログからの集客方法</a></li>
+<li><a href="119971208.html">リスティング広告とは何ですか？</a></li>
+</ul></div>
+<div class="arch"><script type="text/javascript">
+<!--
+function ChangeArchive (sel) {
+if (sel.options[sel.selectedIndex].value != "") {
+location.href = sel.options[sel.selectedIndex].value;
+}
+}
+-->
+</script>
+<select name="MonthArchive" onchange="ChangeArchive(this)" class="archiveselect">
+<option value="">archives</option>
+<option value="../archives/200905-1.html">09/05(15)</option>
+<option value="../archives/200904-1.html">09/04(19)</option>
+<option value="../archives/200903-1.html">09/03(20)</option>
+<option value="../archives/200902-1.html">09/02(9)</option>
+<option value="../archives/200901-1.html">09/01(14)</option>
+<option value="../archives/200812-1.html">08/12(18)</option>
+<option value="../archives/200811-1.html">08/11(19)</option>
+<option value="../archives/200810-1.html">08/10(15)</option>
+<option value="../archives/200809-1.html">08/09(14)</option>
+<option value="../archives/200808-1.html">08/08(8)</option>
+<option value="../archives/200807-1.html">08/07(28)</option>
+<option value="../archives/200806-1.html">08/06(29)</option>
+<option value="../archives/200805-1.html">08/05(33)</option>
+<option value="../archives/200804-1.html">08/04(30)</option>
+<option value="../archives/200803-1.html">08/03(15)</option>
+<option value="../archives/200802-1.html">08/02(19)</option>
+<option value="../archives/200801-1.html">08/01(15)</option>
+<option value="../archives/200712-1.html">07/12(10)</option>
+<option value="../archives/200711-1.html">07/11(10)</option>
+<option value="../archives/200710-1.html">07/10(11)</option>
+<option value="../archives/200709-1.html">07/09(16)</option>
+<option value="../archives/200708-1.html">07/08(10)</option>
+<option value="../archives/200707-1.html">07/07(19)</option></select>
+</div>
+<form action="https://www.google.com/cse" id="cse-search-box">
+    <input type="hidden" name="cx" value="004767610735532938012:_ydsjrf0v8u" />
+    <input type="hidden" name="ie" value="Shift_JIS" />
+    <input type="text" name="q" size="24" />
+    <input type="submit" name="sa" value="検索" />
+</form>
+</aside><!-- #EndLibraryItem --><footer id="footer">
+<div class="pagetop"><a href="#container">PageTop▲</a></div>
+<div class="copyright"><ul><li><a href="../index.html">トップページ</a></li>
+<li><a href="../blog/index.html">ブログ</a></li>
+<li><a href="98359430.html">sitemap</a></li>
+<li><a href="../tag/index.html">tag</a></li>
+<li><a href="110348826.html" rel="nofollow">about</a></li></ul>
+<p>&copy;2009 blog-tips.net</p>
+</div>
+</footer>
+</div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2336808-36"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2336808-36');
+</script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>無料ブログの検索窓の作り方</title>
+<meta name="description" content="無料ブログの検索窓の作り方についての情報です。ヤフー検索窓やライブサーチ、グーグルの設置方法についてご紹介しています。" />
+<meta name="keywords" content="検索窓,作り方,グーグル,ヤフー" />
+<meta name="viewport" content="width=device-width" />
+<link rel="alternate" href="../index.rdf" type="application/rss+xml" title="RSS" />
+<link rel="stylesheet" href="../styles-article.css" type="text/css" />
+<link rel="shortcut icon" href="../image/favicon.ico" />
+</head><body>
+<div id="container">
+<main id="content">
+<div class="blog">
+<!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:Trackback="http://madskills.com/public/xml/rss/module/Trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="https://blog-tips.net/article/51802791.html"
+    trackback:ping="http://blog.seesaa.jp/tb/51802791"
+    dc:title="無料ブログの検索窓の作り方"
+    dc:identifier="https://blog-tips.net/article/51802791.html"
+    dc:description="ブログ作成のあと検索サイトに登録したら、次に無料の検索窓(search box)の設置をした方がいいかと思います。無料ブログの検索窓の作り方、特にyahooやgoogle,msnの設置方法についてみてみたいと思います。"
+    dc:creator="ブログの作り方"
+    dc:subject="初心者簡単な作り方"
+    dc:date="2008-01-16T00:08:06+09:00"
+/>
+</rdf:RDF>
+-->
+<div class="breadcrumb"><a href="../index.html">ブログの作り方 トップ</a> &gt; <a href="88088512.html">ブログの作り方の簡単手順</a> &gt;</div><h1>無料ブログの検索窓の作り方</h1>
+<p>ブログに検索窓を作る際、yahooやgoogle,あるいはmsnなどが無料で提供している検索窓（search box）を設置しておくことをおすすめします。</p><p>無料ブログサービスでも、たいていはデフォルトで設置されている検索窓を利用できますが、検索エンジンが提供している検索窓の方が高機能です。</p>
+<h2>ヤフー検索窓の作り方</h2>
+<p>シーサーブログの場合、検索窓のhtmlタグを取得してコンテンツの自由欄にはりつければ表示されます。</p><p>まず、ヤフーの検索窓の設置についてですが、以下のページから登録するとよいでしょう。</p><p>yahoo公式サイト：<br />
+<a href="https://custom.search.yahoo.co.jp/" target="_blank" rel="nofollow">カスタムサーチ - Yahoo!検索</a></p><p>まず検索窓の種類を選択しますが、「ウェブ全体を検索するタイプ」と、「自分のサイト内も検索するタイプ」の２種類があると思います。</p><p>ブログ内検索はヤフーにインデックスされているページがなければ検索結果には表示されませんので、作りたてのブログの場合はしばらくの間何も表示結果には表示されないかもしれません。</p>
+<h3>文字コードの選択</h3>
+<p>むずかしいのはコードの選択とドメイン名だと思いますが、ブラウザに「ソースの表示」の箇所があるので、最初のメタタグあたりをみれば文字コードがどれかわかると思います。</p><p><img src="../image/see-html.png" width="320" height="248" alt="ソースの表示" class="ccc" /></p><p>ちなみに、シーサーブログの場合は<span style="font-size:large;">Shift_JIS</span>です。</p><p><img src="../image/shift-jis.png" width="320" height="150" alt="Shift_JIS" class="ccc" /></p><p>次にドメイン名ですが、ブログのURLから最初の「Http://」と最後の「/」をのぞいたサブドメイン名（hoge.example.com）で登録したらうまくいきました。</p><p><img src="../image/yahoo-mado.png" width="320" height="312" alt="検索窓" class="ccc" /></p><p>●とか▲の箇所を対応させるものにコピペで書き換えればタグが完成します。あとは、タグ全部をコピペでシーサーブログのデザインのコンテンツの自由欄にはりつけて設定を保存し、再構築すれば表示されるはずです。</p><p>うまくいかなければ、ウェブ検索のみの簡単な方で作成してみるとよいでしょう。</p>
+<h4>検索窓のＨＴＭＬ</h4>
+<p>シーサーブログの場合、XHTML1.0 Transitionalという書き方で書かれていますが、上で作成した検索窓のHTMLタグとは若干書き方が違うようなので、気になる方は修正してみるといいといいと思います。</p><p>ヤフーのヘルプをみてみると、HTMLのタグの変更自体は問題ないようです。<br />
+<a href="https://www.yahoo-help.jp/app/answers/detail/p/595/a_id/42728" target="_blank" rel="nofollow">Yahoo!検索ヘルプ</a></p><p>具体的には、例えば＞で終わっている箇所を /＞にするとかそんな感じです。こちらのサイトで変更箇所を指摘してくれるので、そのとおりに修正すればよいでしょう。<br />
+<a href="http://openlab.ring.gr.jp/k16/htmllint/htmllinte.html" target="_blank" rel="nofollow">ＨＴＭＬチェック</a></p><p>これは特にやってもやらなくても意味はありませんが、検索エンジン対策にはなるかと思います。</p>
+<h2>ＭＳＮの検索窓の作り方</h2><p>ＭＳＮ公式サイト：<br />
+<del>ＭＳＮ検索窓の設置</del>（<span class="red">終了</span>）</p><p><img src="../image/msn-mado.png" width="320" height="64" alt="ライブサーチの検索窓" class="ccc" /></p>
+<p>次にＭＳＮのライブサーチの検索窓「Live Search Box」を設置してみました。ためしに適当に入力して検索してみましたが、まだあまりインデックスはされていないようです。</p><p>こちらのＭＳＮの検索ボックスはJavaScriptのようなもので書かれているようなので、詳しくはわかりませんが、高性能な感じがあります。ＭＳＮのライブサーチの場合はけっこう上級者向けの検索窓のようです。</p><p>ＭＳＮの場合、自分のドメインを登録しておくと、まず「自分のドメインのみ」の検索結果を出してくれて、それでも情報がないときにウェブ全体を検索できる機能となっています。</p><p>デザインもロゴなどの表示はなくシンプルなのでいいと思います。ヤフーの検索窓と同じ手順でやれば設置できるかと思います。</p>
+<h2>グーグルの検索窓の作り方</h2><p>google検索窓の公式サイト：<br />
+<a href="https://cse.google.com/cse/?hl=ja" target="_blank" rel="nofollow">Google カスタム検索</a></p><!-- SiteSearch Google -->
+<center>
+<form method="get" action="http://www.google.co.jp/search">
+<table bgcolor="#FFFFFF"><tr valign="top"><td>
+<a href="http://www.google.co.jp/" rel="nofollow">
+<img src="../../www.google.com/logos/Logo_40wht.gif" 
+border="0" alt="Google" align="middle" /></a>
+</td>
+<td>
+<input type="text" name="q" size="31" maxlength="255" value="" />
+<input type="hidden" name="ie" value="Shift_JIS" />
+<input type="hidden" name="oe" value="Shift_JIS" />
+<input type="hidden" name="hl" value="ja" />
+<input type="submit" name="btnG" value="Google 検索" />
+<font size="-1">
+<input type="hidden" name="domains" value="tukuruzo.seesaa.net" /><br />
+<input type="radio" name="sitesearch" value="" /> WWW を検索 
+<input type="radio" name="sitesearch" value="http://tukuruzo.seesaa.net" checked="checked" />「ブログの作り方」を検索
+</font>
+</td></tr></table>
+</form>
+</center>
+<!-- SiteSearch Google --><p>次にグーグルの検索窓の作り方ですが、ヤフーと同じで文字コードやドメイン名を書き換えるだけです。</p><p>グーグルの場合、無料版ではロゴなどを消すことができませんが、グーグルアドセンスの<a href="96373721.html">アドセンス検索窓</a>を設置すると、背景の色やロゴなどもカスタマイズできます。</p><p>このグーグルアドセンスは自分のブログに広告なども表示でき、そこから収益をえることができるシステムですが、検索窓の検索結果欄の広告をクリックした際にも収益を得ることができるようです。</p></div>
+<div id="trackback">
+<div class="ttitle">関連記事</div>
+<div class="blogging">
+<ul>
+<li><a href="96373721.html">アドセンスの検索窓がリニューアル</a><br />
+グーグルアドセンスのアドセンス検索窓がリニューアルしたとのことなので、さっそく使用してみました。  このアドセンス検索まどはいろいろな改良がされて、かっこいい検索窓になったようです。  グーグルの検索...</li>
+<li><a href="70976416.html">Ｗ３Ｃvalidなヤフー検索窓の作成</a><br />
+Ｗ３ＣっていうところでＨＴＭＬの書き方をきめているようですけど、このＷ３Ｃの規格にかなった形式でＨＴＭＬを書いていくと若干ＳＥＯ的にもいいようです。  自分のブログのＨＴＭＬがこのＷ３Ｃの規格にあって...</li>
+<li><a href="72738318.html">検索窓の設置に関するＨＴＭＬ</a><br />
+検索窓の設置方法でいまだによくわからないのは、検索窓のＨＴＭＬの形式についてです。ちなみに、このブログのＨＴＭＬはXHTML 1.0 Transitionalという形式でかかれているようです。これはデ...</li>
+<li><a href="117305637.html">ブログにヤフーカスタムサーチを設置</a><br />ブログを作成するとデフォルトで検索窓がついていますが、シーサーブログの場合はもともとヤフー検索と連動している検索窓になっているようです。  そのほかにも、自分でカスタマイズな検索窓を設置しようと思った...</li></ul>
+</div>
+</div>
+<div class="navi">
+前の記事:<a href="78707603.html">検索エンジンのＪＯＹ</a><br />次の記事:<a href="78787351.html">グーグルＲＳＳフィード追加ボタンの作り方</a>
+</div>　
+</main><!-- #BeginLibraryItem "/Library/side.lbi" --><aside id="links">
+<div class="sidetitle">カテゴリ</div><div class="side"><ul>
+<li><a href="../category/4150781-1.html">初心者簡単</a></li>
+<li><a href="../category/5449171-1.html">ブログ比較</a></li>
+<li><a href="../category/3754373-1.html">カスタマイズ</a></li>
+<li><a href="../category/4150804-1.html">アフィリエイト</a></li>
+<li><a href="../category/5396661-1.html">SEO対策</a></li>
+<li><a href="../category/6189872-1.html">独自ドメイン</a></li>
+<li><a href="../category/5377733-1.html">アクセス解析とアクセスアップ</a></li>
+<li><a href="../category/5323127-1.html">htmlタグやCSS</a></li>
+<li><a href="../category/5529851-1.html">アドセンス</a></li>
+<li><a href="../category/5323473-1.html">無料ホームページの作り方</a></li>
+<li><a href="../category/4150796-1.html">グーグル無料ツール</a></li>
+<li><a href="../category/5529711-1.html">無料メールアドレスやメルマガ</a></li>
+<li><a href="../category/5529703-1.html">無料ブラウザのＦirefoxとＩＥ</a></li>
+<li><a href="../category/5529606-1.html">ＩＴニュース</a></li>
+</ul></div>
+<div class="sidetitle">ブログの作り方情報</div>
+<div class="side">
+<ul>
+<li><a href="48913125.html">無料メールアドレスの作り方</a></li>
+<li><a href="117970780.html">ブログ広告で収入を得る方法</a></li>
+<li><a href="../hikaku.html">ブログ作りはブログ比較から</a></li>
+<li><a href="92088644.html">ブログ比較の一覧</a></li>
+<li><a href="114655734.html">独自ドメインの取得方法</a></li>
+<li><a href="dokuji-cms.html">CMSでブログを作成する方法</a></li>
+<li><a href="115872348.html">CMS可能な格安レンタルサーバー</a></li>
+<li><a href="112911688.html">FC2ブログの作り方</a></li>
+<li><a href="71878598.html">ＦＣ２ホームページの作り方</a></li>
+<li><a href="110459720.html">さくらのブログの作り方</a></li>
+<li><a href="seesaa.html">Seesaaブログの作り方</a></li>
+<li><a href="107993732.html">シーサーブログを独自ドメイン化</a></li>
+<li><a href="wix.html">WIXでのブログの作り方</a></li>
+<li><a href="53785835.html">ディレクトリ登録のSEO効果</a></li>
+<li><a href="118429340.html">ブログからの集客方法</a></li>
+<li><a href="119971208.html">リスティング広告とは何ですか？</a></li>
+</ul></div>
+<div class="arch"><script type="text/javascript">
+<!--
+function ChangeArchive (sel) {
+if (sel.options[sel.selectedIndex].value != "") {
+location.href = sel.options[sel.selectedIndex].value;
+}
+}
+-->
+</script>
+<select name="MonthArchive" onchange="ChangeArchive(this)" class="archiveselect">
+<option value="">archives</option>
+<option value="../archives/200905-1.html">09/05(15)</option>
+<option value="../archives/200904-1.html">09/04(19)</option>
+<option value="../archives/200903-1.html">09/03(20)</option>
+<option value="../archives/200902-1.html">09/02(9)</option>
+<option value="../archives/200901-1.html">09/01(14)</option>
+<option value="../archives/200812-1.html">08/12(18)</option>
+<option value="../archives/200811-1.html">08/11(19)</option>
+<option value="../archives/200810-1.html">08/10(15)</option>
+<option value="../archives/200809-1.html">08/09(14)</option>
+<option value="../archives/200808-1.html">08/08(8)</option>
+<option value="../archives/200807-1.html">08/07(28)</option>
+<option value="../archives/200806-1.html">08/06(29)</option>
+<option value="../archives/200805-1.html">08/05(33)</option>
+<option value="../archives/200804-1.html">08/04(30)</option>
+<option value="../archives/200803-1.html">08/03(15)</option>
+<option value="../archives/200802-1.html">08/02(19)</option>
+<option value="../archives/200801-1.html">08/01(15)</option>
+<option value="../archives/200712-1.html">07/12(10)</option>
+<option value="../archives/200711-1.html">07/11(10)</option>
+<option value="../archives/200710-1.html">07/10(11)</option>
+<option value="../archives/200709-1.html">07/09(16)</option>
+<option value="../archives/200708-1.html">07/08(10)</option>
+<option value="../archives/200707-1.html">07/07(19)</option></select>
+</div>
+<form action="https://www.google.com/cse" id="cse-search-box">
+    <input type="hidden" name="cx" value="004767610735532938012:_ydsjrf0v8u" />
+    <input type="hidden" name="ie" value="Shift_JIS" />
+    <input type="text" name="q" size="24" />
+    <input type="submit" name="sa" value="検索" />
+</form>
+</aside><!-- #EndLibraryItem --><footer id="footer">
+<div class="pagetop"><a href="#container">PageTop▲</a></div>
+<div class="copyright"><ul><li><a href="../index.html">トップページ</a></li>
+<li><a href="../blog/index.html">ブログ</a></li>
+<li><a href="98359430.html">sitemap</a></li>
+<li><a href="../tag/index.html">tag</a></li>
+<li><a href="110348826.html" rel="nofollow">about</a></li></ul>
+<p>&copy;2009 blog-tips.net</p>
+</div>
+</footer>
+</div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2336808-36"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2336808-36');
+</script>
+</body>
+</html>

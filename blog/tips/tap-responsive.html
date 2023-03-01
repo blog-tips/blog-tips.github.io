@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>タップしやすいスマホサイトの作り方 - 作り方の研究ブログ</title>
+<meta name="description" content="サイドバーのメニューリストなどをタップしやすくするレスポンシブウェブデザインの方法についてご紹介しています。" />
+<meta name="keywords" content="タップしやすい,レスポンシブ,作り方" />
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" href="../entry.css" type="text/css" />
+<link rel="amphtml" href="../amp/tips/tap-responsive.html">
+<link rel="alternate" href="../rss.xml" type="application/rss+xml" title="作り方の研究ブログ - RSS" />
+<link rel="alternate" href="../atom.xml" type="application/atom+xml" title="作り方の研究ブログ - atom" />
+</head>
+<body>
+<div id="container">
+<div class="breadcrumb"><a href="../index.html">作り方の研究ブログ</a> &gt; <a href="index.html">ティップス</a> &gt;</div>
+<div id="content">
+<div class="blog" id="682">
+<h1>タップしやすいスマホサイトの作り方</h1>
+<p>以前、レスポンシブウェブデザインで当ブログをスマホに対応したのですが、当初はこのような形で表示していました。</p><p><img src="../image/previous-responsive.png" alt="" width="320" height="412" style="border: solid 1px #ccc;" /></p> <p>これはサイドバーのフロートを解除し、widthの横幅をスマホのサイズに合わせただけなのですが、この状態ではサイドバーのメニューリストがクリックしずらいため、再度カスタマイズすることにしました。</p><p>これまでの経緯についてはこちらのページをご参照ください。<br />→ <a href="../mt/medhia-kueri.html">当ブログをスマホに対応しました。</a></p><p>最終的には以下のようになったのですが、多少はユーザビリティーが向上したと感じております。</p><p><img src="../image/last-responsive.png" alt="" width="320" height="415" style="border: solid 1px #ccc;" /></p><p>今回はこのカスタマイズ手順についてご紹介いたします。</p><p>■<b>アンダーラインを取る</b></p><p>まずは、text-decoration:none;でアンダーラインをとっておきましょう。スマホ用サイトの場合、メニューリストなどのリンクにはアンダーラインを付けない方がすっきりして見やすいです。</p><p>.example ul li a{text-decoration:none;}</p><p><img src="../image/side-underline.png" alt="" width="320" height="413" style="border: solid 1px #ccc;" /></p> <p>■<b>リストタグを区切る</b></p><p>次に、このメニューリストに区切り線を入れておくとタップしやすくなります。リスト要素にborder-bottomで下線を入れておくとよいでしょう。</p><p>.example ul li {border-bottom:1px solid #ccc;}</p><p><img src="../image/list-kugiri.png" alt="" width="320" height="420" style="border: solid 1px #ccc;" /></p><p>■<b>リストタグの上下の幅を広げる</b></p><p>次に、上下にpaddingを加えてリストタグに高さを出しましょう。</p><p>.example ul li a{padding: 7px 0;display:block;text-decoration:none;}</p><p><img src="../image/list-padding.png" alt="" width="320" height="522" style="border: solid 1px #ccc;" /></p><p>クリック可能領域を広げるため「aタグ」にpaddingを加えておりますが、aタグはインライン要素のため、「display:block;」を付けて上下にpaddingを設定しております。</p><p>この「display:block;」を加えることにより、リスト領域全体をタップできるようになります。</p><p><img src="../image/tap.png" alt="" width="320" height="149" style="border: solid 1px #ccc;" /></p><p>■<b>カテゴリをブロック化</b></p><p>次に、カテゴリのリストの箇所に、categoryなどの適当なIDやclassを割り当ててフロート（横並び）します。リスト要素にはwidth:50%;などの幅を設定して二つづつ表示されるようにします。</p><p>.category {width:100%;}<br />.category ul li {width:50%;float:left;text-indent:14px;}</p><p>また、適当な箇所に「clear:both;」を差し込んでフロートを解除しておきましょう。</p><p><img src="../image/category-block.png" alt="" width="320" height="301" style="border: solid 1px #ccc;" /></p><p>当サイトの場合、メニュータイトルの部分に「clear:both;」を入れました。</p><p>■<b>ブロックに枠線を付ける</b></p><p>また、ボックスに枠線を付けますが、一旦、カテゴリの要素全体を「枠線の色」で背景を塗りつぶします。</p><p>.category {background-color:#ccc;}</p><p><img src="../image/category-gray.png" alt="" width="320" height="207" style="border: solid 1px #ccc;" /></p><p>次に、aタグにmarginを0.5px程度指定して背景色を白に設定すれば、marginの隙間から背景色の灰色が表示されますので、枠線と同じように表示されます。</p><p>.category ul li a{margin:0.5px;background-color:#fff;display:block;height:50px;line-height: 50px;}</p><p><img src="../image/category-white.png" alt="" width="320" height="212" style="border: solid 1px #ccc;" /></p><p>最後に、背景色を白ではなく、適当な色に設定すればぶなんに表示されるはずです。</p><p>.category ul li a{background-color:#F7F6EB;}</p><p><img src="../image/category-brown.png" alt="" width="320" height="208" style="border: solid 1px #ccc;" /></p><p>より詳細なCSSについては、当サイトのHTMLソースとスタイルシートをご参照ください。上記のようにカスタマイズするとタップしやすくなり、スマホで閲覧時のユーザビリティーの向上につながるかもしれません。</p>
+</div>
+<div class="content-nav"><a href="googlebot-mobile.html">&laquo; モバイルサイトマップの送信でエラーになる現象</a> | <a href="renaissance.html">今年で当ブログ開設から10年目を迎えます &raquo;</a></div>
+</div>
+<div id="links">
+<div class="sidetitle">カテゴリ</div>
+<div class="category">
+<ul>
+<li><a href="../how-to/index.html">無料ブログ</a></li>
+<li class="entry-category"><a href="index.html">ティップス</a></li>
+<li class="entry-category"><a href="../mt/index.html">MTブログ</a></li>
+<li class="entry-category"><a href="../seo/index.html">SEO対策</a></li>
+<li class="entry-category"><a href="../homepage/index.html">ホームページ</a></li>
+<li class="entry-category"><a href="../rentalserver/index.html">レンタルサーバー</a></li>
+<li class="entry-category"><a href="../domain/index.html">ドメイン</a></li>
+</ul>
+</div>
+<div class="sidetitle">最近のブログ記事</div>
+<div class="side">
+<ul>
+<li><a href="../domain/godaddy-enyasu.html">ドメインの売却は円安の今がチャンス</a></li>
+<li><a href="affiliate-regulation.html">消費者庁がアフィリエイト広告の規制強化を検討</a></li>
+<li><a href="../seo/infomation-about.html">運営者情報の公開でSEO対策</a></li>
+<li><a href="../mt/xmlrpc.html">Movable Typeの脆弱性をついた攻撃が発生</a></li>
+<li><a href="../mt/howto-jason.html">MovableTypeで構造化データを設定してみました</a></li>
+<li><a href="1920-1080hd.html">フルHD解像度「1920x1080」に最適化</a></li>
+<li><a href="../domain/google-domains.html">Google Domainsに移管してみました</a></li>
+<li><a href="preload.html">WEBフォントをpreloadするのは止めました</a></li>
+<li><a href="../how-to/mfi-freeblog.html">MFI完全移行による無料ブログへの影響</a></li>
+<li><a href="gazou-1200px.html">1200pxの画像を用意するしかあるまい</a></li>
+<li><a href="../mt/mt-amp.html">当ブログをAMPに対応しました</a></li>
+<li><a href="howto-kouzouka.html">「HowTo」構造化データの作り方</a></li>
+<li><a href="line-height.html">見出しh1「line-height」の値はfont-sizeに反比例する</a></li>
+<li><a href="ipad-768px.html">iPad用のブレイクポイントを「834px」に変更</a></li>
+<li><a href="h1px.html">見出しh1のフォントサイズは何pxがよいのか？</a></li>
+<li><a href="kisya-handbook.html">共同通信社「記者ハンドブック」を読む</a></li>
+<li><a href="just-right.html">ブログ記事の校正に「Just Right!」を購入してみました</a></li>
+<li><a href="r2tls-jp4-bk.html">REALFORCEのキーボードを「R2TLS-JP4-BK」に買い替えました</a></li>
+<li><a href="../domain/grace-period.html">Grace Periodは何日間なのか？</a></li>
+<li><a href="gyousyu.html">サイト運営者の業種（日本産業分類）は何になるのか？</a></li>
+</ul>
+</div>
+<div class="sidetitle">リンク</div>
+<div class="side">
+<ul>
+<li><a href="https://www.homepage-tukurikata.com/">ホームページの作り方</a></li>
+<li><a href="../../article/92088644.html">ブログ比較</a></li>
+<li><a href="../../article/117970780.html">ブログ広告での収入</a></li>
+<li><a href="../../article/119971208.html">リスティング広告とは？</a></li>
+</ul></div>
+</div>
+<div id="footer">
+<div class="pagetop"><a href="#container">PageTop▲</a></div>
+<div class="copyright"><ul><li><a href="../archives.html">アーカイブ</a></li><li>&copy;2021 blog-tips.net</li></ul></div>
+<div class="logo"><a href="../index.html">トップページ</a> - <a href="../../index.html">ブログの作り方</a></div>
+</div></div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2336808-36"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2336808-36');
+</script>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "作り方の研究ブログ",
+        "item": "https://blog-tips.net/blog/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "ティップス",
+        "item": "https://blog-tips.net/blog/tips/"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "タップしやすいスマホサイトの作り方"
+      }]
+    }
+</script>
+</body>
+</html>

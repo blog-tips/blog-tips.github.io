@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>ジャバスクリプトによるブログ広告の掲載 - 作り方の研究ブログ</title>
+<meta name="description" content="ジャバスクリプトをブログで利用することの是非について。" />
+<meta name="keywords" content="ジャバスクリプト,ブログ" />
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" href="../entry.css" type="text/css" />
+<link rel="amphtml" href="../amp/tips/javascript.html">
+<link rel="alternate" href="../rss.xml" type="application/rss+xml" title="作り方の研究ブログ - RSS" />
+<link rel="alternate" href="../atom.xml" type="application/atom+xml" title="作り方の研究ブログ - atom" />
+</head>
+<body>
+<div id="container">
+<div class="breadcrumb"><a href="../index.html">作り方の研究ブログ</a> &gt; <a href="index.html">ティップス</a> &gt;</div>
+<div id="content">
+<div class="blog" id="190">
+<h1>ジャバスクリプトによるブログ広告の掲載</h1>
+ <p>ブログでジャバスクリプトを利用する機会はほとんどないと思います。</p><p>HTMLやCSSぐらいまでは必要になるとは思いますが、JavaScriptとかcgi、perlあたりになってくるとプログラムの領域に入ってきますので、既存のツールをブログに導入するケースが多いと思います。</p>
+
+<p>なので、ジャバスクリプトの記述方法を知らなくても、特に困ったことはおこらないと思いますが、ブログのページ内で特定の箇所だけを動かしたい場合には活用してみるとよいかもしれません。</p><p>例えば、画像をクリックすれば、クリックするだけで画像だけが次々に動かすのにはJavascriptが使用されています。この場合、htmlファイルはひとつだけですみますので、画像の枚数分のページを作成する必要はありません。</p><p>これをジャバスクリプトなしで利用するとなると、画像の枚数分だけhtmlファイルを用意して画像を張り付けておき、その画像ページへ移動することになるため、膨大な量のhtmlファイルが必要になります。</p><p>あるいは、マウスオーバーと呼ばれているものになりますが、メニューの箇所などでマウスを表示するだけで詳細な内部リンクを表示させるのに使用されています。つまり、ジャバスクリプトはページ全体を更新することなしに、必要な箇所だけ動かせるメリットがあるわけです。</p><p>ただ、そもそもブラウザ側でOFFにしていたらジャバスクリプトは表示されません。firefox の場合、「ツール - オプション」でチェックをはずせば、簡単に無効にできます。</p><p><img src="../image/jaba.png" alt="" style="border: 1px solid rgb(0, 0, 0);" width="320" height="236" /></p><p>なので、ブログ上で利用したとしても、ユーザーの環境によって機能しないケースもあるというデメリットがあります。</p><p>また、検索エンジンではジャバスクリプトのリンクはたどらないと言われています。</p><p>そのような意味で、メニューの箇所などで内部リンクを作成する場合、できるだけa hrefのリンクを使用し、ジャバスクリプトを使用することは避けた方がよいといわれています。</p><p>逆にいえば、成果報酬型のアフィリエイトリンクをサイト内で掲載したい場合、ジャバスクリプトの形で掲載すれば、そのリンクをたどらないため、アフィリエイトリンクとはみなされなくなるメリットがあります。</p><p>そのような次第で、広告リンクをJavaScriptのリンクに変更してみるのもよいかもしれません。</p><p>これの作りかたとしては、ほにゃらら.jsの外部ファイルにアフィリエイトリンクのタグを記述しておいて、通常のページから呼び出すという方法です。document.write('記述させる文字');にてリンクタグのHTMLを記述しておき、その.jsファイルを検索ロボットがたどらないよう、robots.txtでブロックさせるのがよいと思います。</p><p>アフィリエイトASPではきちんと反映されているようなので、この方法でSEO的な利点があれば、アフィリエイトリンクを掲載することによるSEO対策上のデメリットを軽減させることができると考えております。</p>
+</div>
+<div class="content-nav"><a href="kaisou-index.html">&laquo; ブログの階層が深いとインデックスされにくい</a> | <a href="movie-photo.html">画像や動画コンテンツのブログはグーグル無料ツールも &raquo;</a></div>
+</div>
+<div id="links">
+<div class="sidetitle">カテゴリ</div>
+<div class="category">
+<ul>
+<li><a href="../how-to/index.html">無料ブログ</a></li>
+<li class="entry-category"><a href="index.html">ティップス</a></li>
+<li class="entry-category"><a href="../mt/index.html">MTブログ</a></li>
+<li class="entry-category"><a href="../seo/index.html">SEO対策</a></li>
+<li class="entry-category"><a href="../homepage/index.html">ホームページ</a></li>
+<li class="entry-category"><a href="../rentalserver/index.html">レンタルサーバー</a></li>
+<li class="entry-category"><a href="../domain/index.html">ドメイン</a></li>
+</ul>
+</div>
+<div class="sidetitle">最近のブログ記事</div>
+<div class="side">
+<ul>
+<li><a href="../domain/godaddy-enyasu.html">ドメインの売却は円安の今がチャンス</a></li>
+<li><a href="affiliate-regulation.html">消費者庁がアフィリエイト広告の規制強化を検討</a></li>
+<li><a href="../seo/infomation-about.html">運営者情報の公開でSEO対策</a></li>
+<li><a href="../mt/xmlrpc.html">Movable Typeの脆弱性をついた攻撃が発生</a></li>
+<li><a href="../mt/howto-jason.html">MovableTypeで構造化データを設定してみました</a></li>
+<li><a href="1920-1080hd.html">フルHD解像度「1920x1080」に最適化</a></li>
+<li><a href="../domain/google-domains.html">Google Domainsに移管してみました</a></li>
+<li><a href="preload.html">WEBフォントをpreloadするのは止めました</a></li>
+<li><a href="../how-to/mfi-freeblog.html">MFI完全移行による無料ブログへの影響</a></li>
+<li><a href="gazou-1200px.html">1200pxの画像を用意するしかあるまい</a></li>
+<li><a href="../mt/mt-amp.html">当ブログをAMPに対応しました</a></li>
+<li><a href="howto-kouzouka.html">「HowTo」構造化データの作り方</a></li>
+<li><a href="line-height.html">見出しh1「line-height」の値はfont-sizeに反比例する</a></li>
+<li><a href="ipad-768px.html">iPad用のブレイクポイントを「834px」に変更</a></li>
+<li><a href="h1px.html">見出しh1のフォントサイズは何pxがよいのか？</a></li>
+<li><a href="kisya-handbook.html">共同通信社「記者ハンドブック」を読む</a></li>
+<li><a href="just-right.html">ブログ記事の校正に「Just Right!」を購入してみました</a></li>
+<li><a href="r2tls-jp4-bk.html">REALFORCEのキーボードを「R2TLS-JP4-BK」に買い替えました</a></li>
+<li><a href="../domain/grace-period.html">Grace Periodは何日間なのか？</a></li>
+<li><a href="gyousyu.html">サイト運営者の業種（日本産業分類）は何になるのか？</a></li>
+</ul>
+</div>
+<div class="sidetitle">リンク</div>
+<div class="side">
+<ul>
+<li><a href="https://www.homepage-tukurikata.com/">ホームページの作り方</a></li>
+<li><a href="../../article/92088644.html">ブログ比較</a></li>
+<li><a href="../../article/117970780.html">ブログ広告での収入</a></li>
+<li><a href="../../article/119971208.html">リスティング広告とは？</a></li>
+</ul></div>
+</div>
+<div id="footer">
+<div class="pagetop"><a href="#container">PageTop▲</a></div>
+<div class="copyright"><ul><li><a href="../archives.html">アーカイブ</a></li><li>&copy;2021 blog-tips.net</li></ul></div>
+<div class="logo"><a href="../index.html">トップページ</a> - <a href="../../index.html">ブログの作り方</a></div>
+</div></div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2336808-36"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2336808-36');
+</script>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "作り方の研究ブログ",
+        "item": "https://blog-tips.net/blog/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "ティップス",
+        "item": "https://blog-tips.net/blog/tips/"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "ジャバスクリプトによるブログ広告の掲載"
+      }]
+    }
+</script>
+</body>
+</html>

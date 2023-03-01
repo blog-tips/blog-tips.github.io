@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>リンクタグをCSSでブログカスタマイズ</title>
+<meta name="description" content="このページでは「リンクタグ,CSS,ブログカスタマイズ」について紹介しています。リンクタグをCSSでブログカスタマイズについての情報です。" />
+<meta name="keywords" content="リンクタグ,CSS,ブログカスタマイズ" />
+<meta name="viewport" content="width=device-width" />
+<link rel="alternate" href="../index.rdf" type="application/rss+xml" title="RSS" />
+<link rel="stylesheet" href="../styles-article.css" type="text/css" />
+<link rel="shortcut icon" href="../image/favicon.ico" />
+</head><body>
+<div id="container">
+<main id="content">
+<div class="blog">
+<!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:Trackback="http://madskills.com/public/xml/rss/module/Trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="https://blog-tips.net/article/117105233.html"
+    trackback:ping="http://blog.seesaa.jp/tb/117105233"
+    dc:title="リンクタグをCSSでブログカスタマイズ"
+    dc:identifier="https://blog-tips.net/article/117105233.html"
+    dc:description="今日のブログカスタマイズは、リンクタグの色彩をスタイルシートの a:hover や a:visited を使ってカスタマイズしようと思います。訪問したことのあるリンクの色が変わるとか、リンクタグにカーソルを合わせると浮き上がるとかのCSSですが、訪問したことのあるリンク(a:visited)を何色にすればいいのかが若干難しかったりです。"
+    dc:creator="ブログの作り方"
+    dc:subject="ブログカスタマイズ"
+    dc:date="2009-04-09T00:25:04+09:00"
+/>
+</rdf:RDF>
+-->
+<div class="breadcrumb"><a href="../index.html">ブログの作り方 トップ</a> &gt; <a href="../category/3754373-1.html">ブログカスタマイズ</a> &gt;</div>
+<h1>リンクタグをCSSでブログカスタマイズ</h1>
+<p>今日のブログカスタマイズは、リンクタグの色彩をスタイルシートの a:hover や a:visited を使ってカスタマイズしようと思います。</p><p>訪問したことのあるリンクの色が変わるとか、リンクタグにカーソルを合わせると浮き上がるとかのCSSですが、訪問したことのあるリンク(a:visited)を何色にすればいいのかが若干難しかったりです。</p>
+
+ <h2>リンクタグ a:hover や a:visited の CSS</h2>
+<p>リンクタグをカスタマイズする際のスタイルシートですが、訪問前後で色彩が変わるとか、リンクにポインタをのせると色が変わるとかの設定を指定するといいみたいです。</p><p><a href="http://www.tagindex.com/stylesheet/link/color.html" target="_blank" rel="nofollow">リンクの文字色を指定する - TAG index</a>を参照してみますと、４種類ぐらい設定するのが一般的なようです。</p>
+<ul>
+<li>a:link { color: #カラーコード; } - 未訪問のリンク</li>
+<li>a:visited { color: #カラーコード; } - 訪問済みリンク</li>
+<li>a:hover { color: #カラーコード; } - ポイント時のリンク</li>
+<li>a:active { color: #カラーコード; } - 選択中のリンク</li>
+</ul>
+<p>ちなみに、CSS記入時はこの順番でないと機能しない場合もあるようです。</p>
+<hr />
+<p>このなかで、a:active というのがよくわかんないんですが、たぶん、リンクをクリックした瞬間の色彩？のことだろうと思うんで、設定してもあんまし意味ないんじゃないかなって気もします。</p><p>未訪問の a:link はデフォルトでたいていは設定されているので、a:visited と a:hover だけでも追加すれば、ブログの印象も若干違ってくるはずです。 </p>
+
+<h3>オーソドックスな a:visited と a:hover リンク</h3>
+<p>この a:visited と a:hover のリンクですが、ポイントをのせた時の a:hover の場合は、たいていアンダーラインが浮き上がるような設定になっているケースが多いようです。</p><p>ポイントをのせた時にアンダーラインが付く a:hover のスタイルシート設定はこんな感じです。</p><p>a:hover {<br />
+color: #003366;<br />
+text-decoration:underline;<br />
+}
+</p>
+<p>これは、リンクの装飾(text-decoration)をアンダーライン(underline)でお願いしますって意味だと思います。color: #003366; の部分は色彩で、この数字の場合は青になります。</p>
+<hr />
+<p>次に訪問済みリンクの a:visited の場合ですが、日本のニュースサイトでみてみると、たいていは訪問前が青、訪問後を紫の設定に指定しているケースが多いです。</p>
+<p>ぶなんな紫色での設定はこんな感じのスタイルシートになります。</p><p>a:visited{<br />
+color:#705188;<br />
+}
+</p>
+<p>ちなみに、<a href="102404001.html">色彩ツール</a>で採取してみると、ヤフーニュースの紫は濃い目の #941d55、グーグル検索結果の紫は #551a8b での設定になっています。</p><p>でも、海外のニュースサイトの場合は紫ではなく、訪問前の a:link よりも薄い青色で設定しているケースが多いようです。</p><p><img src="../image/cnn.png" width="288" height="79" alt="海外のa:visitedリンクの設定" class="ccc" /></p><p>結局のところ、このブログのリンクタグはこんな感じのスタイルシートで設定してみました。</p><p>a {<br />
+font-weight:bold;<br />
+color:#003366;<br />
+text-decoration:none;<br />
+}<br />
+a:visited {<br />
+color:#705188;<br />
+}<br />
+a:hover {<br />
+text-decoration:underline;<br />
+}
+</p><p>サイドバーやフッターのリンクにも個別にCSSを設定している場合、スタイルシートで最後にでてきたやつに反応するので、それぞれ個別に設定されることをおすすめします。</p>
+<p>ちなみに、スタイルシートではなく、リンクタグの html に関してはこちらにも、、</p><p><a href="100615403.html">リンクタグのhtml</a></p><p>外窓表示で開く際の target="_blank" 付きのリンクタグやnofollow などの属性、アンカーテキストについて書いてます。</p>
+</div>
+<div id="trackback">
+<div class="ttitle">関連記事</div>
+<div class="blogging">
+<ul>
+<li><a href="66304701.html">リンクタグの作り方</a><br />
+ブログでリンクをしようと思ったとき、リンクタグの作り方はけっこう覚えておいた方がいいと思います。  例えば、あなたのブログからわたしのブログへリンクをはる方法を考えてみましょう！
+</li>
+</ul>
+</div>
+</div>
+
+<div class="navi">
+前の記事:<a href="116963581.html">ブログのタグタイトルをSEOカスタマイズ</a><br />次の記事:<a href="117305637.html">ブログにヤフーカスタムサーチを設置</a>
+</div>
+</main><!-- #BeginLibraryItem "/Library/side.lbi" --><aside id="links">
+<div class="sidetitle">カテゴリ</div><div class="side"><ul>
+<li><a href="../category/4150781-1.html">初心者簡単</a></li>
+<li><a href="../category/5449171-1.html">ブログ比較</a></li>
+<li><a href="../category/3754373-1.html">カスタマイズ</a></li>
+<li><a href="../category/4150804-1.html">アフィリエイト</a></li>
+<li><a href="../category/5396661-1.html">SEO対策</a></li>
+<li><a href="../category/6189872-1.html">独自ドメイン</a></li>
+<li><a href="../category/5377733-1.html">アクセス解析とアクセスアップ</a></li>
+<li><a href="../category/5323127-1.html">htmlタグやCSS</a></li>
+<li><a href="../category/5529851-1.html">アドセンス</a></li>
+<li><a href="../category/5323473-1.html">無料ホームページの作り方</a></li>
+<li><a href="../category/4150796-1.html">グーグル無料ツール</a></li>
+<li><a href="../category/5529711-1.html">無料メールアドレスやメルマガ</a></li>
+<li><a href="../category/5529703-1.html">無料ブラウザのＦirefoxとＩＥ</a></li>
+<li><a href="../category/5529606-1.html">ＩＴニュース</a></li>
+</ul></div>
+<div class="sidetitle">ブログの作り方情報</div>
+<div class="side">
+<ul>
+<li><a href="48913125.html">無料メールアドレスの作り方</a></li>
+<li><a href="117970780.html">ブログ広告で収入を得る方法</a></li>
+<li><a href="../hikaku.html">ブログ作りはブログ比較から</a></li>
+<li><a href="92088644.html">ブログ比較の一覧</a></li>
+<li><a href="114655734.html">独自ドメインの取得方法</a></li>
+<li><a href="dokuji-cms.html">CMSでブログを作成する方法</a></li>
+<li><a href="115872348.html">CMS可能な格安レンタルサーバー</a></li>
+<li><a href="112911688.html">FC2ブログの作り方</a></li>
+<li><a href="71878598.html">ＦＣ２ホームページの作り方</a></li>
+<li><a href="110459720.html">さくらのブログの作り方</a></li>
+<li><a href="seesaa.html">Seesaaブログの作り方</a></li>
+<li><a href="107993732.html">シーサーブログを独自ドメイン化</a></li>
+<li><a href="wix.html">WIXでのブログの作り方</a></li>
+<li><a href="53785835.html">ディレクトリ登録のSEO効果</a></li>
+<li><a href="118429340.html">ブログからの集客方法</a></li>
+<li><a href="119971208.html">リスティング広告とは何ですか？</a></li>
+</ul></div>
+<div class="arch"><script type="text/javascript">
+<!--
+function ChangeArchive (sel) {
+if (sel.options[sel.selectedIndex].value != "") {
+location.href = sel.options[sel.selectedIndex].value;
+}
+}
+-->
+</script>
+<select name="MonthArchive" onchange="ChangeArchive(this)" class="archiveselect">
+<option value="">archives</option>
+<option value="../archives/200905-1.html">09/05(15)</option>
+<option value="../archives/200904-1.html">09/04(19)</option>
+<option value="../archives/200903-1.html">09/03(20)</option>
+<option value="../archives/200902-1.html">09/02(9)</option>
+<option value="../archives/200901-1.html">09/01(14)</option>
+<option value="../archives/200812-1.html">08/12(18)</option>
+<option value="../archives/200811-1.html">08/11(19)</option>
+<option value="../archives/200810-1.html">08/10(15)</option>
+<option value="../archives/200809-1.html">08/09(14)</option>
+<option value="../archives/200808-1.html">08/08(8)</option>
+<option value="../archives/200807-1.html">08/07(28)</option>
+<option value="../archives/200806-1.html">08/06(29)</option>
+<option value="../archives/200805-1.html">08/05(33)</option>
+<option value="../archives/200804-1.html">08/04(30)</option>
+<option value="../archives/200803-1.html">08/03(15)</option>
+<option value="../archives/200802-1.html">08/02(19)</option>
+<option value="../archives/200801-1.html">08/01(15)</option>
+<option value="../archives/200712-1.html">07/12(10)</option>
+<option value="../archives/200711-1.html">07/11(10)</option>
+<option value="../archives/200710-1.html">07/10(11)</option>
+<option value="../archives/200709-1.html">07/09(16)</option>
+<option value="../archives/200708-1.html">07/08(10)</option>
+<option value="../archives/200707-1.html">07/07(19)</option></select>
+</div>
+<form action="https://www.google.com/cse" id="cse-search-box">
+    <input type="hidden" name="cx" value="004767610735532938012:_ydsjrf0v8u" />
+    <input type="hidden" name="ie" value="Shift_JIS" />
+    <input type="text" name="q" size="24" />
+    <input type="submit" name="sa" value="検索" />
+</form>
+</aside><!-- #EndLibraryItem --><footer id="footer">
+<div class="pagetop"><a href="#container">PageTop▲</a></div>
+<div class="copyright"><ul><li><a href="../index.html">トップページ</a></li>
+<li><a href="../blog/index.html">ブログ</a></li>
+<li><a href="98359430.html">sitemap</a></li>
+<li><a href="../tag/index.html">tag</a></li>
+<li><a href="110348826.html" rel="nofollow">about</a></li></ul>
+<p>&copy;2009 blog-tips.net</p>
+</div>
+</footer>
+</div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2336808-36"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2336808-36');
+</script>
+</body>
+</html>

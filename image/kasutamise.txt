@@ -1,0 +1,298 @@
+<% content.header -%>
+<!-- Content -->
+
+
+
+
+①ナビの部分
+
+
+
+①－①　記事のナビ部分
+
+<% if:page_name eq 'article' -%>
+
+<div class="navi">
+<% if:previous_article -%><a href="<% previous_article.page_url %>">&lt;&lt;</a> <a href="<% previous_article.page_url %>"><% previous_article.subject | tag_break %></a> | <% /if -%>
+<a href="<% blog.page_url %>">TOP</a>
+<% if:next_article -%> | <a href="<% next_article.page_url %>"><% next_article.subject | tag_break %></a> <a href="<% next_article.page_url %>">&gt;&gt;</a><% /if -%>
+</div>
+
+<% /if -%>
+
+①－②　過去ログのナビ部分
+
+<% if:page_name eq 'archive' -%>
+
+<div class="navi">
+<% if:archive_page_name eq 'month' -%>
+<% if:previous_archive -%><a href="<% previous_archive.page_url %>">&lt;&lt;</a> <a href="<% previous_archive.page_url %>"><% previous_archive.createstamp | date_format("%Y年%m月") %></a> | <% /if -%><a href="<% blog.page_url %>">TOP</a><% if:next_archive -%> | <a href="<% next_archive.page_url %>"><% next_archive.createstamp | date_format("%Y年%m月") %></a> <a href="<% next_archive.page_url %>">&gt;&gt;</a><% /if %>
+<% /if %>
+<% if:archive_page_name eq 'mday' %><% /if -%>
+</div>
+
+<% if:archive_page_name eq 'month' -%>
+<% if:pager.need_pager -%>
+<div class="navi">
+<% if:pager.previous_page %><a href="<% archive.page_url(pager.previous_page) %>"><% /if %>&lt;&lt;<% if:pager.previous_page %></a><% /if %><% loop:list_pager %> <% if:current_page ne pager_number %><a href="<% archive.page_url(pager_number)%>"><% /if %><% pager_number %><% if:current_page ne pager_number %></a><% /if %><% /loop %> <% if:pager.next_page %><a href="<% archive.page_url(pager.next_page) %>"><% /if %>&gt;&gt;<% if:pager.next_page %></a><% /if %>
+</div>
+<% /if -%>
+<% /if -%>
+
+<% /if -%>
+
+①－③カテゴリのナビ部分
+
+<% if:page_name eq 'category' -%>
+<div class="navi">
+<a href="<% blog.page_url %>">TOP</a> / <% category.name %>
+</div>
+<% if:pager.need_pager -%>
+<div class="navi">
+<% if:pager.previous_page %><a href="<% category.page_url(pager.previous_page) %>"><% /if %>&lt;&lt;<% if:pager.previous_page %></a><% /if %><% loop:list_pager %> <% if:current_page ne pager_number %><a href="<% category.page_url(pager_number)%>"><% /if %><% pager_number %><% if:current_page ne pager_number %></a><% /if %><% /loop %> <% if:pager.next_page %><a href="<% category.page_url(pager.next_page) %>"><% /if %>&gt;&gt;<% if:pager.next_page %></a><% /if %>
+</div>
+<% /if -%>
+
+<% /if -%>
+
+<% loop:list_article -%>
+
+
+
+
+
+
+
+
+
+
+②ブログ本体の部分
+
+
+
+<div class="blog">
+
+<!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:Trackback="http://madskills.com/public/xml/rss/module/Trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="<% article.page_url | xml %>"
+    trackback:ping="<% article.tb_url | xml %>"
+    dc:title="<% article.subject | nl2br | tag_strip | xml | inside_comment %>"
+    dc:identifier="<% article.page_url | xml %>"
+    dc:description="<% article.get_excerpt | nl2br | tag_strip | xml | inside_comment | text_summary(240) %>"
+    dc:creator="<% article.nickname | nl2br | tag_strip | xml | inside_comment %>"
+    dc:subject="<% article_category.name | nl2br | tag_strip | xml | inside_comment %>"
+    dc:date="<% article.createstamp | date_format("%Y-%m-%dT%H:%M:%S+09:00") %>"
+/>
+</rdf:RDF>
+-->
+
+
+②－①日付の部分
+
+
+<% if:with_date %><h2 class="date"><% article.createstamp | date_format("%Y年%m月%d日") %></h2><% /if %>
+
+<div class="blogbody">
+
+②－②記事タイトルの部分
+
+<h3 class="title"><a href="<% article.page_url %>" class="title"><% article.subject %></a></h3>
+
+
+
+
+<% if:page_name eq 'article' -%>
+
+
+②－③個別記事の本文の部分
+
+<div class="text"><% if:diet_log %><% include:article_diet_file %><% /if %><% article.entire_body | bodyfilter(article_info,blog) %>
+
+②－④個別記事のタグの部分
+
+<% if:list_tag %><div class="tag-word">タグ：<% loop:list_tag %><a href="<% blog.tag_url(tag) %>"><% tag.word %></a> <% /loop %></div><% /if %>
+
+②ー⑤カテゴリや過去ログの記事本文
+
+<% else -%>
+<div class="text"><% if:diet_log %><% include:article_diet_file %><% /if %><% article.first_body | bodyfilter(article_info,blog) %>
+
+②ー⑥カテゴリや過去ログのタグの部分
+
+<% if:list_tag %><div class="tag-word">タグ：<% loop:list_tag %><a href="<% blog.tag_url(tag) %>"><% tag.word %></a> <% /loop %></div><% /if %>
+<% /if -%>
+
+
+②ー⑦ブックマークサービスの部分
+
+<% if:blog.bookmark_service %>
+<script type="text/javascript" language="javascript" charset="utf-8"><!--
+seesaa_bookmark_services = "<% blog.bookmark_service %>";
+seesaa_article_page_url = "<% article.page_url %>";
+seesaa_article_subject = "<% article.subject | jsescape | tag_strip %>";
+seesaa_blog_url = "<% site_info.blog_url %>";
+//--></script>
+<script type="text/javascript" language="JavaScript" charset="utf-8" src="<% site_info.blog_url %>/js/bookmark.js"></script>
+<% /if %>
+</div>
+
+②ー⑧投稿者名の部分
+
+<div class="posted">posted by <% article.nickname %> at <% article.createstamp | date_format("%H:%M") -%>
+
+②ー⑨天気の部分
+
+<% if:article_weather -%>
+| <% article_weather.state %> <% article_weather.weather_emoji -%>
+<% /if -%>
+
+<% if:diet_log -%>
+| <% if:diet_log.condition == -2 %>絶不調<img src="<% site_info.blog_url %>/img/icon/5.gif" width="16" height="17" border="0" alt="絶不調" align="absmiddle" /><% /if -%>
+<% if:diet_log.condition == -1 %>不調<img src="<% site_info.blog_url %>/img/icon/4.gif" width="16" height="17" border="0" alt="不調" align="absmiddle" /><% /if -%>
+<% if:diet_log.condition == 0 %>普通<img src="<% site_info.blog_url %>/img/icon/3.gif" width="16" height="17" border="0" alt="普通" align="absmiddle" /><% /if -%>
+<% if:diet_log.condition == 1 %>好調<img src="<% site_info.blog_url %>/img/icon/2.gif" width="16" height="17" border="0" alt="好調" align="absmiddle" /><% /if -%>
+<% if:diet_log.condition == 2 %>絶好調<img src="<% site_info.blog_url %>/img/icon/1.gif" width="16" height="17" border="0" alt="絶好調" align="absmiddle" /><% /if -%>
+<% /if -%>
+
+
+②－⑩コメント数の部分
+
+
+<% if:article.accept_comment_show -%>
+| <a href="<% article.page_url %>#comment">Comment(<% article.children_count | __or__ | echo('0') %>)</a>
+<% /if -%>
+
+②－⑩トラックバック数の部分
+
+<% if:article.accept_tb_show %>
+| <a href="<% article.page_url %>#trackback">TrackBack(<% article.tb_count | __or__ | echo('0') %>)</a>
+<% /if -%>
+
+②ー⑪カテゴリ名の部分
+
+<% if:style.disp_category %>| <a href="<% article_category.page_url %>"><% article_category.name %></a><% /if %>
+</div>
+
+</div>
+
+</div>
+<% /loop -%>
+
+
+
+
+
+
+
+
+
+③記事下のナビの部分
+
+
+
+
+
+<% if:page_name eq 'category' -%>
+<% if:pager.need_pager -%>
+
+</pre><div class="navi">
+<% if:pager.previous_page %><a href="<% category.page_url(pager.previous_page) %>"><% /if %>&lt;&lt;<% if:pager.previous_page %></a><% /if %><% loop:list_pager %> <% if:current_page ne pager_number %><a href="<% category.page_url(pager_number)%>"><% /if %><% pager_number %><% if:current_page ne pager_number %></a><% /if %>&nbsp;<% /loop %><% if:pager.next_page %><a href="<% category.page_url(pager.next_page) %>"><% /if %>&gt;&gt;<% if:pager.next_page %></a><% /if %>
+</div>
+<% /if -%>
+<% /if -%>
+
+<% if:page_name eq 'archive' -%>
+<% if:archive_page_name eq 'month' -%>
+<% if:pager.need_pager -%>
+<div class="navi">
+<% if:pager.previous_page %><a href="<% archive.page_url(pager.previous_page) %>"><% /if %>&lt;&lt;<% if:pager.previous_page %></a><% /if %><% loop:list_pager %> <% if:current_page ne pager_number %><a href="<% archive.page_url(pager_number)%>"><% /if %><% pager_number %><% if:current_page ne pager_number %></a><% /if %>&nbsp;<% /loop %><% if:pager.next_page %><a href="<% archive.page_url(pager.next_page) %>"><% /if %>&gt;&gt;<% if:pager.next_page %></a><% /if %>
+</div>
+<% /if -%>
+<% /if -%>
+<% /if -%>
+
+
+
+④コメントやトラックバック記入欄の部分
+
+
+
+
+<% if:page_name eq 'article' -%>
+<% if:individual_article.accept_comment_show -%>
+<div id="comments">
+
+<a name="comment"></a>
+
+<div class="comments-head">この記事へのコメント</div>
+
+<% loop:list_individual_article_children -%>
+<div class="comments-body">
+<div class="text"><% comment.body | html | tag_strip | nl2br | clickable('target="_blank" rel="nofollow"') %></div>
+<div class="comments-post">Posted by <% if:comment.homepage %><a href="<% comment.homepage | html | tag_strip %>" target="_blank" rel="nofollow"><% comment.writer | html | tag_strip %></a><% else %><% comment.writer | html | tag_strip %><% /if %> at <% comment.createstamp | date_format('%Y年%m月%d日 %H:%M') %><br /></div>
+</div>
+<% /loop -%>
+<% if:individual_article.accept_comment_catch -%>
+<div class="comments-head">コメントを書く</div>
+<form action="<% blog.page_url %>pages/user/comments2/regist/input" method="post">
+<div class="comments-body">
+お名前: <% if:blog.ignore_setting.fill_writer %>[必須入力]<% /if %><br />
+<input type="text" name="article_child__writer" size="50" value="" /><br />
+メールアドレス: <% if:blog.ignore_setting.fill_email %>[必須入力]<% /if %><br />
+<input type="text" name="article_child__email" size="50" value="" /><br />
+ホームページアドレス: <% if:blog.ignore_setting.fill_homepage %>[必須入力]<% /if %><br />
+<input type="text" name="article_child__homepage" size="50" value="" /><br />
+コメント: <% if:blog.ignore_setting.fill_body %>[必須入力]<% /if %><br />
+<textarea name="article_child__body" rows="10" cols="45"></textarea><br />
+<input type="hidden" name="article_child__article_id" value="<% individual_article.id %>" />
+<input type="hidden" name="article_id" value="<% individual_article.id %>" />
+<% if:blog.ignore_setting.captcha_comment -%>
+認証コード: [必須入力]<br />
+<img src="<% blog.ignore_setting.page_url_captcha_comment -%>" /><br />
+<input type="text" name="captcha_comment" size="50" value="" /><br />
+※画像の中の文字を半角で入力してください。<br />
+<% /if -%>
+<% if:individual_article.accept_comment_permission_mode -%>
+※ブログオーナーが承認したコメントのみ表示されます。<br />
+<% /if -%>
+<% if:blog.ignore_setting.banascii_comment -%>
+<% /if -%>
+<input name="need_confirm" type="submit" class="input-submit"  value="確認する" /><input name="posted" type="submit" class="input-submit"  value="書き込む" />
+</div>
+</form>
+<% /if -%>
+</div>
+<% /if -%>
+
+<% if:individual_article.accept_tb_show -%>
+<div id="trackback">
+<% if:individual_article.accept_tb_catch -%>
+この記事へのトラックバックURL<br /><% individual_article.tb_url %><br />
+<% if:individual_article.accept_tb_permission_mode -%>
+※ブログオーナーが承認したトラックバックのみ表示されます。<br />
+<% /if -%>
+<% if:blog.ignore_setting.tb_link_lookup -%>
+※言及リンクのないトラックバックは受信されません。<br />
+<% /if -%>
+<% if:blog.ignore_setting.banascii_tb -%>
+<% /if -%>
+<% /if %>
+<hr />
+この記事へのトラックバック<br />
+<% loop:list_individual_article_tb -%>
+<hr />
+<a href="<% tb.url %>" target="_blank" rel="nofollow"><% tb.title | html %></a><br />
+Excerpt: <% tb.excerpt | text_summary | html %><br />
+Weblog: <% tb.blog_name | html %><br />
+Tracked: <% tb.createstamp | date_format('%Y-%m-%d %H:%M') %><br />
+<% /loop -%>
+</div>
+<% /if -%>
+
+
+<% /if -%>
+<!-- /Content -->
+<% content.footer -%>

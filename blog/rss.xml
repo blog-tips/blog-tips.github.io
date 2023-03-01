@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+    <channel>
+        <title>作り方の研究ブログ</title>
+        <link>https://blog-tips.net/blog/</link>
+        <description>ブログの作り方のちっちゃいぶろぐです。</description>
+        <language>ja</language>
+        <copyright>Copyright 2022</copyright>
+        <lastBuildDate>Sat, 19 Nov 2022 14:15:53 +0900</lastBuildDate>
+        <generator>http://www.sixapart.com/movabletype/</generator>
+        <docs>http://www.rssboard.org/rss-specification</docs>
+        
+        <item>
+            <title>ドメインの売却は円安の今がチャンス</title>
+            <description><![CDATA[<p>ドル円の為替が円安に振れてきたので、海外オークションサイトでドメインを売却してきました。</p>]]></description>
+            <link>https://blog-tips.net/blog/domain/godaddy-enyasu.html</link>
+            <guid>https://blog-tips.net/blog/domain/godaddy-enyasu.html</guid>
+            
+                <category domain="http://www.sixapart.com/ns/types#category">ドメイン</category>
+            
+            
+                <category domain="http://www.sixapart.com/ns/types#tag">４文字ドットコムなどの高価値のドメインを売却する予定でしたら、まさに円安の今がチャンス到来といえます。</category>
+            
+            <pubDate>Sat, 19 Nov 2022 14:15:53 +0900</pubDate>
+        </item>
+        
+        <item>
+            <title>消費者庁がアフィリエイト広告の規制強化を検討</title>
+            <description><![CDATA[<p>サイトでアフィリエイトをしている方も多いと思いますが、消費者庁でアフィリエイト広告に関する検討会が開催されたようです。</p>]]></description>
+            <link>https://blog-tips.net/blog/tips/affiliate-regulation.html</link>
+            <guid>https://blog-tips.net/blog/tips/affiliate-regulation.html</guid>
+            
+                <category domain="http://www.sixapart.com/ns/types#category">ティップス</category>
+            
+            
+                <category domain="http://www.sixapart.com/ns/types#tag">消費者庁の方でアフィリエイト広告に関する検討会が開催されたようです。</category>
+            
+            <pubDate>Wed, 02 Feb 2022 00:11:06 +0900</pubDate>
+        </item>
+        
+        <item>
+            <title>運営者情報の公開でSEO対策</title>
+            <description><![CDATA[<p>最近のSEO対策の傾向として、専門性や権威性、信頼性が重要になってきたため、これを機に運営者情報を公開してみました。</p>]]></description>
+            <link>https://blog-tips.net/blog/seo/infomation-about.html</link>
+            <guid>https://blog-tips.net/blog/seo/infomation-about.html</guid>
+            
+                <category domain="http://www.sixapart.com/ns/types#category">SEO対策</category>
+            
+            
+                <category domain="http://www.sixapart.com/ns/types#tag">運営者情報を公開すれば、上位表示しやすくなったともいえますので、可能な限りコンテンツを作成したのが誰なのかの情報を公開しておくことをおすすめします。</category>
+            
+            <pubDate>Fri, 17 Dec 2021 17:52:53 +0900</pubDate>
+        </item>
+        
+        <item>
+            <title>Movable Typeの脆弱性をついた攻撃が発生</title>
+            <description><![CDATA[<p>レンタルサーバー会社から負荷が高くなっているとの連絡があったのですが、Movable Typeの脆弱性をついた攻撃を受けてしまっていたようです。</p>]]></description>
+            <link>https://blog-tips.net/blog/mt/xmlrpc.html</link>
+            <guid>https://blog-tips.net/blog/mt/xmlrpc.html</guid>
+            
+                <category domain="http://www.sixapart.com/ns/types#category">MTブログ</category>
+            
+            
+                <category domain="http://www.sixapart.com/ns/types#tag">サーバー会社から負荷が高くなっているとの連絡があったのですが、Movable Typeの脆弱性をついた攻撃を受けてしまっていたようです。</category>
+            
+            <pubDate>Thu, 11 Nov 2021 09:55:48 +0900</pubDate>
+        </item>
+        
+        <item>
+            <title>MovableTypeで構造化データを設定してみました</title>
+            <description><![CDATA[<p>当ブログではMovableTypeを使用していますが、MTブログでjsonの構造化データを設定してみました。</p>]]></description>
+            <link>https://blog-tips.net/blog/mt/howto-jason.html</link>
+            <guid>https://blog-tips.net/blog/mt/howto-jason.html</guid>
+            
+                <category domain="http://www.sixapart.com/ns/types#category">MTブログ</category>
+            
+            
+                <category domain="http://www.sixapart.com/ns/types#tag">当ブログではMovableTypeを使用していますが、MTブログでjsonの構造化データを作成してみました。</category>
+            
+            <pubDate>Wed, 21 Jul 2021 06:14:09 +0900</pubDate>
+        </item>
+        
+        <item>
+            <title>フルHD解像度「1920x1080」に最適化</title>
+            <description><![CDATA[<p>アクセス解析で解像度の割合を確認してみたのですが、最近のパソコンは「1920x1080」のフルHDが主流になっているようです。</p>]]></description>
+            <link>https://blog-tips.net/blog/tips/1920-1080hd.html</link>
+            <guid>https://blog-tips.net/blog/tips/1920-1080hd.html</guid>
+            
+                <category domain="http://www.sixapart.com/ns/types#category">ティップス</category>
+            
+            
+                <category domain="http://www.sixapart.com/ns/types#tag">シェアが多いフルHD「1920x1080」の解像度にホームページを最適化するのが重要ではないかと思います。</category>
+            
+            <pubDate>Mon, 14 Jun 2021 06:46:28 +0900</pubDate>
+        </item>
+        
+        <item>
+            <title>Google Domainsに移管してみました</title>
+            <description><![CDATA[<p>Google Domainsが日本でも使えるようになっていたため、今回いくつかのドメイン名を移管してみました。</p>]]></description>
+            <link>https://blog-tips.net/blog/domain/google-domains.html</link>
+            <guid>https://blog-tips.net/blog/domain/google-domains.html</guid>
+            
+                <category domain="http://www.sixapart.com/ns/types#category">ドメイン</category>
+            
+            
+                <category domain="http://www.sixapart.com/ns/types#tag">Googleドメインですが、日本でも使えるようになっていたため、今回いくつかのドメイン名を移管してみました。</category>
+            
+            <pubDate>Sun, 30 May 2021 22:32:14 +0900</pubDate>
+        </item>
+        
+        <item>
+            <title>WEBフォントをpreloadするのは止めました</title>
+            <description><![CDATA[<p>今までは&lt;link rel="preload"でWEBフォントを優先してダウンロードしていたのですが、場合によっては逆効果になるのでこれは止めました。</p>]]></description>
+            <link>https://blog-tips.net/blog/tips/preload.html</link>
+            <guid>https://blog-tips.net/blog/tips/preload.html</guid>
+            
+                <category domain="http://www.sixapart.com/ns/types#category">ティップス</category>
+            
+            
+                <category domain="http://www.sixapart.com/ns/types#tag">preloadで意図的にダウンロードするのではなく、ブラウザに任せてしまった方がかえって効率がよいのではないかと思います。</category>
+            
+            <pubDate>Fri, 23 Apr 2021 14:05:22 +0900</pubDate>
+        </item>
+        
+        <item>
+            <title>MFI完全移行による無料ブログへの影響</title>
+            <description><![CDATA[<p>WEB全体がモバイルファースト・インデックス（MFI）へ完全移行する予定となっていますが、無料ブログの場合はどのように対処すればよいのでしょうか？</p>]]></description>
+            <link>https://blog-tips.net/blog/how-to/mfi-freeblog.html</link>
+            <guid>https://blog-tips.net/blog/how-to/mfi-freeblog.html</guid>
+            
+                <category domain="http://www.sixapart.com/ns/types#category">無料ブログ</category>
+            
+            
+                <category domain="http://www.sixapart.com/ns/types#tag">今後のモバイルファースト・インデックス完全移行の影響により、無料ブログでのアクセス数が減少する可能性があると懸念しています。</category>
+            
+            <pubDate>Fri, 09 Apr 2021 19:55:33 +0900</pubDate>
+        </item>
+        
+        <item>
+            <title>1200pxの画像を用意するしかあるまい</title>
+            <description><![CDATA[<p>構造化データでArticleを指定しているページがあるのですが、Seach Consoleから「推奨サイズより大きい画像を指定してください」との警告を受けてしまいました。</p>]]></description>
+            <link>https://blog-tips.net/blog/tips/gazou-1200px.html</link>
+            <guid>https://blog-tips.net/blog/tips/gazou-1200px.html</guid>
+            
+                <category domain="http://www.sixapart.com/ns/types#category">ティップス</category>
+            
+            
+                <category domain="http://www.sixapart.com/ns/types#tag">構造化データでArticleを指定しているページがあるのですが、Seach Consoleから「推奨サイズより大きい画像を指定してください」との警告を受けたので、現在、その修正作業をしています。</category>
+            
+            <pubDate>Sat, 06 Feb 2021 02:17:04 +0900</pubDate>
+        </item>
+        
+        <item>
+            <title>当ブログをAMPに対応しました</title>
+            <description><![CDATA[<p>当ブログをAMPに対応してみたので、Movable Typeで作成したブログをAMPに対応する際の手順についてご紹介します。</p>]]></description>
+            <link>https://blog-tips.net/blog/mt/mt-amp.html</link>
+            <guid>https://blog-tips.net/blog/mt/mt-amp.html</guid>
+            
+                <category domain="http://www.sixapart.com/ns/types#category">MTブログ</category>
+            
+            
+                <category domain="http://www.sixapart.com/ns/types#tag">当ブログをAMPに対応してみましたので、Movable Typeで作成したブログをAMPに対応する方法についてご紹介します。</category>
+            
+            <pubDate>Tue, 19 Jan 2021 06:31:48 +0900</pubDate>
+        </item>
+        
+        <item>
+            <title>「HowTo」構造化データの作り方</title>
+            <description><![CDATA[<p>構造化データの作り方は難しい印象がありましたが、最近ではJavaScript表記の「JSON-LD」が利用できるようなので構造化データに対応してみました。</p>]]></description>
+            <link>https://blog-tips.net/blog/tips/howto-kouzouka.html</link>
+            <guid>https://blog-tips.net/blog/tips/howto-kouzouka.html</guid>
+            
+                <category domain="http://www.sixapart.com/ns/types#category">ティップス</category>
+            
+            
+                <category domain="http://www.sixapart.com/ns/types#tag">最近ではニュース記事やレシピだけではなく、「HowTo」タイプの構造化データも利用できるようなので、ハウツー系ブログを運営されている方は構造化データに対応してみるとよいかもしれません。</category>
+            
+            <pubDate>Fri, 01 Jan 2021 18:20:53 +0900</pubDate>
+        </item>
+        
+        <item>
+            <title>見出しh1「line-height」の値はfont-sizeに反比例する</title>
+            <description><![CDATA[<p>前回、大手メディアの見出しh1フォントサイズについてチェックしましたが、海外サイトでは40～60px程度、日本では24～32pxで設定されているケースが多いようです。</p>]]></description>
+            <link>https://blog-tips.net/blog/tips/line-height.html</link>
+            <guid>https://blog-tips.net/blog/tips/line-height.html</guid>
+            
+                <category domain="http://www.sixapart.com/ns/types#category">ティップス</category>
+            
+            
+                <category domain="http://www.sixapart.com/ns/types#tag">line-heightはフォントサイズが「40px～60px」の場合は「1.1～1.2」程度、「24px～32px」の場合は「1.3～1.5」程度、「16px」の場合は「1.6～1.7」程度がよいと思います。</category>
+            
+            <pubDate>Wed, 16 Dec 2020 00:15:06 +0900</pubDate>
+        </item>
+        
+        <item>
+            <title>iPad用のブレイクポイントを「834px」に変更</title>
+            <description><![CDATA[<p>第７世代のiPadを購入したのですが、以前と比べて画面のサイズが大きくなっており、自サイトを閲覧すると崩れて表示されていました。</p>]]></description>
+            <link>https://blog-tips.net/blog/tips/ipad-768px.html</link>
+            <guid>https://blog-tips.net/blog/tips/ipad-768px.html</guid>
+            
+                <category domain="http://www.sixapart.com/ns/types#category">ティップス</category>
+            
+            
+                <category domain="http://www.sixapart.com/ns/types#tag">今までiPadのブレイクポイントを「768px」で設定しており、ChromeのデベロッパーツールでもiPadが「768px」となっていますが、これでは小さいのではないかと感じたので「834px」に変更しました。</category>
+            
+            <pubDate>Tue, 08 Dec 2020 14:52:00 +0900</pubDate>
+        </item>
+        
+        <item>
+            <title>見出しh1のフォントサイズは何pxがよいのか？</title>
+            <description><![CDATA[<p>最近のニュースメディアはフォントサイズが大きくなってきていますが、特に海外メディアでその傾向が強いと感じています。</p>]]></description>
+            <link>https://blog-tips.net/blog/tips/h1px.html</link>
+            <guid>https://blog-tips.net/blog/tips/h1px.html</guid>
+            
+                <category domain="http://www.sixapart.com/ns/types#category">ティップス</category>
+            
+            
+                <category domain="http://www.sixapart.com/ns/types#tag">自サイトでは見出しタグを「22px～24px」あたりに設定していたのですが、最近の傾向を考えますと、ワンランク上の「26px～28px」で大きめに設定した方がよいのかもしれません。</category>
+            
+            <pubDate>Sun, 29 Nov 2020 15:27:55 +0900</pubDate>
+        </item>
+        
+    </channel>
+</rss>

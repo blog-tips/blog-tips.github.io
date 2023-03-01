@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>シーサーブログの壁紙カスタマイズ</title>
+<meta name="description" content="シーサーブログの壁紙カスタマイズについての情報です。" />
+<meta name="keywords" content="壁紙,カスタマイズ,CSS" />
+<meta name="viewport" content="width=device-width" />
+<link rel="alternate" href="../index.rdf" type="application/rss+xml" title="RSS" />
+<link rel="stylesheet" href="../styles-article.css" type="text/css" />
+<link rel="shortcut icon" href="../image/favicon.ico" />
+</head><body>
+<div id="container">
+<main id="content">
+<div class="blog">
+<!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:Trackback="http://madskills.com/public/xml/rss/module/Trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="https://blog-tips.net/article/65994218.html"
+    trackback:ping="http://blog.seesaa.jp/tb/65994218"
+    dc:title="シーサーブログの壁紙カスタマイズ"
+    dc:identifier="https://blog-tips.net/article/65994218.html"
+    dc:description="シーサーブログのカスタマイズは、けっこう、壁紙で印象がだいぶ違ってきたりするものだと思います。以前にも壁紙カスタマイズについての記事は書いたんですけど、どこかに埋もれてしまってわからなくなってしまったようです。その記事ではテンプレートのことについてと、記事タイトルについて書いたんですけど、この記事ではシーサーブログの壁紙のカスタマイズについて書いてみたいと思います。"
+    dc:creator="ブログの作り方"
+    dc:subject="ブログカスタマイズ"
+    dc:date="2007-11-12T04:07:27+09:00"
+/>
+</rdf:RDF>
+-->
+<div class="breadcrumb"><a href="../index.html">ブログの作り方 トップ</a> &gt; <a href="../category/3754373-1.html">ブログカスタマイズ</a> &gt;</div>
+<h1>シーサーブログの壁紙カスタマイズ</h1>
+<p>シーサーブログのカスタマイズは、けっこう、壁紙で印象がだいぶ違ってきたりするものだと思います。</p><p>以前にも壁紙カスタマイズについての記事は書いたんですけど、どこかに埋もれてしまってわからなくなってしまったようです。</p><p>その記事ではテンプレートのことについてと、記事タイトルについて書いたんですけど、この記事ではシーサーブログの壁紙のカスタマイズについて書いてみたいと思います。</p> <p>ネット上でブログ用の無料素材を検索するといろいろと出てきますが、このブログの場合、無料素材の夢幻華亭さんからもらってきました。</p>
+<p><a href="http://mugenkatei.fem.jp/" target="_blank">無料素材の夢幻華亭</a></p>
+<p>シーサーブログでダウンロードした壁紙を使用する際はこんな手順になりますが、ほかのブログサービスでもだいたいは同じような感じです。</p>
+<ol>
+<li>パソコンに画像を保存（画像の上で右クリックー画像を保存）</li>
+<li>保存した画像を自分のブログにアップロード（記事投稿ーファイルマネージャー）</li>
+<li>アップロードした画像のＵＲＬをスタイルシート（デザインーデザイン一覧）に指定</li>
+</ol>
+<p>アップロードした画像のＵＲＬはファイルマネージャーの画像の元ファイルというＵＲＬのことです。</p><p>スタイルシートでヘッダーならバナーのところ、フッターならフッター部分のバックグラウンドＵＲＬのところに差し込むといいです。</p><p>わたしのブログの場合、ヘッダーの部分にダウンロードしたさかなの画像をはりつけていますので、これはバナー部分のバックグラウンドＵＲＬにあたります。</p><p>#banner{<br />
+background-image:url(<span style="color:#650000;">/image/ayu-850.jpg</span>);<br />
+background-repeat:no-repeat;<br />
+background-position: 0px 0px;<br />
+height:90px;<br />
+color: #000000;<br />
+padding:10px 0px 0px 30px;<br />
+text-align: left;<br />
+}</p><p>こんな感じで保存して再構築すれば画像が表示されます。正しく表示されない場合はheightの高さをひろげたりするといいと思います。</p>
+<p>ブログのどの部分がスタイルシートで同じ場所に対応するかについては、こちらの方に記事にしてます。</p>
+<p><a href="100962415.html" target="_blank">シーサーブログＣＳＳと Firebug</a></p>
+<hr />
+<p>ヘッダーではなく、ブログの背景画像として設定する場合は body の部分に指定することになりますが、テキスト部分にも画像が表示されてしまう場合は、同時にcontainerの部分の背景を白に設定しておくといいです。</p>
+<p>body {<br />
+background-image: url(<br />
+http://画像のurl);<br />
+background-repeat: repeat;<br />
+}<br /><br />
+#container{<br />
+background-color:#ffffff;<br />
+}
+</p>
+<p>背景画像にグラデーション素材を自分で作成して設定する方法はこちらを、、<br />
+<a href="110596464.html" target="_blank">ブログにグラデーションな背景画像の作り方</a></p>
+<p>そのほか、シーサーブログではフォトライブラリーとコラボしてるんで、無料で壁紙画像を使用することができ、スタイルシートが自動的に出力されますので設定方法も割と初心者簡単です。</p>
+<p><img src="../image/kabegami.png" width="320" height="144" alt="フォトライブラリーでの壁紙" class="ccc" /></p>
+<p>シーサーにログインした状態で、上の画像の箇所から入っていくと、画像の範囲などを選択するだけで、ブログのスタイルシートが出力されます。</p>
+<p>無料素材の場合はどこも、直接リンクするのはタブーのようなので十分に気をつけた方がいいと思います。</p>
+</div>
+<div id="trackback">
+<div class="ttitle">関連記事</div>
+<div class="blogging">
+<ul>
+<li><a href="102611026.html">シーサーブログでフッターカスタマイズ</a><br />
+無料ブログのシーサーブログでいろいろやってるんですが、フッターの立場がいまいちわからないのでちょっとレイアウトを少しカスタマイズしてみました。  ブログのフッターといえば、やはり、コピーライトとかなん...</li>
+<li><a href="96159966.html">シーサーブログのヘッダー画像のカスタマイズ</a><br />
+シーサーブログ(seesaa blog)で壁紙の背景画像が簡単に変えられるようなのでちょっとカスタマイズしてみました。  テンプレート一覧のところにいつもあったフォトライブラリーというリンクですが、こ...</li>
+<li><a href="95468384.html">スタイルシートカスタマイズでブラウザ崩れ</a><br />
+シーサーブログではスタイルシートを個別に設定できるので、個別記事やカテゴリ欄、過去ログやトップページなどそれぞれ個別にカスタマイズできるようです。  シーサーブログ（Seesaa Blog）のカスタマ...</li>
+<li><a href="89590785.html">ブログの背景色を薄い白にカスタマイズ</a><br />
+今日はちょっと調べものがあっていろいろとネットサーフィンをしていました。最近思うのですが、rel-norrowってのはどうなんでしょうか。ページからの発リンク数が少ないと力が分散されずにそれぞれのペー...</li>
+<li><a href="116067979.html">CSSで初心者簡単ブログカスタマイズ方法</a><br />
+初めてブログを作る際は文字の大きさや行間などを自分好みにしようと思っても、どこをどう変更していいものやらさっぱりなんですが、スタイルシートの CSS の部分をブログカスタマイズするといいようなんです。...</li>
+</ul>
+</div>
+</div>
+
+<div class="navi">
+前の記事:<a href="65972991.html">無料のホームページの制作</a><br />次の記事:<a href="66304701.html">リンクタグの作り方</a>
+</div>
+</main><!-- #BeginLibraryItem "/Library/side.lbi" --><aside id="links">
+<div class="sidetitle">カテゴリ</div><div class="side"><ul>
+<li><a href="../category/4150781-1.html">初心者簡単</a></li>
+<li><a href="../category/5449171-1.html">ブログ比較</a></li>
+<li><a href="../category/3754373-1.html">カスタマイズ</a></li>
+<li><a href="../category/4150804-1.html">アフィリエイト</a></li>
+<li><a href="../category/5396661-1.html">SEO対策</a></li>
+<li><a href="../category/6189872-1.html">独自ドメイン</a></li>
+<li><a href="../category/5377733-1.html">アクセス解析とアクセスアップ</a></li>
+<li><a href="../category/5323127-1.html">htmlタグやCSS</a></li>
+<li><a href="../category/5529851-1.html">アドセンス</a></li>
+<li><a href="../category/5323473-1.html">無料ホームページの作り方</a></li>
+<li><a href="../category/4150796-1.html">グーグル無料ツール</a></li>
+<li><a href="../category/5529711-1.html">無料メールアドレスやメルマガ</a></li>
+<li><a href="../category/5529703-1.html">無料ブラウザのＦirefoxとＩＥ</a></li>
+<li><a href="../category/5529606-1.html">ＩＴニュース</a></li>
+</ul></div>
+<div class="sidetitle">ブログの作り方情報</div>
+<div class="side">
+<ul>
+<li><a href="48913125.html">無料メールアドレスの作り方</a></li>
+<li><a href="117970780.html">ブログ広告で収入を得る方法</a></li>
+<li><a href="../hikaku.html">ブログ作りはブログ比較から</a></li>
+<li><a href="92088644.html">ブログ比較の一覧</a></li>
+<li><a href="114655734.html">独自ドメインの取得方法</a></li>
+<li><a href="dokuji-cms.html">CMSでブログを作成する方法</a></li>
+<li><a href="115872348.html">CMS可能な格安レンタルサーバー</a></li>
+<li><a href="112911688.html">FC2ブログの作り方</a></li>
+<li><a href="71878598.html">ＦＣ２ホームページの作り方</a></li>
+<li><a href="110459720.html">さくらのブログの作り方</a></li>
+<li><a href="seesaa.html">Seesaaブログの作り方</a></li>
+<li><a href="107993732.html">シーサーブログを独自ドメイン化</a></li>
+<li><a href="wix.html">WIXでのブログの作り方</a></li>
+<li><a href="53785835.html">ディレクトリ登録のSEO効果</a></li>
+<li><a href="118429340.html">ブログからの集客方法</a></li>
+<li><a href="119971208.html">リスティング広告とは何ですか？</a></li>
+</ul></div>
+<div class="arch"><script type="text/javascript">
+<!--
+function ChangeArchive (sel) {
+if (sel.options[sel.selectedIndex].value != "") {
+location.href = sel.options[sel.selectedIndex].value;
+}
+}
+-->
+</script>
+<select name="MonthArchive" onchange="ChangeArchive(this)" class="archiveselect">
+<option value="">archives</option>
+<option value="../archives/200905-1.html">09/05(15)</option>
+<option value="../archives/200904-1.html">09/04(19)</option>
+<option value="../archives/200903-1.html">09/03(20)</option>
+<option value="../archives/200902-1.html">09/02(9)</option>
+<option value="../archives/200901-1.html">09/01(14)</option>
+<option value="../archives/200812-1.html">08/12(18)</option>
+<option value="../archives/200811-1.html">08/11(19)</option>
+<option value="../archives/200810-1.html">08/10(15)</option>
+<option value="../archives/200809-1.html">08/09(14)</option>
+<option value="../archives/200808-1.html">08/08(8)</option>
+<option value="../archives/200807-1.html">08/07(28)</option>
+<option value="../archives/200806-1.html">08/06(29)</option>
+<option value="../archives/200805-1.html">08/05(33)</option>
+<option value="../archives/200804-1.html">08/04(30)</option>
+<option value="../archives/200803-1.html">08/03(15)</option>
+<option value="../archives/200802-1.html">08/02(19)</option>
+<option value="../archives/200801-1.html">08/01(15)</option>
+<option value="../archives/200712-1.html">07/12(10)</option>
+<option value="../archives/200711-1.html">07/11(10)</option>
+<option value="../archives/200710-1.html">07/10(11)</option>
+<option value="../archives/200709-1.html">07/09(16)</option>
+<option value="../archives/200708-1.html">07/08(10)</option>
+<option value="../archives/200707-1.html">07/07(19)</option></select>
+</div>
+<form action="https://www.google.com/cse" id="cse-search-box">
+    <input type="hidden" name="cx" value="004767610735532938012:_ydsjrf0v8u" />
+    <input type="hidden" name="ie" value="Shift_JIS" />
+    <input type="text" name="q" size="24" />
+    <input type="submit" name="sa" value="検索" />
+</form>
+</aside><!-- #EndLibraryItem --><footer id="footer">
+<div class="pagetop"><a href="#container">PageTop▲</a></div>
+<div class="copyright"><ul><li><a href="../index.html">トップページ</a></li>
+<li><a href="../blog/index.html">ブログ</a></li>
+<li><a href="98359430.html">sitemap</a></li>
+<li><a href="../tag/index.html">tag</a></li>
+<li><a href="110348826.html" rel="nofollow">about</a></li></ul>
+<p>&copy;2009 blog-tips.net</p>
+</div>
+</footer>
+</div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2336808-36"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2336808-36');
+</script>
+</body>
+</html>

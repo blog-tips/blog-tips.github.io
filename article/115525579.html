@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>ブログのメタデータをカスタマイズ</title>
+<meta name="description" content="このページでは「ブログ,メタタグ,カスタマイズ」について紹介しています。ブログのメタデータをカスタマイズについての情報です。" />
+<meta name="keywords" content="ブログ,メタタグ,カスタマイズ" />
+<meta name="viewport" content="width=device-width" />
+<link rel="alternate" href="../index.rdf" type="application/rss+xml" title="RSS" />
+<link rel="stylesheet" href="../styles-article.css" type="text/css" />
+<link rel="shortcut icon" href="../image/favicon.ico" />
+</head><body>
+<div id="container">
+<main id="content">
+<div class="blog">
+<!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:Trackback="http://madskills.com/public/xml/rss/module/Trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="https://blog-tips.net/article/115525579.html"
+    trackback:ping="http://blog.seesaa.jp/tb/115525579"
+    dc:title="ブログのメタデータをカスタマイズ"
+    dc:identifier="https://blog-tips.net/article/115525579.html"
+    dc:description="ブログのメタデータには、キーワード設定とかブログ説明というのがありますが、最近ウェブマスターツールにログインしてみたら、以前よりもコンテンツ分析の問題が細分化されているような気がします。メタタグの重複とかは正直、無料ブログではどうしようもないというのもあるので、ほったらかしにしてたんですが、それに加えて長すぎるものや短すぎるものも問題みたいなんで修正してみようかなと思うんです。"
+    dc:creator="ブログの作り方"
+    dc:subject="ブログカスタマイズ"
+    dc:date="2009-03-12T20:19:40+09:00"
+/>
+</rdf:RDF>
+-->
+<div class="breadcrumb"><a href="../index.html">ブログの作り方 トップ</a> &gt; <a href="../category/3754373-1.html">ブログカスタマイズ</a> &gt;</div>
+<h1>ブログのメタデータをカスタマイズ</h1>
+<p>ブログのメタデータには、キーワード設定とかブログ説明というのがありますが、最近ウェブマスターツールにログインしてみたら、以前よりもコンテンツ分析の問題が細分化されているような気がします。</p><p><img src="../image/meta-data.png" width="256" height="249" alt="メタタグ問題" class="ccc" /></p><p>メタタグの重複とかは正直、無料ブログではどうしようもないというのもあるので、ほったらかしにしてたんですが、それに加えて長すぎるものや短すぎるものも問題みたいなんで修正してみようかなと思うんです。</p><h2>タイトルや説明など問題のあるメタデータ</h2><p>メタデータのなかでも、グーグルは keywords meta タグのメタデータはあまり重要視しないようなんで、ウェブマスターツールでも descriptions とタイトルタグの問題ぐらいしかのってないようです。</p><p>ブログ説明もタイトルタグも、長すぎる場合や短すぎるもの、重複するものはどれも問題があるみたいです。</p><p>メタタグは検索結果の順位に関係ないようなことも聞いたことがあります。</p><p>けれども、的確なブログ説明やタイトルタグを記入することで検索結果でのクリック率が上昇すると、やはり順位も少しは上昇するのではないかなと思うんです。</p><h3>メタタグのブログカスタマイズ方法</h3><p>無料ホームページなど html を直接記入することができるウェブサイトの場合、個別にまったく違うブログ説明を入力することができますが、無料ブログの場合はすべてを違うように記入するのはまず無理かと思います。</p><p>特に、過去ログやカテゴリページでは、どうしてもタイトルタグやブログ説明が重複しがちです。</p><p>過去ログは検索結果でヒットすることはあまりないので、インデックスさえされればいいかなって思うんで、ぶっちゃけメタタグはなくてもいいかなとも思うんですが、個別エントリーのページは、なるべく違う感じになるようにブログカスタマイズしたいものです。</p><p>シーサーブログの場合、こんな感じにするといいっぽいんですが、どうなんでしょうか。</p><p style="width:300px; height:40px; background-color:#ffffff; overflow:auto;">
+&lt;meta name="description" content="&lt;% if:extra_title %&gt;&lt;% extra_title %&gt;。&lt;% /if %&gt;&lt;% blog.description | nl2br | tag_strip %&gt;" /&gt;</p><p>個別エントリーにはブログ説明の前に記事タイトルが追加される形です。</p><h3>ＭＴブログや無料ホームページはメタタグ自由</h3><p>無料ブログレンタルの場合、メタタグの重複や長短で問題がでてきてしまうことが多いですので、いっそのこと削除した方がいいのかなという気もしてきます。</p><p>けれども、無料ホームページの場合はまったくの自由ですし、ＭＴブログの場合もカスタマイズしやすいので、なるべくなら記入しておきたいものです。</p><p>ＭＴブログのメタタグの場合、キーワード入力には &lt;$MTEntryKeywords$&gt; などをいれておけばいいのかなと思います。</p><p>エントリーのメタタグ説明は、もしタグ機能を使っていないようであれば、mtif による場合わけが必要ですが、そこにメタタグ description を入力すれば、個別に自由設定できるのでおすすめです。</p><p style="width:300px; height:40px; background-color:#ffffff; overflow:auto;">
+&lt;meta name="description" content="&lt;MTEntryIfTagged&gt;&lt;MTEntryTags glue=", "&gt;&lt;$MTTagName$&gt;&lt;/MTEntryTags&gt;&lt;/MTEntryIfTagged&gt;" /&gt;</p><p>シーサーブログでもキーワードのメタタグをはずして、キーワード入力欄にエントリーのブログ説明を入力してもいいんじゃないかなとも思います。</p><p>グーグルではキーワードのメタタグはそれほど重要視しないようですし、ヤフーからのアクセスがない場合はメタタグ description だけでもいいんじゃないかなって気もします。</p><p>実際に機能するのかどうかは確認してないんですが、たぶん、独自タグとしてはこんな感じになるかと思います。</p><p style="width:300px; height:40px; background-color:#ffffff; overflow:auto;">&lt;meta name="description" content="&lt;% extra_keywords | oneline | tag_strip %&gt;" /&gt;</p><p>ただ、キーワードのメタタグをはずすかといったら、私ははずしませんが、どちらかというと、やはり keywords よりも description のメタデータの方が重要な感じがします。</p><p>私はネット上で検索するときに、検索順位よりも description メタタグで判断することがけっこう多いです。</p><p>ブログ訪問者さまに入らぬお手間をかけさせないためにも、description メタタグは適切に記入したいものです。</p>
+</div>
+<div id="trackback">
+<div class="ttitle">関連記事</div>
+<div class="blogging">
+<ul>
+<li><a href="110297135.html">ブログのメタタグ軽量化で SEO 対策</a><br />
+ブログのメタタグのことなんですが、SEO 的な要素としてはそんなに変わらないとは思うんですが、いろんなメタタグがあって、どれを使用すればいいのかなっていまいち疑問なところです。メタタグの書き方について...</li>
+<li><a href="103765608.html">無料ブログのメタタグ重複問題</a><br />
+無料ブログで何かと気になるのはメタタグの重複エラー問題なのではないかなと思います。わたしも最近はメタタグの重複をどうすればいいのか困っています。
+</li>
+<li><a href="116963581.html">ブログのタグタイトルをSEOカスタマイズ</a><br />
+今日のブログカスタマイズは、タグページのタイトルタグや説明文をSEO的にカスタマイズしようと思います。タグページの例としてはてなダイアリーやライブドアブログなんかのを見てみると、こんな感じになっている...</li>
+<li><a href="117735509.html">seesaaブログのdescriptionをカスタマイズ</a><br />
+検索エンジンの検索結果で、ブログのメタタグで設定した説明文が表示されることが多いと思うんですけど、そのページ内容が分かるような適切な説明文を記入するべきなんだそうです。メタタグ部分の descript...</li>
+</ul>
+</div>
+</div>
+
+<div class="navi">
+前の記事:<a href="107993732.html">独自ドメインをシーサーブログで使用</a><br />次の記事:<a href="115702834.html">ブログ引越しのSEO対策</a>
+</div>
+</main><!-- #BeginLibraryItem "/Library/side.lbi" --><aside id="links">
+<div class="sidetitle">カテゴリ</div><div class="side"><ul>
+<li><a href="../category/4150781-1.html">初心者簡単</a></li>
+<li><a href="../category/5449171-1.html">ブログ比較</a></li>
+<li><a href="../category/3754373-1.html">カスタマイズ</a></li>
+<li><a href="../category/4150804-1.html">アフィリエイト</a></li>
+<li><a href="../category/5396661-1.html">SEO対策</a></li>
+<li><a href="../category/6189872-1.html">独自ドメイン</a></li>
+<li><a href="../category/5377733-1.html">アクセス解析とアクセスアップ</a></li>
+<li><a href="../category/5323127-1.html">htmlタグやCSS</a></li>
+<li><a href="../category/5529851-1.html">アドセンス</a></li>
+<li><a href="../category/5323473-1.html">無料ホームページの作り方</a></li>
+<li><a href="../category/4150796-1.html">グーグル無料ツール</a></li>
+<li><a href="../category/5529711-1.html">無料メールアドレスやメルマガ</a></li>
+<li><a href="../category/5529703-1.html">無料ブラウザのＦirefoxとＩＥ</a></li>
+<li><a href="../category/5529606-1.html">ＩＴニュース</a></li>
+</ul></div>
+<div class="sidetitle">ブログの作り方情報</div>
+<div class="side">
+<ul>
+<li><a href="48913125.html">無料メールアドレスの作り方</a></li>
+<li><a href="117970780.html">ブログ広告で収入を得る方法</a></li>
+<li><a href="../hikaku.html">ブログ作りはブログ比較から</a></li>
+<li><a href="92088644.html">ブログ比較の一覧</a></li>
+<li><a href="114655734.html">独自ドメインの取得方法</a></li>
+<li><a href="dokuji-cms.html">CMSでブログを作成する方法</a></li>
+<li><a href="115872348.html">CMS可能な格安レンタルサーバー</a></li>
+<li><a href="112911688.html">FC2ブログの作り方</a></li>
+<li><a href="71878598.html">ＦＣ２ホームページの作り方</a></li>
+<li><a href="110459720.html">さくらのブログの作り方</a></li>
+<li><a href="seesaa.html">Seesaaブログの作り方</a></li>
+<li><a href="107993732.html">シーサーブログを独自ドメイン化</a></li>
+<li><a href="wix.html">WIXでのブログの作り方</a></li>
+<li><a href="53785835.html">ディレクトリ登録のSEO効果</a></li>
+<li><a href="118429340.html">ブログからの集客方法</a></li>
+<li><a href="119971208.html">リスティング広告とは何ですか？</a></li>
+</ul></div>
+<div class="arch"><script type="text/javascript">
+<!--
+function ChangeArchive (sel) {
+if (sel.options[sel.selectedIndex].value != "") {
+location.href = sel.options[sel.selectedIndex].value;
+}
+}
+-->
+</script>
+<select name="MonthArchive" onchange="ChangeArchive(this)" class="archiveselect">
+<option value="">archives</option>
+<option value="../archives/200905-1.html">09/05(15)</option>
+<option value="../archives/200904-1.html">09/04(19)</option>
+<option value="../archives/200903-1.html">09/03(20)</option>
+<option value="../archives/200902-1.html">09/02(9)</option>
+<option value="../archives/200901-1.html">09/01(14)</option>
+<option value="../archives/200812-1.html">08/12(18)</option>
+<option value="../archives/200811-1.html">08/11(19)</option>
+<option value="../archives/200810-1.html">08/10(15)</option>
+<option value="../archives/200809-1.html">08/09(14)</option>
+<option value="../archives/200808-1.html">08/08(8)</option>
+<option value="../archives/200807-1.html">08/07(28)</option>
+<option value="../archives/200806-1.html">08/06(29)</option>
+<option value="../archives/200805-1.html">08/05(33)</option>
+<option value="../archives/200804-1.html">08/04(30)</option>
+<option value="../archives/200803-1.html">08/03(15)</option>
+<option value="../archives/200802-1.html">08/02(19)</option>
+<option value="../archives/200801-1.html">08/01(15)</option>
+<option value="../archives/200712-1.html">07/12(10)</option>
+<option value="../archives/200711-1.html">07/11(10)</option>
+<option value="../archives/200710-1.html">07/10(11)</option>
+<option value="../archives/200709-1.html">07/09(16)</option>
+<option value="../archives/200708-1.html">07/08(10)</option>
+<option value="../archives/200707-1.html">07/07(19)</option></select>
+</div>
+<form action="https://www.google.com/cse" id="cse-search-box">
+    <input type="hidden" name="cx" value="004767610735532938012:_ydsjrf0v8u" />
+    <input type="hidden" name="ie" value="Shift_JIS" />
+    <input type="text" name="q" size="24" />
+    <input type="submit" name="sa" value="検索" />
+</form>
+</aside><!-- #EndLibraryItem --><footer id="footer">
+<div class="pagetop"><a href="#container">PageTop▲</a></div>
+<div class="copyright"><ul><li><a href="../index.html">トップページ</a></li>
+<li><a href="../blog/index.html">ブログ</a></li>
+<li><a href="98359430.html">sitemap</a></li>
+<li><a href="../tag/index.html">tag</a></li>
+<li><a href="110348826.html" rel="nofollow">about</a></li></ul>
+<p>&copy;2009 blog-tips.net</p>
+</div>
+</footer>
+</div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2336808-36"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2336808-36');
+</script>
+</body>
+</html>

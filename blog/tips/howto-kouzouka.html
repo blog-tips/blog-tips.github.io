@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>「HowTo」構造化データの作り方 - 作り方の研究ブログ</title>
+<meta name="description" content="最近ではニュース記事やレシピだけではなく、「HowTo」タイプの構造化データも利用できるようなので、ハウツー系ブログを運営されている方は構造化データに対応してみるとよいかもしれません。" />
+<meta name="keywords" content="HowTo,構造化データ" />
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" href="../entry.css" type="text/css" />
+<link rel="amphtml" href="../amp/tips/howto-kouzouka.html">
+<link rel="alternate" href="../rss.xml" type="application/rss+xml" title="作り方の研究ブログ - RSS" />
+<link rel="alternate" href="../atom.xml" type="application/atom+xml" title="作り方の研究ブログ - atom" />
+</head>
+<body>
+<div id="container">
+<div class="breadcrumb"><a href="../index.html">作り方の研究ブログ</a> &gt; <a href="index.html">ティップス</a> &gt;</div>
+<div id="content">
+<div class="blog" id="725">
+<h1>「HowTo」構造化データの作り方</h1>
+<p>構造化データの作り方は難しい印象がありましたが、最近ではJavaScript表記の「JSON-LD」が利用できるようなので構造化データに対応してみました。</p><p>以前までの「microdata」形式と比べると簡単に利用しやすくなったと感じています。</p>
+<p>また、最近ではニュース記事やレシピだけではなく、<span class="red">「HowTo」タイプの構造化データ</span>も利用できるようなので、ハウツー系ブログを運営されている方は対応してみるとよいかもしれません。</p>
+<p><a href="https://developers.google.cn/search/docs/data-types/how-to?hl=ja" target="_blank" rel="nofollow noopener noreferrer">Googleの公式サイト</a>では、キッチンのタイル張りをする方法についての例が記載されていますが、このようなカテゴリは「"@type": "HowTo"」タイプに分類されるようです。</p>
+<p><img src="../image/howto-kouzouka.png" alt="" width="320" height="226" style="border: solid 1px #ccc;" /></p>
+<p>ただし、「<b>レシピに HowTo マークアップを使用しないでください。</b>」との記載があるので、レシピ関連のサイトでは「"@type": "Recipe"」で対応することをおすすめします。</p>
+<p>また、このページのように、何とかの作り方のような内容であったとしても、何ら具体的な手順を示さず、単に最新情報や雰囲気をお伝えするだけのコンテンツの場合は「"@type": "NewsArticle"」の方が適しているのかもしれません。</p>
+<p>この「HowTo」構造化データを利用する際ですが、基本的には"step": [ほにゃらら]の箇所がメインコンテンツになります。このほにゃららの箇所に、「"HowToStep"」や「"HowToDirection"」でそれぞれの手順と指示を記載し、画像やURLも差し込みつつ記述していくことになります。画像については、widthとheightの値を逆にしないように注意するとよいでしょう。</p>
+<p>そのほか、所要時間の「"totalTime"」や必要な素材の「"supply"」、必要な道具の「"tool"」なども記載しておくとよいかもしれません。</p>
+<p>今とのころ、この「HowTo」構造化データはモバイル検索だけでリッチリザルトで表示される可能性があるようですが、PCサイトでも同様の内容を記載しておくことをおすすめします。</p>
+<p>レスポンシブウェブデザインを採用している場合、モバイルもPCも同様の内容を記載する形になるかと思いますが、amp対応などで別のページにしている場合、PCサイトにも記載しておくとよいでしょう。</p>
+</div>
+<div class="content-nav"><a href="line-height.html">&laquo; 見出しh1「line-height」の値はfont-sizeに反比例する</a> | <a href="../mt/mt-amp.html">当ブログをAMPに対応しました &raquo;</a></div>
+</div>
+<div id="links">
+<div class="sidetitle">カテゴリ</div>
+<div class="category">
+<ul>
+<li><a href="../how-to/index.html">無料ブログ</a></li>
+<li class="entry-category"><a href="index.html">ティップス</a></li>
+<li class="entry-category"><a href="../mt/index.html">MTブログ</a></li>
+<li class="entry-category"><a href="../seo/index.html">SEO対策</a></li>
+<li class="entry-category"><a href="../homepage/index.html">ホームページ</a></li>
+<li class="entry-category"><a href="../rentalserver/index.html">レンタルサーバー</a></li>
+<li class="entry-category"><a href="../domain/index.html">ドメイン</a></li>
+</ul>
+</div>
+<div class="sidetitle">最近のブログ記事</div>
+<div class="side">
+<ul>
+<li><a href="../domain/godaddy-enyasu.html">ドメインの売却は円安の今がチャンス</a></li>
+<li><a href="affiliate-regulation.html">消費者庁がアフィリエイト広告の規制強化を検討</a></li>
+<li><a href="../seo/infomation-about.html">運営者情報の公開でSEO対策</a></li>
+<li><a href="../mt/xmlrpc.html">Movable Typeの脆弱性をついた攻撃が発生</a></li>
+<li><a href="../mt/howto-jason.html">MovableTypeで構造化データを設定してみました</a></li>
+<li><a href="1920-1080hd.html">フルHD解像度「1920x1080」に最適化</a></li>
+<li><a href="../domain/google-domains.html">Google Domainsに移管してみました</a></li>
+<li><a href="preload.html">WEBフォントをpreloadするのは止めました</a></li>
+<li><a href="../how-to/mfi-freeblog.html">MFI完全移行による無料ブログへの影響</a></li>
+<li><a href="gazou-1200px.html">1200pxの画像を用意するしかあるまい</a></li>
+<li><a href="../mt/mt-amp.html">当ブログをAMPに対応しました</a></li>
+<li><a href="howto-kouzouka.html">「HowTo」構造化データの作り方</a></li>
+<li><a href="line-height.html">見出しh1「line-height」の値はfont-sizeに反比例する</a></li>
+<li><a href="ipad-768px.html">iPad用のブレイクポイントを「834px」に変更</a></li>
+<li><a href="h1px.html">見出しh1のフォントサイズは何pxがよいのか？</a></li>
+<li><a href="kisya-handbook.html">共同通信社「記者ハンドブック」を読む</a></li>
+<li><a href="just-right.html">ブログ記事の校正に「Just Right!」を購入してみました</a></li>
+<li><a href="r2tls-jp4-bk.html">REALFORCEのキーボードを「R2TLS-JP4-BK」に買い替えました</a></li>
+<li><a href="../domain/grace-period.html">Grace Periodは何日間なのか？</a></li>
+<li><a href="gyousyu.html">サイト運営者の業種（日本産業分類）は何になるのか？</a></li>
+</ul>
+</div>
+<div class="sidetitle">リンク</div>
+<div class="side">
+<ul>
+<li><a href="https://www.homepage-tukurikata.com/">ホームページの作り方</a></li>
+<li><a href="../../article/92088644.html">ブログ比較</a></li>
+<li><a href="../../article/117970780.html">ブログ広告での収入</a></li>
+<li><a href="../../article/119971208.html">リスティング広告とは？</a></li>
+</ul></div>
+</div>
+<div id="footer">
+<div class="pagetop"><a href="#container">PageTop▲</a></div>
+<div class="copyright"><ul><li><a href="../archives.html">アーカイブ</a></li><li>&copy;2021 blog-tips.net</li></ul></div>
+<div class="logo"><a href="../index.html">トップページ</a> - <a href="../../index.html">ブログの作り方</a></div>
+</div></div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2336808-36"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2336808-36');
+</script>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "作り方の研究ブログ",
+        "item": "https://blog-tips.net/blog/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "ティップス",
+        "item": "https://blog-tips.net/blog/tips/"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "「HowTo」構造化データの作り方"
+      }]
+    }
+</script>
+</body>
+</html>

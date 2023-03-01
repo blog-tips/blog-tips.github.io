@@ -1,0 +1,31 @@
+ＨＴＭＬのカテゴリの箇所をカスタマイズ
+
+<% if:page_name eq 'category' -%>
+<div class="navi">
+<a href="<% blog.page_url %>">あなたのブログの名前</a>のＴＯＰへ / <% category.name %></div>
+<% if:pager.need_pager -%>
+<div class="navi">
+<ul><% loop:list_pager %><li> <% if:current_page ne pager_number %><a href="<% category.page_url(pager_number)%>"><% /if %><% pager_number %><% if:current_page ne pager_number %></a> <% /if %></li><% /loop %><li>&nbsp;&nbsp;&nbsp;&nbsp;<% if:pager.next_page %><a href="<% category.page_url(pager.next_page) %>"><span class="next">次へ</span></a><% else %>-<% /if %></li></ul>
+</div>
+<% /if -%>
+<% /if -%>
+
+
+
+ＣＳＳはあなたのブログで調節。
+私のブログの場合はこんな感じです。
+
+.navi ul {
+margin: 0 0 0 1em;
+padding: 0;
+}
+
+.navi li {
+display:inline;
+list-style:none;
+}
+
+.next {
+font-size:20px;
+text-decoration:underline;
+}

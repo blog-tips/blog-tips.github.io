@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>独自SSL導入によるhttpsページへの対応 - 作り方の研究ブログ</title>
+<meta name="description" content="はじめて独自SSLを導入してhttpsページに対応する際の基礎知識をご紹介しています。" />
+<meta name="keywords" content="独自SSL,格安SSL" />
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" href="../entry.css" type="text/css" />
+<link rel="amphtml" href="../amp/tips/dokuji-ssl.html">
+<link rel="alternate" href="../rss.xml" type="application/rss+xml" title="作り方の研究ブログ - RSS" />
+<link rel="alternate" href="../atom.xml" type="application/atom+xml" title="作り方の研究ブログ - atom" />
+</head>
+<body>
+<div id="container">
+<div class="breadcrumb"><a href="../index.html">作り方の研究ブログ</a> &gt; <a href="index.html">ティップス</a> &gt;</div>
+<div id="content">
+<div class="blog" id="669">
+<h1>独自SSL導入によるhttpsページへの対応</h1>
+<p>グーグルがSSL対応を推奨した影響もあってか、レンタルサーバー会社による独自SSLキャンペーンをよく見かけるようになってきました。はじめて独自SSLを導入してhttpsページに対応する際の基礎知識をご紹介します。</p><p>■<b>独自SSLと共有SSLの違い</b></p>
+<p>共有サーバーでは、レンタルサーバー会社から提供されるhttpsページを利用できることが多いです。当サイト運営者もメールフォームの設置で使用した記憶がありますが、他のドメインのURLへのリンクになってしまうため、途中でやめたことがあります。</p>
+<p>一方、自分のドメインでSSLページを利用するには、独自SSLを申し込む必要があります。たいていは利用しているレンタルサーバー会社に申し込んで利用する形になりますが、大手と格安のブランドがあり、信頼性や利用料金などの面で違いがあります。</p>
+<p>■<b>大手SSLと格安SSL</b></p>
+<p>国内大手で有名なSSLブランドには以下のものがあります。</p>
+<ul>
+<li>シマンテック（旧日本ベリサイン、世界シェア１位）</li>
+<li>グローバルサイン（国内シェア１位）</li>
+<li>ジオトラスト（シマンテックグループ）</li>
+<li>セコムトラスト</li>
+</ul>
+<p>大手ブランドは知名度が高く信頼性も高いので、ネットショップや大企業などでよく利用されています。けれども、利用料金が数万～数十万円と高額なのに加え、申請手続きが煩雑で面倒くさい傾向にあり、個人や中小企業には手を出しにくいです。</p>
+<p>一方、低価格の格安タイプもあります。</p>
+<ul>
+<li>ラピッドSSL（ジオトラスト社RapidSSL事業部）</li>
+<li>SecureCore（セキュアコア株式会社）</li>
+<li>CoreSSL（セキュアコア株式会社）</li>
+</ul>
+<p>こちらの格安SSLはどれもドメイン認証なので導入が手軽なうえ、料金も数千円程度と利用しやすいです。ちなみに、セキュアコア株式会社はそれほど知名度は高くないですが、レンタルサーバーのネットオウルの関連会社でComodo社が認証局となっています。</p>
+<p>■<b>個人ブログと企業・商用サイト</b></p>
+<p>申請時の認証方法によっても違いがあり、一番簡単なものがドメイン認証です。格安SSLや大手の低価格プランの場合、ドメインのwhois情報にメールを送信して確認するのが一般的です。個人ブログの場合、主にこのドメイン認証方法が一般的かと思います。</p>
+<p>一方で企業サイトの場合、企業認証SSLが一般的になります。企業データベースや電話確認、印鑑証明書などによって企業の実在性が確認されるため、より信頼性が高い認証方法です。</p>
+<p>さらに、EV認証というのもあり、こちらは大企業などで利用される認証方法になります。確認書類が増え、組織の担当者の権限などより厳格な審査が必要になります。</p>
+<p>■<b>SSL対応のメリット</b></p>
+<p>業種別にいいますと、ネットショップなどの個人情報を扱うサイトや金融機関、医療機関などは高い信頼性のSSLブランドを使用することが必須の要素です。</p>
+<p>一方、個人ブログの場合、双方向的なインタラクティブなやり取りではなく、単に要求されたhtmlファイルを表示するだけの一方行的なやり取りになるので、特に必要はない気がしてなりません。グーグルがhttpsページを推奨していますので、ゆくゆくは対応する必要性があるとは思いますが、画像などのhttpページへのリンクもすべてhttpsページへと変更する必要があるため手間がかかるはずです。</p>
+<p>もし当ドメインで対応する場合、SSLを申し込んだのち、「http://blog-tips.net/」でドメイン内を検索し、該当する箇所をすべてhttps付きの「https://blog-tips.net/」に置換作業で書き換えればそれで済むはずですが、サイトマップなどもすべて書き換える必要があります。</p>
+<p>ただ、不完全な形で中途半端にSSL対応している場合、ブラウザに黄色いマークが出て「この接続は安全ではありません」という表示がされるため、通常のhttpページよりもかえって訪問者に不安を与える形になってしまいます。</p>
+<p>https対応により、既にインデックスされている全ページのキャッシュも更新されると思いますので、検索順位にも何らかの影響があるような気がしてなりません。それがよい方向で影響があればよいのですが、悪い影響が出てくる可能性もあるため、高いお金を出すのは少し躊躇してしまいます。</p>
+<p>■<b>携帯端末とスマホ端末への対応</b></p>
+<p>非常に気になる点に携帯端末への対応状況があります。大手ジオトラストでも、スマホへの対応率は100%なものの携帯電話（ガラケー、フィーチャーフォン）への対応率は95.7％となっています。CoreSSLワイルドカードの場合は非対応となっていたりと、古い携帯端末の場合は閲覧できないケースもあります。</p>
+<p>実際のところは利用してアクセス解析を確認してみないと分りませんが、もしかするとアクセス数が減少するケースも１部では発生するかもしれません。</p>
+<p>■<b>信頼性について</b></p>
+<p>大手ブランドによる企業認証やEV認証の場合は信頼性が高いですが、ドメイン認証の場合はお手軽で簡単なため、フィッシングサイトなどでも利用されるケースがあります。なので、httpsページだからといって、必ずしも安全性が高いということにはなりませんが、一般訪問者が格安SSLかEV認証かの違いはほぼわからないはずです。</p>
+<p>■<b>SSL対応による表示速度の遅延について</b></p>
+<p>これはあくまでも主観ですが、SSL対応のページは遅くてイライラするケースが多いです。実際、通信が暗号化されるため、遅延が生じるのは仕方ないとは思いますが、かなり遅いケースがあります。単に情報を閲覧するだけの個人ブログで個人情報を入力するわけでもない場合、表示速度がはやい方が訪問者のメリットが大きい気がしています。</p>
+<p>そもそも悪意のあるサイトについては検索エンジン結果からは除外されていますし、ブラウザで直接URLにアクセスする場合でも警告がでます。さらに、パソコン内のウイルスソフトでもある程度は対策されているはずです。</p>
+<p>個人情報のやり取りをするわけでもないブログで、表示速度を犠牲にしてまでSSLに対応する必要性があるのかは正直疑問があります。</p>
+<p>検索エンジン対策の要因としてサイトの表示速度も関係してきますので、仮にSSL対応で安全性が高くなることでSEO効果があったとしても、表示速度の遅延によって、そのSEO効果が打ち消される可能性もあるのではないでしょうか。</p>
+<p>https対応した場合のSEO効果については不確定要素が多い気がしており、当ドメインでは現在のところは様子見をすることにしております。</p>
+</div>
+<div class="content-nav"><a href="kakutei-sinnkoku.html">&laquo; アフィリエイト収入の確定申告の仕方</a> | <a href="ssl-301.html">SSL導入時には301で明示化すべきか？ &raquo;</a></div>
+</div>
+<div id="links">
+<div class="sidetitle">カテゴリ</div>
+<div class="category">
+<ul>
+<li><a href="../how-to/index.html">無料ブログ</a></li>
+<li class="entry-category"><a href="index.html">ティップス</a></li>
+<li class="entry-category"><a href="../mt/index.html">MTブログ</a></li>
+<li class="entry-category"><a href="../seo/index.html">SEO対策</a></li>
+<li class="entry-category"><a href="../homepage/index.html">ホームページ</a></li>
+<li class="entry-category"><a href="../rentalserver/index.html">レンタルサーバー</a></li>
+<li class="entry-category"><a href="../domain/index.html">ドメイン</a></li>
+</ul>
+</div>
+<div class="sidetitle">最近のブログ記事</div>
+<div class="side">
+<ul>
+<li><a href="../domain/godaddy-enyasu.html">ドメインの売却は円安の今がチャンス</a></li>
+<li><a href="affiliate-regulation.html">消費者庁がアフィリエイト広告の規制強化を検討</a></li>
+<li><a href="../seo/infomation-about.html">運営者情報の公開でSEO対策</a></li>
+<li><a href="../mt/xmlrpc.html">Movable Typeの脆弱性をついた攻撃が発生</a></li>
+<li><a href="../mt/howto-jason.html">MovableTypeで構造化データを設定してみました</a></li>
+<li><a href="1920-1080hd.html">フルHD解像度「1920x1080」に最適化</a></li>
+<li><a href="../domain/google-domains.html">Google Domainsに移管してみました</a></li>
+<li><a href="preload.html">WEBフォントをpreloadするのは止めました</a></li>
+<li><a href="../how-to/mfi-freeblog.html">MFI完全移行による無料ブログへの影響</a></li>
+<li><a href="gazou-1200px.html">1200pxの画像を用意するしかあるまい</a></li>
+<li><a href="../mt/mt-amp.html">当ブログをAMPに対応しました</a></li>
+<li><a href="howto-kouzouka.html">「HowTo」構造化データの作り方</a></li>
+<li><a href="line-height.html">見出しh1「line-height」の値はfont-sizeに反比例する</a></li>
+<li><a href="ipad-768px.html">iPad用のブレイクポイントを「834px」に変更</a></li>
+<li><a href="h1px.html">見出しh1のフォントサイズは何pxがよいのか？</a></li>
+<li><a href="kisya-handbook.html">共同通信社「記者ハンドブック」を読む</a></li>
+<li><a href="just-right.html">ブログ記事の校正に「Just Right!」を購入してみました</a></li>
+<li><a href="r2tls-jp4-bk.html">REALFORCEのキーボードを「R2TLS-JP4-BK」に買い替えました</a></li>
+<li><a href="../domain/grace-period.html">Grace Periodは何日間なのか？</a></li>
+<li><a href="gyousyu.html">サイト運営者の業種（日本産業分類）は何になるのか？</a></li>
+</ul>
+</div>
+<div class="sidetitle">リンク</div>
+<div class="side">
+<ul>
+<li><a href="https://www.homepage-tukurikata.com/">ホームページの作り方</a></li>
+<li><a href="../../article/92088644.html">ブログ比較</a></li>
+<li><a href="../../article/117970780.html">ブログ広告での収入</a></li>
+<li><a href="../../article/119971208.html">リスティング広告とは？</a></li>
+</ul></div>
+</div>
+<div id="footer">
+<div class="pagetop"><a href="#container">PageTop▲</a></div>
+<div class="copyright"><ul><li><a href="../archives.html">アーカイブ</a></li><li>&copy;2021 blog-tips.net</li></ul></div>
+<div class="logo"><a href="../index.html">トップページ</a> - <a href="../../index.html">ブログの作り方</a></div>
+</div></div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2336808-36"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2336808-36');
+</script>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "作り方の研究ブログ",
+        "item": "https://blog-tips.net/blog/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "ティップス",
+        "item": "https://blog-tips.net/blog/tips/"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "独自SSL導入によるhttpsページへの対応"
+      }]
+    }
+</script>
+</body>
+</html>

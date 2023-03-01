@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>MovableTypeのデフォルトテンプレートについて - 作り方の研究ブログ</title>
+<meta name="description" content="Movable Type をこんな感じカスタマイズしてます" />
+<meta name="keywords" content="Movable Type,カスタマイズ,デフォルト" />
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" href="../entry.css" type="text/css" />
+<link rel="amphtml" href="../amp/mt/defalult-mt.html">
+<link rel="alternate" href="../rss.xml" type="application/rss+xml" title="作り方の研究ブログ - RSS" />
+<link rel="alternate" href="../atom.xml" type="application/atom+xml" title="作り方の研究ブログ - atom" />
+</head>
+<body>
+<div id="container">
+<div class="breadcrumb"><a href="../index.html">作り方の研究ブログ</a> &gt; <a href="index.html">MTブログ</a> &gt;</div>
+<div id="content">
+<div class="blog" id="198">
+<h1>MovableTypeのデフォルトテンプレートについて</h1>
+<p>MovableTypeでブログを作成すれば詳細なカスタマイズができるので、自分の思うとおりに作ることができます。けれども、最初のテンプレートの設定自体はかなり難しいです。</p><p>MovableTypeに付属のデフォルトのテンプレートで作成している人も多いですが、不必要なdivが多数生成されてしまい、SEO対策的にどうなのだろうという気もしますし、構成がかなり複雑になってしまいますので、私はとりあえずデフォルトのものは削除して利用することが多いです。</p><p>個人的な印象では、デフォルトのテンプレートでは、スタイルシート、HTMLともに、カスタマイズしにくい面があるような気がします。</p><p>この原因として、ひとつのテンプレートで２カラムや３カラムなどに対応しているため、必要のないCSSまで設定されていることが理由と思います。また、使用していないモジュールであっても設定されており、煩雑になってしまっている印象があります。海外CMSのため、フォントなども欧文用に最適化されている側面があり、リセットCSSという手法がとられている点も複雑化している要因となっているのかもしれません。</p><p>ひとつのCSSで全てのニーズに対応するには、外部CSSを複数に切り分けてインポートする形が便利なのでしょうけど、一般的には一枚のCSSでそのまま表示されるのが一番いいのではないでしょうか。</p><p>そんなわけで、とりあえず、デフォルトのスタイルシートはある程度は削除してから、１から作成するようにしている次第です。ついでに、カテゴリ用やアーカイブ用でスタイルシートはわけたりもしてカスタマイズしています。</p><p><img src="../image/mt-kannri.png" alt="" width="320" height="291" style="border: solid 1px #ccc;" /> </p><p>テンプレートモジュールはこんな感じで作ってます。</p><p><img src="../image/kannri.png" alt="" width="320" height="287" style="border: solid 1px #ccc;" /> </p><p>デフォルトの場合、「/12/01/example.html」などのように日付でURLが作成されてしまいますが、「/カテゴリ名/example.html」のような形の方が検索エンジンフレンドリーなURLとなり、SEO対策上のメリットがあると思います。</p><p>「テンプレートモジュール」と「ウィジット」の違いはよくわからないのですが、中くらいの部品と小さい部品のような違いなのかなと思ってます。つ<span style="font-size: 1em;">まり、「大 - 中 - 小」のような形での構成になっているかと思いますが、私の場合は「大」ひとつで対応するような形がシンプルと思います。</span></p><p><span style="font-size: 1em;">カスタマイズしようと「大」を調べてみると、それは「中」に書いてあるといわれ、「中」の箇所をチェックしてみると「小」を調べてみてくれと言われる感じなので、大規模サイトでもない限り、「大」ひとつで統一してしまってもかまわないと思います。</span></p><p>Movable Type のデフォルトテンプレートではけっこう複雑なんで、いったんシンプルな形で作成しなおしてから、徐々に複雑化していくのがよいかもしれません。</p>
+</div>
+<div class="content-nav"><a href="../seo/zero.html">&laquo; ページランクなしとゼロはけっこう違う</a> | <a href="mt-module.html">Movable Type のテンプレートモジュールはまとめてます &raquo;</a></div>
+</div>
+<div id="links">
+<div class="sidetitle">カテゴリ</div>
+<div class="category">
+<ul>
+<li><a href="../how-to/index.html">無料ブログ</a></li>
+<li class="entry-category"><a href="../tips/index.html">ティップス</a></li>
+<li class="entry-category"><a href="index.html">MTブログ</a></li>
+<li class="entry-category"><a href="../seo/index.html">SEO対策</a></li>
+<li class="entry-category"><a href="../homepage/index.html">ホームページ</a></li>
+<li class="entry-category"><a href="../rentalserver/index.html">レンタルサーバー</a></li>
+<li class="entry-category"><a href="../domain/index.html">ドメイン</a></li>
+</ul>
+</div>
+<div class="sidetitle">最近のブログ記事</div>
+<div class="side">
+<ul>
+<li><a href="../domain/godaddy-enyasu.html">ドメインの売却は円安の今がチャンス</a></li>
+<li><a href="../tips/affiliate-regulation.html">消費者庁がアフィリエイト広告の規制強化を検討</a></li>
+<li><a href="../seo/infomation-about.html">運営者情報の公開でSEO対策</a></li>
+<li><a href="xmlrpc.html">Movable Typeの脆弱性をついた攻撃が発生</a></li>
+<li><a href="howto-jason.html">MovableTypeで構造化データを設定してみました</a></li>
+<li><a href="../tips/1920-1080hd.html">フルHD解像度「1920x1080」に最適化</a></li>
+<li><a href="../domain/google-domains.html">Google Domainsに移管してみました</a></li>
+<li><a href="../tips/preload.html">WEBフォントをpreloadするのは止めました</a></li>
+<li><a href="../how-to/mfi-freeblog.html">MFI完全移行による無料ブログへの影響</a></li>
+<li><a href="../tips/gazou-1200px.html">1200pxの画像を用意するしかあるまい</a></li>
+<li><a href="mt-amp.html">当ブログをAMPに対応しました</a></li>
+<li><a href="../tips/howto-kouzouka.html">「HowTo」構造化データの作り方</a></li>
+<li><a href="../tips/line-height.html">見出しh1「line-height」の値はfont-sizeに反比例する</a></li>
+<li><a href="../tips/ipad-768px.html">iPad用のブレイクポイントを「834px」に変更</a></li>
+<li><a href="../tips/h1px.html">見出しh1のフォントサイズは何pxがよいのか？</a></li>
+<li><a href="../tips/kisya-handbook.html">共同通信社「記者ハンドブック」を読む</a></li>
+<li><a href="../tips/just-right.html">ブログ記事の校正に「Just Right!」を購入してみました</a></li>
+<li><a href="../tips/r2tls-jp4-bk.html">REALFORCEのキーボードを「R2TLS-JP4-BK」に買い替えました</a></li>
+<li><a href="../domain/grace-period.html">Grace Periodは何日間なのか？</a></li>
+<li><a href="../tips/gyousyu.html">サイト運営者の業種（日本産業分類）は何になるのか？</a></li>
+</ul>
+</div>
+<div class="sidetitle">リンク</div>
+<div class="side">
+<ul>
+<li><a href="https://www.homepage-tukurikata.com/">ホームページの作り方</a></li>
+<li><a href="../../article/92088644.html">ブログ比較</a></li>
+<li><a href="../../article/117970780.html">ブログ広告での収入</a></li>
+<li><a href="../../article/119971208.html">リスティング広告とは？</a></li>
+</ul></div>
+</div>
+<div id="footer">
+<div class="pagetop"><a href="#container">PageTop▲</a></div>
+<div class="copyright"><ul><li><a href="../archives.html">アーカイブ</a></li><li>&copy;2021 blog-tips.net</li></ul></div>
+<div class="logo"><a href="../index.html">トップページ</a> - <a href="../../index.html">ブログの作り方</a></div>
+</div></div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2336808-36"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2336808-36');
+</script>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "作り方の研究ブログ",
+        "item": "https://blog-tips.net/blog/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "MTブログ",
+        "item": "https://blog-tips.net/blog/mt/"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "MovableTypeのデフォルトテンプレートについて"
+      }]
+    }
+</script>
+</body>
+</html>

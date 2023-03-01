@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>ＭＴ形式でインポートした記事の改行が反映されない - 作り方の研究ブログ</title>
+<meta name="description" content="ＭＴ形式でインポートした記事の改行が反映されない場合は、CONVERT BREAKSの値を「1」に設定するとよいでしょう。" />
+<meta name="keywords" content="ＭＴ形式,改行,反映されない" />
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" href="../entry.css" type="text/css" />
+<link rel="amphtml" href="../amp/mt/convert-breaks.html">
+<link rel="alternate" href="../rss.xml" type="application/rss+xml" title="作り方の研究ブログ - RSS" />
+<link rel="alternate" href="../atom.xml" type="application/atom+xml" title="作り方の研究ブログ - atom" />
+</head>
+<body>
+<div id="container">
+<div class="breadcrumb"><a href="../index.html">作り方の研究ブログ</a> &gt; <a href="index.html">MTブログ</a> &gt;</div>
+<div id="content">
+<div class="blog" id="600">
+<h1>ＭＴ形式でインポートした記事の改行が反映されない</h1>
+ <p>かれこれ５年ほど更新していたブログがあるのですが、運営元が閉鎖になるようなんで、独自ドメインを取得してmovable typeに引越すことにしました。そして、ＭＴ形式で記事をもらってインポートしてみたのですが、どうも改行が反映されないようなんです。</p><p>まず、このＭＴへインポートする際、「改行を変換する」の設定があると思うのですが、こちらを設定してインポートしても改行が反映されません。</p><p><img src="../image/mt-kaigyou2.png" alt="" width="318" height="190" class="ccc" /></p><p>そこで、本体の「設定 - 投稿」の箇所でも改行を反映するに設定してインポートしてみたのですが、やはりこちらでもだめでした。</p><p><img src="../image/mt-kaigyou.png" alt="" width="250" height="168" class="ccc" /></p><p>そこで<a href="https://www.movabletype.jp/documentation/appendices/import-export-format.html" rel="nofollow" target="_blank">movable typeのヘルプ</a>を参照してみたところ、インポートする元記事の「<b>CONVERT BREAKS:</b>」の箇所が改行を設定する箇所にあたるようなのです。</p><p>それでもらったＭＴ形式のテキストファイルの中身を確認してみたところ、この「CONVERT BREAKS:」がdefaultという値になっていたため、これを改行に変換する設定の「1」に書き直してインポートしてみたところ、無事、改行が反映されるようになりました。</p><p><img src="../image/konbure.png" alt="" width="262" height="217" class="ccc" /></p><p>やり方は、もらったMT形式のファイルをメモ帳で開いて、「編集 - 置換」をクリックし、この「default」の箇所を全部「1」に一括で置換して保存、それをインポートして再構築すると解決できるかと思います。</p><p><img src="../image/conver.png" alt="" width="299" height="87" class="ccc" /></p><p>この「CONVERT BREAKS:」は「0」だと改行なし、「1」のときに改行が反映される仕組みのようです。無料ブログなどからＭＴ形式でエクスポートする際、この箇所を確認してみて、もし「0」とか「default」のような値になっていたら、「1」に書き直して対処するとよいでしょう。</p><p>ちなみに、その５年間更新していたブログなのですが、インデックス状況を確認してみると、ゼロ件で１記事もヒットしなかったようです。</p><p>主に、株関連で人気銘柄の需給を正確に計算してみたりといった情報を更新していたのですが、アクセス数がゼロのまま５年間もずっと更新していたようなのです。<br /> てっきり、１日10人ぐらいのアクセスはあるんじゃないかなーと思っていたのですが、なんだかがっかりしてしまいました。</p><p>もちろん、コンテンツの質が低いというのはあるとは思いますが、やはり無料ブログサービスにもいろいろあって、それぞれにインデックスされやすいとか、されにくいとかの違いはあるものと思います。</p><p>もし、一番最初の段階で違う無料ブログサービスを選択していたら、たぶん、この５年間でけっこうなアクセス数が発生していたような気がいたします。</p><p>そういった意味で、一番最初のブログサービス選びというのは、「ま、これでいいっか。」みたいに気軽に選ぶのではなく、慎重に選んだ方がよさそうですね。</p>
+</div>
+<div class="content-nav"><a href="../domain/sedo-domain.html">&laquo; Sedoでドメインは売れるのか？</a> | <a href="../tips/PageSpeed.html">スマホ用サイトを最適化 &raquo;</a></div>
+</div>
+<div id="links">
+<div class="sidetitle">カテゴリ</div>
+<div class="category">
+<ul>
+<li><a href="../how-to/index.html">無料ブログ</a></li>
+<li class="entry-category"><a href="../tips/index.html">ティップス</a></li>
+<li class="entry-category"><a href="index.html">MTブログ</a></li>
+<li class="entry-category"><a href="../seo/index.html">SEO対策</a></li>
+<li class="entry-category"><a href="../homepage/index.html">ホームページ</a></li>
+<li class="entry-category"><a href="../rentalserver/index.html">レンタルサーバー</a></li>
+<li class="entry-category"><a href="../domain/index.html">ドメイン</a></li>
+</ul>
+</div>
+<div class="sidetitle">最近のブログ記事</div>
+<div class="side">
+<ul>
+<li><a href="../domain/godaddy-enyasu.html">ドメインの売却は円安の今がチャンス</a></li>
+<li><a href="../tips/affiliate-regulation.html">消費者庁がアフィリエイト広告の規制強化を検討</a></li>
+<li><a href="../seo/infomation-about.html">運営者情報の公開でSEO対策</a></li>
+<li><a href="xmlrpc.html">Movable Typeの脆弱性をついた攻撃が発生</a></li>
+<li><a href="howto-jason.html">MovableTypeで構造化データを設定してみました</a></li>
+<li><a href="../tips/1920-1080hd.html">フルHD解像度「1920x1080」に最適化</a></li>
+<li><a href="../domain/google-domains.html">Google Domainsに移管してみました</a></li>
+<li><a href="../tips/preload.html">WEBフォントをpreloadするのは止めました</a></li>
+<li><a href="../how-to/mfi-freeblog.html">MFI完全移行による無料ブログへの影響</a></li>
+<li><a href="../tips/gazou-1200px.html">1200pxの画像を用意するしかあるまい</a></li>
+<li><a href="mt-amp.html">当ブログをAMPに対応しました</a></li>
+<li><a href="../tips/howto-kouzouka.html">「HowTo」構造化データの作り方</a></li>
+<li><a href="../tips/line-height.html">見出しh1「line-height」の値はfont-sizeに反比例する</a></li>
+<li><a href="../tips/ipad-768px.html">iPad用のブレイクポイントを「834px」に変更</a></li>
+<li><a href="../tips/h1px.html">見出しh1のフォントサイズは何pxがよいのか？</a></li>
+<li><a href="../tips/kisya-handbook.html">共同通信社「記者ハンドブック」を読む</a></li>
+<li><a href="../tips/just-right.html">ブログ記事の校正に「Just Right!」を購入してみました</a></li>
+<li><a href="../tips/r2tls-jp4-bk.html">REALFORCEのキーボードを「R2TLS-JP4-BK」に買い替えました</a></li>
+<li><a href="../domain/grace-period.html">Grace Periodは何日間なのか？</a></li>
+<li><a href="../tips/gyousyu.html">サイト運営者の業種（日本産業分類）は何になるのか？</a></li>
+</ul>
+</div>
+<div class="sidetitle">リンク</div>
+<div class="side">
+<ul>
+<li><a href="https://www.homepage-tukurikata.com/">ホームページの作り方</a></li>
+<li><a href="../../article/92088644.html">ブログ比較</a></li>
+<li><a href="../../article/117970780.html">ブログ広告での収入</a></li>
+<li><a href="../../article/119971208.html">リスティング広告とは？</a></li>
+</ul></div>
+</div>
+<div id="footer">
+<div class="pagetop"><a href="#container">PageTop▲</a></div>
+<div class="copyright"><ul><li><a href="../archives.html">アーカイブ</a></li><li>&copy;2021 blog-tips.net</li></ul></div>
+<div class="logo"><a href="../index.html">トップページ</a> - <a href="../../index.html">ブログの作り方</a></div>
+</div></div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2336808-36"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2336808-36');
+</script>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "作り方の研究ブログ",
+        "item": "https://blog-tips.net/blog/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "MTブログ",
+        "item": "https://blog-tips.net/blog/mt/"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "ＭＴ形式でインポートした記事の改行が反映されない"
+      }]
+    }
+</script>
+</body>
+</html>

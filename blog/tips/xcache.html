@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>「mod_pagespeed」から「Xアクセラレータ」に変更しました - 作り方の研究ブログ</title>
+<meta name="description" content="「Xアクセラレータ」はサーバーキャッシュの機能になりますが、WordPressなどの動的なCMSでサイトを作成しており、なおかつ膨大なアクセスがあるサイトはメリットが多いと思います。" />
+<meta name="keywords" content="Xアクセラレータ,サーバーキャッシュ" />
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" href="../entry.css" type="text/css" />
+<link rel="amphtml" href="../amp/tips/xcache.html">
+<link rel="alternate" href="../rss.xml" type="application/rss+xml" title="作り方の研究ブログ - RSS" />
+<link rel="alternate" href="../atom.xml" type="application/atom+xml" title="作り方の研究ブログ - atom" />
+</head>
+<body>
+<div id="container">
+<div class="breadcrumb"><a href="../index.html">作り方の研究ブログ</a> &gt; <a href="index.html">ティップス</a> &gt;</div>
+<div id="content">
+<div class="blog" id="710">
+<h1>「mod_pagespeed」から「Xアクセラレータ」に変更しました</h1>
+<p>以前に「mod_pagespeed」を利用していたのですが、画像が表示されないことがあったため、当ブログでは利用しないことにしました。</p><p>エックスサーバーでも既に「mod_pagespeed」の新規受付は終了してますが、こちらは少し使いづらい気がしています。</p>
+<p><img src="../image/mod-end.png" alt="mod_pagespeed" width="320" height="227" class="ccc" /></p>
+<p><b>関連記事</b>：<a href="../seo/mod-pagespeed.html">「mod_pagespeed」によるSEO的な影響はあるのか？</a></p>
+<p>その代わりに「<b>Xアクセラレータ</b>」を設定したみたのですが、こちらは<span class="red">サーバーキャッシュの機能</span>になるようです。</p>
+<p>一般的なブラウザキャッシュの場合、サーバーからデータを引っ張るのではなく、ブラウザのキャッシュを利用して高速に表示させる機能になりますが、これのサーバー版と考えればよいかもしれません。</p>
+<p>サーバーキャッシュの場合もキャッシュを作成することにより、アクセスされる度にいちいちサーバーにデータを取りに行かなくても済むようになり、高速にサイトを表示させることができます。</p>
+<p>■<b>通常の場合</b>：</p>
+<p>ユーザー ←→ サーバー</p>
+<p>■<b>サーバーキャッシュ機能の場合</b>：</p>
+<p>ユーザー ←→ キャッシュ ← サーバー</p>
+<p>特にWordPressなどの動的なサイトの場合、アクセスがあった際にはデータベースなどからデータを引っ張ってきてHTMLファイル等を作成して表示するわけですが、大量のアクセスが集中した際にその都度ファイルを作成していたらサーバーの負荷が高くなりがちです。</p>
+<p>そのため、一度作成したファイルをしばらくの間はサーバーでキャッシュしておき、再度アクセスがあった際にはそのキャッシュを表示させることでサーバーの負荷が減り、高速で表示される仕組みかと思います。</p>
+<p>エックスサーバーの場合はキャッシュの保存期間が「<b>2分間</b>」と書いてますが、これを逆算して考えると１時間で30アクセス、仮に9時～0時までの15時間で考えると１日450アクセスぐらいのあるページの場合は効果があるのかなと感じています。</p>
+<p>そのため、１日10アクセスぐらいのページの場合だとせいぜい１時間に１アクセスぐらいかと思いますので、再度アクセスが来るまでにキャッシュは消えてしまっているはずです。</p>
+<p>この場合はその都度サーバーにデータを取りに行く形になるはずなので、Xアクセラレータを設定しても効果はないのかもしれません。（詳細は不明）</p>
+<p>また、当サイトのように静的なサイトの場合、その都度ファイルを作成するわけではないため、この場合も効果は微妙かもしれませんが、公式サイトには「静的ファイルのキャッシュをサーバーに保持することで、サイトの高速化と同時アクセス数の拡張が行われます。」とあるので、おそらくは静的なサイトでも効果はあるかと思います。</p>
+<p>WordPressなどの動的なCMSでサイトを作成しており、なおかつ膨大なアクセスが同時に集中してサーバーが落ちてしまうようなサイトの場合はメリットが多いものと思います。</p>
+</div>
+<div class="content-nav"><a href="target-blank.html">&laquo; CVR低下は「target="_blank"」の影響か？</a> | <a href="../seo/coreupdate.html">コアアップデートの影響でアクセス数が減少してしまいました &raquo;</a></div>
+</div>
+<div id="links">
+<div class="sidetitle">カテゴリ</div>
+<div class="category">
+<ul>
+<li><a href="../how-to/index.html">無料ブログ</a></li>
+<li class="entry-category"><a href="index.html">ティップス</a></li>
+<li class="entry-category"><a href="../mt/index.html">MTブログ</a></li>
+<li class="entry-category"><a href="../seo/index.html">SEO対策</a></li>
+<li class="entry-category"><a href="../homepage/index.html">ホームページ</a></li>
+<li class="entry-category"><a href="../rentalserver/index.html">レンタルサーバー</a></li>
+<li class="entry-category"><a href="../domain/index.html">ドメイン</a></li>
+</ul>
+</div>
+<div class="sidetitle">最近のブログ記事</div>
+<div class="side">
+<ul>
+<li><a href="../domain/godaddy-enyasu.html">ドメインの売却は円安の今がチャンス</a></li>
+<li><a href="affiliate-regulation.html">消費者庁がアフィリエイト広告の規制強化を検討</a></li>
+<li><a href="../seo/infomation-about.html">運営者情報の公開でSEO対策</a></li>
+<li><a href="../mt/xmlrpc.html">Movable Typeの脆弱性をついた攻撃が発生</a></li>
+<li><a href="../mt/howto-jason.html">MovableTypeで構造化データを設定してみました</a></li>
+<li><a href="1920-1080hd.html">フルHD解像度「1920x1080」に最適化</a></li>
+<li><a href="../domain/google-domains.html">Google Domainsに移管してみました</a></li>
+<li><a href="preload.html">WEBフォントをpreloadするのは止めました</a></li>
+<li><a href="../how-to/mfi-freeblog.html">MFI完全移行による無料ブログへの影響</a></li>
+<li><a href="gazou-1200px.html">1200pxの画像を用意するしかあるまい</a></li>
+<li><a href="../mt/mt-amp.html">当ブログをAMPに対応しました</a></li>
+<li><a href="howto-kouzouka.html">「HowTo」構造化データの作り方</a></li>
+<li><a href="line-height.html">見出しh1「line-height」の値はfont-sizeに反比例する</a></li>
+<li><a href="ipad-768px.html">iPad用のブレイクポイントを「834px」に変更</a></li>
+<li><a href="h1px.html">見出しh1のフォントサイズは何pxがよいのか？</a></li>
+<li><a href="kisya-handbook.html">共同通信社「記者ハンドブック」を読む</a></li>
+<li><a href="just-right.html">ブログ記事の校正に「Just Right!」を購入してみました</a></li>
+<li><a href="r2tls-jp4-bk.html">REALFORCEのキーボードを「R2TLS-JP4-BK」に買い替えました</a></li>
+<li><a href="../domain/grace-period.html">Grace Periodは何日間なのか？</a></li>
+<li><a href="gyousyu.html">サイト運営者の業種（日本産業分類）は何になるのか？</a></li>
+</ul>
+</div>
+<div class="sidetitle">リンク</div>
+<div class="side">
+<ul>
+<li><a href="https://www.homepage-tukurikata.com/">ホームページの作り方</a></li>
+<li><a href="../../article/92088644.html">ブログ比較</a></li>
+<li><a href="../../article/117970780.html">ブログ広告での収入</a></li>
+<li><a href="../../article/119971208.html">リスティング広告とは？</a></li>
+</ul></div>
+</div>
+<div id="footer">
+<div class="pagetop"><a href="#container">PageTop▲</a></div>
+<div class="copyright"><ul><li><a href="../archives.html">アーカイブ</a></li><li>&copy;2021 blog-tips.net</li></ul></div>
+<div class="logo"><a href="../index.html">トップページ</a> - <a href="../../index.html">ブログの作り方</a></div>
+</div></div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2336808-36"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2336808-36');
+</script>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "作り方の研究ブログ",
+        "item": "https://blog-tips.net/blog/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "ティップス",
+        "item": "https://blog-tips.net/blog/tips/"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "「mod_pagespeed」から「Xアクセラレータ」に変更しました"
+      }]
+    }
+</script>
+</body>
+</html>

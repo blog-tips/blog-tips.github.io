@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>MTOSデフォルトのHTMLとＣＳＳの特徴 - 作り方の研究ブログ</title>
+<meta name="description" content="mtブログのデフォルトテンプレートはブログカスタマイズした方がいいと思います。" />
+<meta name="keywords" content="mt,ブログ,テンプレート,デフォルト" />
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" href="../entry.css" type="text/css" />
+<link rel="amphtml" href="../amp/mt/mt-default.html">
+<link rel="alternate" href="../rss.xml" type="application/rss+xml" title="作り方の研究ブログ - RSS" />
+<link rel="alternate" href="../atom.xml" type="application/atom+xml" title="作り方の研究ブログ - atom" />
+</head>
+<body>
+<div id="container">
+<div class="breadcrumb"><a href="../index.html">作り方の研究ブログ</a> &gt; <a href="index.html">MTブログ</a> &gt;</div>
+<div id="content">
+<div class="blog" id="129">
+<h1>MTOSデフォルトのHTMLとＣＳＳの特徴</h1>
+<p>MTOSのデフォルトのHTMLとCSSについてですが、SEO対策によいのか悪いのか、いまいち判断が付きません。</p><p>特徴的なのは、デフォルトの赤茶色っぽいテンプレートですが、わたしの場合、ネット検索していると3日に１回ぐらいはお目にかかることが多いです。検索でヒットすることから考えても、検索エンジン対策には向いていると感じております。</p><p><img src="../image/mtdefault.png" alt="ＭＴデフォルトテンプレート" border="0" width="291" height="222" /></p><p>けれども、HTMLソースの方を確認してみますと、H1とH2が連続していたり、H3を抜かしてH4が入っていたりしています。また、要らない&lt;div&gt;が多すぎるように感じておりますが、例えば、Footerあたりにはfooter-innerにfooter-contentなど、そんなに入れ子を用意しなくてもいい箇所が多々見受けられます。</p><p>これらのH4や要らないdivは削除しておくべきかもしれません。</p><p>また、テンプレートの種類として、「インデックステンプレート」と「アーカイブテンプレート」、そして「テンプレートモジュール」などがありますが、URLの出力形式が微妙と感じております。年月ではなく、カテゴリ名/ファイル名.htmlのような形で作成した方がよいかもしれません。このあたりはテンプレートでカスタマイズできます。</p><p>テンプレートには、2カラムや3カラムなどがありますが、html上のbodyタグなどにIDが埋め込まれており、wtt（wide-thin-thin）やwtなどのIDで切り分けているようです。IDとCSSを対応させることにより、2カラムや3カラムなどを形成しているものと思われます。</p><p>ただ、CSSについては非常に難解です。</p><p>いわゆるリセットスタイルシートの方式で、ブラウザによるデフォルトの表示の違いを消すため、リセットするためのCSSの設定がされています。例えば、marignなどはCSSで何も設定しなかった場合、上下に何pxかが設定されると思いますが、これを一旦はゼロにした上で、新たに設定していくという方式になっています。</p><p>このリセットCSSの是非はあるかと思いますが、私の場合はかえってやりずらいです。後ろ方で上書きされ、さらに上書きされということを何度も繰り返す形になってしまうため、要素ごとにCSSのプロパティを設定しなおいた方がよいと思います。</p><p>また、フォントが欧文で使用されるものが設定されておりますので、font-familyでメイリオやヒラギノカクなどの日本語フォントに設定しなおした方がよいと思います。</p>
+</div>
+<div class="content-nav"><a href="../how-to/h2.html">&laquo; 無料ブログのh2タイトル比較</a> | <a href="../tips/layout.html">ブログのレイアウト構成 &raquo;</a></div>
+</div>
+<div id="links">
+<div class="sidetitle">カテゴリ</div>
+<div class="category">
+<ul>
+<li><a href="../how-to/index.html">無料ブログ</a></li>
+<li class="entry-category"><a href="../tips/index.html">ティップス</a></li>
+<li class="entry-category"><a href="index.html">MTブログ</a></li>
+<li class="entry-category"><a href="../seo/index.html">SEO対策</a></li>
+<li class="entry-category"><a href="../homepage/index.html">ホームページ</a></li>
+<li class="entry-category"><a href="../rentalserver/index.html">レンタルサーバー</a></li>
+<li class="entry-category"><a href="../domain/index.html">ドメイン</a></li>
+</ul>
+</div>
+<div class="sidetitle">最近のブログ記事</div>
+<div class="side">
+<ul>
+<li><a href="../domain/godaddy-enyasu.html">ドメインの売却は円安の今がチャンス</a></li>
+<li><a href="../tips/affiliate-regulation.html">消費者庁がアフィリエイト広告の規制強化を検討</a></li>
+<li><a href="../seo/infomation-about.html">運営者情報の公開でSEO対策</a></li>
+<li><a href="xmlrpc.html">Movable Typeの脆弱性をついた攻撃が発生</a></li>
+<li><a href="howto-jason.html">MovableTypeで構造化データを設定してみました</a></li>
+<li><a href="../tips/1920-1080hd.html">フルHD解像度「1920x1080」に最適化</a></li>
+<li><a href="../domain/google-domains.html">Google Domainsに移管してみました</a></li>
+<li><a href="../tips/preload.html">WEBフォントをpreloadするのは止めました</a></li>
+<li><a href="../how-to/mfi-freeblog.html">MFI完全移行による無料ブログへの影響</a></li>
+<li><a href="../tips/gazou-1200px.html">1200pxの画像を用意するしかあるまい</a></li>
+<li><a href="mt-amp.html">当ブログをAMPに対応しました</a></li>
+<li><a href="../tips/howto-kouzouka.html">「HowTo」構造化データの作り方</a></li>
+<li><a href="../tips/line-height.html">見出しh1「line-height」の値はfont-sizeに反比例する</a></li>
+<li><a href="../tips/ipad-768px.html">iPad用のブレイクポイントを「834px」に変更</a></li>
+<li><a href="../tips/h1px.html">見出しh1のフォントサイズは何pxがよいのか？</a></li>
+<li><a href="../tips/kisya-handbook.html">共同通信社「記者ハンドブック」を読む</a></li>
+<li><a href="../tips/just-right.html">ブログ記事の校正に「Just Right!」を購入してみました</a></li>
+<li><a href="../tips/r2tls-jp4-bk.html">REALFORCEのキーボードを「R2TLS-JP4-BK」に買い替えました</a></li>
+<li><a href="../domain/grace-period.html">Grace Periodは何日間なのか？</a></li>
+<li><a href="../tips/gyousyu.html">サイト運営者の業種（日本産業分類）は何になるのか？</a></li>
+</ul>
+</div>
+<div class="sidetitle">リンク</div>
+<div class="side">
+<ul>
+<li><a href="https://www.homepage-tukurikata.com/">ホームページの作り方</a></li>
+<li><a href="../../article/92088644.html">ブログ比較</a></li>
+<li><a href="../../article/117970780.html">ブログ広告での収入</a></li>
+<li><a href="../../article/119971208.html">リスティング広告とは？</a></li>
+</ul></div>
+</div>
+<div id="footer">
+<div class="pagetop"><a href="#container">PageTop▲</a></div>
+<div class="copyright"><ul><li><a href="../archives.html">アーカイブ</a></li><li>&copy;2021 blog-tips.net</li></ul></div>
+<div class="logo"><a href="../index.html">トップページ</a> - <a href="../../index.html">ブログの作り方</a></div>
+</div></div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2336808-36"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2336808-36');
+</script>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "作り方の研究ブログ",
+        "item": "https://blog-tips.net/blog/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "MTブログ",
+        "item": "https://blog-tips.net/blog/mt/"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "MTOSデフォルトのHTMLとＣＳＳの特徴"
+      }]
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>当ブログをスマホに対応しました。 - 作り方の研究ブログ</title>
+<meta name="description" content="メディアクエリを使い、ブログをスマートフォンに対応する方法についてご紹介しています。" />
+<meta name="keywords" content="ブログ,スマホ対応" />
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" href="../entry.css" type="text/css" />
+<link rel="amphtml" href="../amp/mt/medhia-kueri.html">
+<link rel="alternate" href="../rss.xml" type="application/rss+xml" title="作り方の研究ブログ - RSS" />
+<link rel="alternate" href="../atom.xml" type="application/atom+xml" title="作り方の研究ブログ - atom" />
+</head>
+<body>
+<div id="container">
+<div class="breadcrumb"><a href="../index.html">作り方の研究ブログ</a> &gt; <a href="index.html">MTブログ</a> &gt;</div>
+<div id="content">
+<div class="blog" id="581">
+<h1>当ブログをスマホに対応しました。</h1>
+<p>当ブログをスマホに対応してみました。タブレット端末にはipadやipadミニ、ネクサス7などの中ぐらいのものもありますが、その辺はめんどうなんで、一番小さいスマホだけに対応するようにしております。</p><p>このスマホ対応のやり方についてですが、CSSにメディアクエリを追加すると簡単に設定できます。これはスマホだけに適応されるCSSを最後の方に記述することで、スマホ閲覧の時にだけ表示の仕方を変更してくれるものです。</p><p>@media screen and (max-device-width: 480px) {<br />
+ここにスマホ用のスタイルシートを記入する。
+}</p><p>これをCSSの最後の方に追加しておくと、ＰＣでの閲覧時にはこの記述は無視されますが、デバイスの最大幅480pxのスマホで閲覧した場合にはこの記述が適用され、スマホ用の表示をしてくれます。</p><p>例えば、当ブログはiponeではこのように表示されています。</p><p><img src="../image/iphone-taiou1.png" alt="" width="282" height="500" style="border: solid 1px #ccc;" /></p><p>これでは閲覧しにくいので、これにメディアクエリをCSSに追加して表示の仕方を変更します。</p><p>とりあえず、各要素のフロートを解除してサイドバーの回り込みをはずし、横幅を広げてみるとこのようになります。</p><p>@media screen and (max-device-width: 480px) {<br />
+#container,#content,#links,#footer {width:890px;float:none;}<br />
+}</p><p><img src="../image/iphone-taiou2.png" alt="" width="282" height="500" style="border: solid 1px #ccc;" /></p><p>次に、文字が小さいのでfont-sizeを300%ぐらいにして大きくしてみるとこうなります。</p><p><img src="../image/iphone-taiou3.png" alt="" width="282" height="500" style="border: solid 1px #ccc;" /></p><p>次に、フォントスタイルを変更し、画像も大き目に表示されるように設定しました。<br />
+スマホ用のフォントスタイルについては、いろいろ試してみた結果、これがいいと思います。</p><p>font-family: ArialMT, "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", メイリオ, sans-serif;</p><p>画像を大きく表示させる場合は、以下の記述をします。</p><p>img {zoom:170%;}</p><p>そうするとこうなります。</p><p><img src="../image/iphone-taiou4.png" alt="" width="282" height="500" style="border: solid 1px #ccc;" /></p><p>このぐらいの大きさなら、スマホでも十分に閲覧できるのではないかと思います。<br />ちなみに、iphoneを横向きで表示させてみても特に問題ないようです。</p><p><img src="../image/iphone-taiou5.png" alt="" width="320" height="180" style="border: solid 1px #ccc;" /></p><p>今回、スマホ用のCSSをmax-device-width: 480pxで指定しましたが、この前にipad用のメディアクエリなども指定しておくと、各タブレット端末に対応できるかと思います。ただ、中ぐらいのタブレットの場合は、目をこらせば見れるレベルの大きさの画面かと思いますので、スマートフォンだけでも対応しておけばいいんじゃないかという気もします。</p><p>こんな感じでメディアクエリを使えば、htmlはいじらなくても、スタイルシートのみで対応できるので便利です。</p>
+</div>
+<div class="content-nav"><a href="../domain/zokusei-jp-domain.html">&laquo; 汎用JPと属性型JPドメインの違い</a> | <a href="../tips/viewport.html">viewportがdevice-widthな風潮 &raquo;</a></div>
+</div>
+<div id="links">
+<div class="sidetitle">カテゴリ</div>
+<div class="category">
+<ul>
+<li><a href="../how-to/index.html">無料ブログ</a></li>
+<li class="entry-category"><a href="../tips/index.html">ティップス</a></li>
+<li class="entry-category"><a href="index.html">MTブログ</a></li>
+<li class="entry-category"><a href="../seo/index.html">SEO対策</a></li>
+<li class="entry-category"><a href="../homepage/index.html">ホームページ</a></li>
+<li class="entry-category"><a href="../rentalserver/index.html">レンタルサーバー</a></li>
+<li class="entry-category"><a href="../domain/index.html">ドメイン</a></li>
+</ul>
+</div>
+<div class="sidetitle">最近のブログ記事</div>
+<div class="side">
+<ul>
+<li><a href="../domain/godaddy-enyasu.html">ドメインの売却は円安の今がチャンス</a></li>
+<li><a href="../tips/affiliate-regulation.html">消費者庁がアフィリエイト広告の規制強化を検討</a></li>
+<li><a href="../seo/infomation-about.html">運営者情報の公開でSEO対策</a></li>
+<li><a href="xmlrpc.html">Movable Typeの脆弱性をついた攻撃が発生</a></li>
+<li><a href="howto-jason.html">MovableTypeで構造化データを設定してみました</a></li>
+<li><a href="../tips/1920-1080hd.html">フルHD解像度「1920x1080」に最適化</a></li>
+<li><a href="../domain/google-domains.html">Google Domainsに移管してみました</a></li>
+<li><a href="../tips/preload.html">WEBフォントをpreloadするのは止めました</a></li>
+<li><a href="../how-to/mfi-freeblog.html">MFI完全移行による無料ブログへの影響</a></li>
+<li><a href="../tips/gazou-1200px.html">1200pxの画像を用意するしかあるまい</a></li>
+<li><a href="mt-amp.html">当ブログをAMPに対応しました</a></li>
+<li><a href="../tips/howto-kouzouka.html">「HowTo」構造化データの作り方</a></li>
+<li><a href="../tips/line-height.html">見出しh1「line-height」の値はfont-sizeに反比例する</a></li>
+<li><a href="../tips/ipad-768px.html">iPad用のブレイクポイントを「834px」に変更</a></li>
+<li><a href="../tips/h1px.html">見出しh1のフォントサイズは何pxがよいのか？</a></li>
+<li><a href="../tips/kisya-handbook.html">共同通信社「記者ハンドブック」を読む</a></li>
+<li><a href="../tips/just-right.html">ブログ記事の校正に「Just Right!」を購入してみました</a></li>
+<li><a href="../tips/r2tls-jp4-bk.html">REALFORCEのキーボードを「R2TLS-JP4-BK」に買い替えました</a></li>
+<li><a href="../domain/grace-period.html">Grace Periodは何日間なのか？</a></li>
+<li><a href="../tips/gyousyu.html">サイト運営者の業種（日本産業分類）は何になるのか？</a></li>
+</ul>
+</div>
+<div class="sidetitle">リンク</div>
+<div class="side">
+<ul>
+<li><a href="https://www.homepage-tukurikata.com/">ホームページの作り方</a></li>
+<li><a href="../../article/92088644.html">ブログ比較</a></li>
+<li><a href="../../article/117970780.html">ブログ広告での収入</a></li>
+<li><a href="../../article/119971208.html">リスティング広告とは？</a></li>
+</ul></div>
+</div>
+<div id="footer">
+<div class="pagetop"><a href="#container">PageTop▲</a></div>
+<div class="copyright"><ul><li><a href="../archives.html">アーカイブ</a></li><li>&copy;2021 blog-tips.net</li></ul></div>
+<div class="logo"><a href="../index.html">トップページ</a> - <a href="../../index.html">ブログの作り方</a></div>
+</div></div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2336808-36"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2336808-36');
+</script>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "作り方の研究ブログ",
+        "item": "https://blog-tips.net/blog/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "MTブログ",
+        "item": "https://blog-tips.net/blog/mt/"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "当ブログをスマホに対応しました。"
+      }]
+    }
+</script>
+</body>
+</html>

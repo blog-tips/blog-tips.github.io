@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>htaccess ファイルって何だろう？</title>
+<meta name="description" content="このページでは「htaccess,ホームページ,リダイレクト」について紹介しています。htaccess ファイルって何だろう？についての情報です。" />
+<meta name="keywords" content="htaccess,ホームページ,リダイレクト" />
+<meta name="viewport" content="width=device-width" />
+<link rel="alternate" href="../index.rdf" type="application/rss+xml" title="RSS" />
+<link rel="stylesheet" href="../styles-article.css" type="text/css" />
+<link rel="shortcut icon" href="../image/favicon.ico" />
+</head><body>
+<div id="container">
+<main id="content">
+<div class="blog">
+<!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:Trackback="http://madskills.com/public/xml/rss/module/Trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="https://blog-tips.net/article/116268034.html"
+    trackback:ping="http://blog.seesaa.jp/tb/116268034"
+    dc:title="htaccess ファイルって何だろう？"
+    dc:identifier="https://blog-tips.net/article/116268034.html"
+    dc:description="ホームページ作成の際、.htaccess と robots.txt のファイル設定は基本的な設定事項としてよく出てきますが、両方ともなきゃないでもいいっぽい気もします。.htaccess のファイルはアクセスに制限をかけたり、リダイレクトしたりするファイルであるのに対して、robots.txt は検索ロボットのクロールを制御したり、指示したりするためのファイルのようです。SEO的には、できるだけ軽いホームページの方がいいと思うんですけど、.htaccess ファイルを使用する..."
+    dc:creator="ブログの作り方"
+    dc:subject="無料ホームページの作り方"
+    dc:date="2009-03-27T00:08:16+09:00"
+/>
+</rdf:RDF>
+-->
+<div class="breadcrumb"><a href="../index.html">ブログの作り方 トップ</a> &gt; <a href="../category/5323473-1.html">無料ホームページの作り方</a> &gt;</div>
+<h1>htaccess ファイルって何だろう？</h1>
+<p>ホームページ作成の際、.htaccess と robots.txt のファイル設定は基本的な設定事項としてよく出てきますが、両方ともなきゃないでもいいっぽい気もします。</p><p>.htaccess のファイルはアクセスに制限をかけたり、リダイレクトしたりするファイルであるのに対して、robots.txt は検索ロボットのクロールを制御したり、指示したりするためのファイルのようです。</p><p>SEO的には、できるだけ軽いホームページの方がいいと思うんですけど、.htaccess ファイルを使用すると、サーバーの性能が低下することもあるようなんでどうなんだろって思います。</p><h2>Apache なサーバサイドの .htaccess ファイル</h2>
+<p>.htaccess ファイルはサーバソフトウェアの Apache ファイルのようで、ぶっちゃけ両方とも何て読むのかは知らないんですけど、Apache チュートリアルのページに .htaccess に関する説明が詳しく載っています。</p><p><a href="http://httpd.apache.org/docs/2.0/howto/htaccess.html" target="_blank" rel="nofollow">Apache チュートリアル: .htaccess ファイル</a></p><p>これによると、.htaccess ファイルの使用は極力避けた方がいいようなんですが、ある階層でファイルがリクエストされたら、その上位のファイルまでさかのぼっていろいろ探しちゃうみたいなんです。</p><p>そのたびにファイルが読み込まれてとかって感じのようです。</p><p>そんなこんなで、できれば使わない方がいいっぽい .htaccess ですが、このファイルはアクセス制限のほかにも、404 ページのカスタマイズやリダイレクト設定などができる何かとお役立ちファイルのようなんです。</p>
+
+<h3>.htaccess で 404 ページやリダイレクトの設定</h3>
+
+<p>人のホームページで「このＨＰはどこのサーバーを使ってるんだろう？」と思った時に、適当なファイル名を入力して 404 ページを表示させると、そのレンタルサーバー情報が表示されることが多いです。</p><p>けれども、たまに<a href="https://support.google.com/webmasters/answer/93641" target="_blank" rel="nofollow">404 ページのカスタマイズ</a>をしているホームページがあるのですが、そういうホームページの場合は、この .htaccess ファイルを使っての 404 設定になるようです。</p>
+<hr />
+<p>そのほかにも、ホームページ url を、ページランクのSEO的な事情で、www のあり・なしのどちらか片方に統一する必要性がある場合など、ドメインのDNSやネームサーバー設定よりも、.htaccess ファイルでリダイレクト設定した方が簡単みたいです。</p><p>www あり・なしの統一は、グーグルのウェブマスターツールでも設定することができるようですが、やはり同じページは重複してても大丈夫なものの、SEO的にはちゃんとリダイレクト設定しておくのがぶなんだと思います。</p><p>そのほか、サイトの引越しの場合など、個別ページごとに対応させてリダイレクト設定する場合でも、メタタグで設定するよりも、.htaccess ファイルで設定した方簡単で楽チンだと思います。</p><p>けれども、404 ページを間違って設定してしまった場合、「ファイルがない - 404ページへ - 404.html がない - 404ページへ」と短時間に無限に転送されることも多いようです。</p><p>その結果、転送量が多くなって共有サーバーが重くなり、ほかの人に迷惑がかかることもあるようなんで注意したいものです。</p>
+<p>結局のところ、.htaccess ファイルの必要性はサイト引越しの際にとても役立ちそうだっていう印象があるんで、必要になった際には使ってみようと思います。</p>
+<p>無料ブログでは使えないっぽいです。</p>
+</div>
+<div id="trackback">
+<div class="ttitle">関連記事</div>
+<div class="blogging">
+<ul>
+<li><a href="115961493.html">robots.txt って何だろう？</a><br />
+ヤフーやグーグルのウェブマスターヘルプを眺めていると、robots.txt がどうこうって書かれていることが多いですが、このテキストファイルは、ルートディレクトリにアップロードすることで検索エンジンの...</li>
+<li><a href="115702834.html">ブログ引越しのSEO対策</a><br />
+わたしのシーサーブログのなかで、時間をかけたもののアクセスしょぼしょぼのしょぼいブログがあるんですけど、独自ドメイン化したら少しでもアクセスアップになるかな？と思い、今日、新ドメインへブログの引越しを...</li>
+<li><a href="112251425.html">ブログのリンク切れとリダイレクトのSEO対策</a><br />
+ブログのSEO対策としては、リンク切れのチェックとリダイレクトあれこれのテリトリーがありますが、新年なので、すでに存在しなく、404が返ってくるような発リンクは削除しておいた方がぶなんなんじゃないかな...</li>
+</ul>
+</div>
+</div>
+
+<div class="navi">
+前の記事:<a href="116067979.html">CSSで初心者簡単ブログカスタマイズ方法</a><br />次の記事:<a href="112911688.html">FC2ブログの作り方</a>
+</div>
+</main><!-- #BeginLibraryItem "/Library/side.lbi" --><aside id="links">
+<div class="sidetitle">カテゴリ</div><div class="side"><ul>
+<li><a href="../category/4150781-1.html">初心者簡単</a></li>
+<li><a href="../category/5449171-1.html">ブログ比較</a></li>
+<li><a href="../category/3754373-1.html">カスタマイズ</a></li>
+<li><a href="../category/4150804-1.html">アフィリエイト</a></li>
+<li><a href="../category/5396661-1.html">SEO対策</a></li>
+<li><a href="../category/6189872-1.html">独自ドメイン</a></li>
+<li><a href="../category/5377733-1.html">アクセス解析とアクセスアップ</a></li>
+<li><a href="../category/5323127-1.html">htmlタグやCSS</a></li>
+<li><a href="../category/5529851-1.html">アドセンス</a></li>
+<li><a href="../category/5323473-1.html">無料ホームページの作り方</a></li>
+<li><a href="../category/4150796-1.html">グーグル無料ツール</a></li>
+<li><a href="../category/5529711-1.html">無料メールアドレスやメルマガ</a></li>
+<li><a href="../category/5529703-1.html">無料ブラウザのＦirefoxとＩＥ</a></li>
+<li><a href="../category/5529606-1.html">ＩＴニュース</a></li>
+</ul></div>
+<div class="sidetitle">ブログの作り方情報</div>
+<div class="side">
+<ul>
+<li><a href="48913125.html">無料メールアドレスの作り方</a></li>
+<li><a href="117970780.html">ブログ広告で収入を得る方法</a></li>
+<li><a href="../hikaku.html">ブログ作りはブログ比較から</a></li>
+<li><a href="92088644.html">ブログ比較の一覧</a></li>
+<li><a href="114655734.html">独自ドメインの取得方法</a></li>
+<li><a href="dokuji-cms.html">CMSでブログを作成する方法</a></li>
+<li><a href="115872348.html">CMS可能な格安レンタルサーバー</a></li>
+<li><a href="112911688.html">FC2ブログの作り方</a></li>
+<li><a href="71878598.html">ＦＣ２ホームページの作り方</a></li>
+<li><a href="110459720.html">さくらのブログの作り方</a></li>
+<li><a href="seesaa.html">Seesaaブログの作り方</a></li>
+<li><a href="107993732.html">シーサーブログを独自ドメイン化</a></li>
+<li><a href="wix.html">WIXでのブログの作り方</a></li>
+<li><a href="53785835.html">ディレクトリ登録のSEO効果</a></li>
+<li><a href="118429340.html">ブログからの集客方法</a></li>
+<li><a href="119971208.html">リスティング広告とは何ですか？</a></li>
+</ul></div>
+<div class="arch"><script type="text/javascript">
+<!--
+function ChangeArchive (sel) {
+if (sel.options[sel.selectedIndex].value != "") {
+location.href = sel.options[sel.selectedIndex].value;
+}
+}
+-->
+</script>
+<select name="MonthArchive" onchange="ChangeArchive(this)" class="archiveselect">
+<option value="">archives</option>
+<option value="../archives/200905-1.html">09/05(15)</option>
+<option value="../archives/200904-1.html">09/04(19)</option>
+<option value="../archives/200903-1.html">09/03(20)</option>
+<option value="../archives/200902-1.html">09/02(9)</option>
+<option value="../archives/200901-1.html">09/01(14)</option>
+<option value="../archives/200812-1.html">08/12(18)</option>
+<option value="../archives/200811-1.html">08/11(19)</option>
+<option value="../archives/200810-1.html">08/10(15)</option>
+<option value="../archives/200809-1.html">08/09(14)</option>
+<option value="../archives/200808-1.html">08/08(8)</option>
+<option value="../archives/200807-1.html">08/07(28)</option>
+<option value="../archives/200806-1.html">08/06(29)</option>
+<option value="../archives/200805-1.html">08/05(33)</option>
+<option value="../archives/200804-1.html">08/04(30)</option>
+<option value="../archives/200803-1.html">08/03(15)</option>
+<option value="../archives/200802-1.html">08/02(19)</option>
+<option value="../archives/200801-1.html">08/01(15)</option>
+<option value="../archives/200712-1.html">07/12(10)</option>
+<option value="../archives/200711-1.html">07/11(10)</option>
+<option value="../archives/200710-1.html">07/10(11)</option>
+<option value="../archives/200709-1.html">07/09(16)</option>
+<option value="../archives/200708-1.html">07/08(10)</option>
+<option value="../archives/200707-1.html">07/07(19)</option></select>
+</div>
+<form action="https://www.google.com/cse" id="cse-search-box">
+    <input type="hidden" name="cx" value="004767610735532938012:_ydsjrf0v8u" />
+    <input type="hidden" name="ie" value="Shift_JIS" />
+    <input type="text" name="q" size="24" />
+    <input type="submit" name="sa" value="検索" />
+</form>
+</aside><!-- #EndLibraryItem --><footer id="footer">
+<div class="pagetop"><a href="#container">PageTop▲</a></div>
+<div class="copyright"><ul><li><a href="../index.html">トップページ</a></li>
+<li><a href="../blog/index.html">ブログ</a></li>
+<li><a href="98359430.html">sitemap</a></li>
+<li><a href="../tag/index.html">tag</a></li>
+<li><a href="110348826.html" rel="nofollow">about</a></li></ul>
+<p>&copy;2009 blog-tips.net</p>
+</div>
+</footer>
+</div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2336808-36"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2336808-36');
+</script>
+</body>
+</html>
